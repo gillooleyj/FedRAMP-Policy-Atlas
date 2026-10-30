@@ -15,3 +15,7 @@ Requested after the regional-navigation iteration. Keep the current default and 
 The supplied flow-chart reference includes legislation, OMB policy, Rev. 5 baselines and additional NIST publications. Add these only through authoritative ingestion with pinned revisions, applicability and evidence for each relationship. Do not treat the visual reference as a source of verified edges. The first chart uses the atlas's existing FedRAMP rules, KSIs and NIST 800-53 data.
 
 The chart now reaches every imported FedRAMP branch. Next: implement the legal/policy ingestion vertical slice in [policy-source-roadmap.md](policy-source-roadmap.md), starting with the explicit references inventoried in the active FedRAMP snapshot.
+
+## Follow-ups from independent browser QA (October 30, 2026)
+
+The stale Everything scope, semantic return navigation, disappearing context, moving class cards and offscreen selected mobile cards are addressed in this iteration. Mobile Filters now dismisses on Escape and restores trigger focus. Remaining validation: a complete mobile drawer focus-management/close-control pass, measured contrast and touch-target sizing, screen-reader testing, physical touch devices, Firefox/Safari, and live-site browser verification when environment access permits. Dense full-chart edge routing and long-title readability remain research items; source-directed arrows must not be reversed to improve layout.

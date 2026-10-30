@@ -21,3 +21,16 @@ export function flowLayout(nodes:Entity[],edges:Edge[]){
  }
  return positions;
 }
+
+/** Keep visited cards in place; new cards fill unused columns without changing edge direction. */
+export function anchoredFlowLayout(nodes:Entity[],edges:Edge[],previous:Map<string,{x:number;y:number}>){
+ if(!previous.size)return flowLayout(nodes,edges);
+ const positions=new Map<string,{x:number;y:number}>(),occupied=[...previous.values()];
+ for(const n of nodes)if(previous.has(n.id))positions.set(n.id,{...previous.get(n.id)!});
+ let slot=0;const width=flowCard.width+70,height=flowCard.height+34;
+ for(const n of [...nodes].sort((a,b)=>a.id.localeCompare(b.id))){if(positions.has(n.id))continue;
+  let p:{x:number;y:number};do{p={x:28+Math.floor(slot/5)*width,y:28+(slot%5)*height};slot++;}while(occupied.some(q=>p.x<q.x+flowCard.width+20&&p.x+flowCard.width+20>q.x&&p.y<q.y+flowCard.height+20&&p.y+flowCard.height+20>q.y));
+  positions.set(n.id,p);occupied.push(p);
+ }
+ return positions;
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "selected": "KSI-CNA-EIS",
+    "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/?node=fr%3AKSI-CNA-EIS",
+    "historyLength": 2
+  },
+  {
+    "selected": "ac-2",
+    "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/?node=nist%3Aac-2",
+    "historyLength": 2
+  },
+  {
+    "action": "browser Back",
+    "url": "about:blank"
+  }
+]

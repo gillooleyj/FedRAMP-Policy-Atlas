@@ -1,0 +1,62 @@
+{
+  "testedAt": "2026-10-30T12:52:43.901Z",
+  "browser": "154.0.8037.57",
+  "checks": [
+    {
+      "name": "Initial overview contains both source labels and explicit publisher counts"
+    },
+    {
+      "name": "Focus keeps all eligible points and dimmed context labels remain clickable",
+      "clicked": "fedramp"
+    },
+    {
+      "name": "Overview clears selection and restores both publisher labels"
+    },
+    {
+      "name": "UI Back and browser Back/Forward restore the exact prior entity"
+    },
+    {
+      "name": "Up follows actual AC-2 → AC family → NIST source containment"
+    },
+    {
+      "name": "Everything clears stale layer, relationship and selection scope"
+    },
+    {
+      "name": "Class B stays anchored on the left after selection with readable zoom",
+      "position": "translate(28px, 174px)",
+      "zoom": 0.938182
+    },
+    {
+      "name": "Class anchor persists through Map → Flow remount"
+    },
+    {
+      "name": "Back across branch changes restores selected class, expanded216 count and anchor",
+      "viewportBefore": "transform: translate(300.5px, 53.5px) scale(1);",
+      "viewportAfter": "transform: translate(300.5px, 53.5px) scale(1);"
+    },
+    {
+      "name": "Class Up returns to its branch without inventing a containment parent"
+    },
+    {
+      "name": "Back restores depth2 and all119 loaded KSI neighborhood cards"
+    },
+    {
+      "name": "Back restores class filter and selection after Clear filters"
+    },
+    {
+      "name": "Navigation history remains actionable after reload",
+      "selected": null,
+      "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/?mode=flow&branch=theme%3ACNA"
+    },
+    {
+      "name": "Direct linked selected Class B seeds the same left anchor"
+    },
+    {
+      "name": "Mobile navigation remains visible, selected card stays in frame, and Escape closes Filters"
+    },
+    {
+      "name": "No uncaught browser exceptions"
+    }
+  ],
+  "errors": []
+}

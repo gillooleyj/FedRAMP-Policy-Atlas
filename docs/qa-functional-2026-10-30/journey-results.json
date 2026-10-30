@@ -1,0 +1,89 @@
+{
+  "testedAt": "2026-10-30T12:41:36.182Z",
+  "browser": "154.0.8037.57",
+  "checks": [
+    {
+      "name": "Clean 3D initial view contains both source labels"
+    },
+    {
+      "name": "All-links renders every verified relationship"
+    },
+    {
+      "name": "Mapping filter retains all 558 published mappings"
+    },
+    {
+      "name": "NIST selection narrows labels despite full graph still present",
+      "labels": [
+        "ac-2",
+        "ac-2.11",
+        "ac-2.13",
+        "KSI-IAM-APM",
+        "KSI-IAM-SNU",
+        "KSI-IAM-SUS"
+      ],
+      "footer": "1,676 visible entities\n·\n18 rendered edges\nLayout indicates proximity, not legal authority",
+      "historyLength": 2
+    },
+    {
+      "name": "Explicit focus removes unrelated points entirely",
+      "footer": "19 visible entities\n·\n18 rendered edges\nLayout indicates proximity, not legal authority"
+    },
+    {
+      "name": "Camera Back does not restore the prior selection",
+      "previous": "ac-2",
+      "afterCameraBack": "KSI-CNA-EIS"
+    },
+    {
+      "name": "Connection depth expands to two and three levels",
+      "counts": "Level 1: 16\nLevel 2: 102\nLevel 3: 488"
+    },
+    {
+      "name": "Evidence opens exact original KSI mapping pointer"
+    },
+    {
+      "name": "Class variants retain Optional and missing-class semantics"
+    },
+    {
+      "name": "Selection survives changing all three presentations"
+    },
+    {
+      "name": "Table search and nested OSCAL statements work"
+    },
+    {
+      "name": "Table pagination advances and returns"
+    },
+    {
+      "name": "Class B filter narrows the table",
+      "caption": "270 entities match the current filters"
+    },
+    {
+      "name": "Sources page displays both schema validations and update status",
+      "update": "SOURCE WATCH\nMonitored source revisions match the active graph\nReview before promotion\n\nThis panel describes the status bundled with this site build. The scheduled job checks FedRAMP rules and NIST OSCAL; it does not cover all regulations or automatically publish changes.\n\nLAST SUCCESSFUL CHECK\n10/29/2026, 8:28:09 PM\nLAST ATTEMPT\n10/29/2026, 8:28:09 PM\nACTIVE GRAPH\n5cda3bb3c29d199d"
+    },
+    {
+      "name": "20x scope preserves active presentation"
+    },
+    {
+      "name": "20x chart excludes NIST control nodes"
+    },
+    {
+      "name": "Full FedRAMP chart reaches 459 entities and 1922 evidenced internal links"
+    },
+    {
+      "name": "Branch and mapped NIST scope survive URL reload"
+    },
+    {
+      "name": "Keyboard flow connector inspection exposes precise provenance"
+    },
+    {
+      "name": "Flow Reset returns to chosen branch"
+    },
+    {
+      "name": "Mobile layout and navigation to accessible table work"
+    },
+    {
+      "name": "No uncaught browser exceptions"
+    }
+  ],
+  "errors": []
+}

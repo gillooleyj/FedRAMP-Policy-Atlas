@@ -1,0 +1,117 @@
+{
+  "time": "2026-10-30T12:52:51.505Z",
+  "browser": "154.0.8037.57",
+  "asset": "/FedRAMP-Policy-Atlas/assets/index-dK7PwtXj.js",
+  "checks": [
+    {
+      "name": "Everything clears NIST-only focus, filters and selection",
+      "result": "pass",
+      "detail": "1,676 visible entities\n·\n1,719 rendered edges\nLayout indicates proximity, not legal authority"
+    },
+    {
+      "name": "Semantic Back restores previous selected group and browser Forward restores KSI",
+      "result": "pass",
+      "detail": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/?node=fr%3AKSI-CNA-EIS"
+    },
+    {
+      "name": "Up and containment breadcrumbs traverse actual parents",
+      "result": "pass"
+    },
+    {
+      "name": "Focused map retains all eligible points and dim context labels are clickable",
+      "result": "pass",
+      "detail": {
+        "clickedContext": "fedramp",
+        "remainingCount": "1,676 visible entities\n·\n107 rendered edges\nLayout indicates proximity, not legal authority"
+      }
+    },
+    {
+      "name": "Class B stays anchored, readable and visible after selecting",
+      "result": "pass",
+      "detail": {
+        "position": "translate(28px, 174px)",
+        "beforeView": "transform: translate(350.155px, 4.73091px) scale(0.938182);",
+        "scale": 0.938182,
+        "visibility": {
+          "contained": true,
+          "card": {
+            "x": 503.42364501953125,
+            "y": 977.6492919921875,
+            "width": 210.1527099609375,
+            "height": 105.076416015625
+          },
+          "surface": {
+            "x": 284,
+            "y": 746.6875,
+            "width": 649,
+            "height": 566.5
+          }
+        }
+      }
+    },
+    {
+      "name": "Class coordinates persist across presentation switches and URL reload",
+      "result": "pass"
+    },
+    {
+      "name": "Flow Back restores branch and viewport after zoom/pan and selection",
+      "result": "pass",
+      "detail": "transform: translate(323.885px, -51.8729px) scale(1.12582);"
+    },
+    {
+      "name": "Selected card remains in the chart after desktop-to-mobile resize",
+      "result": "pass",
+      "detail": {
+        "contained": true,
+        "card": {
+          "x": 83,
+          "y": 1183.96875,
+          "width": 224,
+          "height": 112
+        },
+        "surface": {
+          "x": 15,
+          "y": 1028.96875,
+          "width": 360,
+          "height": 422
+        }
+      }
+    },
+    {
+      "name": "Mobile selected KSI stays visible when switching map to flow",
+      "result": "pass",
+      "detail": {
+        "contained": true,
+        "card": {
+          "x": 83,
+          "y": 1197.96875,
+          "width": 224,
+          "height": 112
+        },
+        "surface": {
+          "x": 15,
+          "y": 1029.96875,
+          "width": 360,
+          "height": 448
+        }
+      }
+    },
+    {
+      "name": "Mobile Up and Overview work above chart without inspector Close",
+      "result": "pass"
+    },
+    {
+      "name": "Mobile Filters Escape closes sidebar and restores toggle focus",
+      "result": "pass"
+    },
+    {
+      "name": "Tablet navigation controls fit without horizontal overflow",
+      "result": "pass"
+    },
+    {
+      "name": "No uncaught browser errors",
+      "result": "pass"
+    }
+  ],
+  "errors": []
+}

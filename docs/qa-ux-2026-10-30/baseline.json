@@ -1,0 +1,3706 @@
+{
+  "time": "2026-10-30T12:41:41.919Z",
+  "browser": "154.0.8037.57",
+  "errors": [],
+  "states": [
+    {
+      "name": "01-desktop-initial",
+      "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/",
+      "labels": [
+        "FedRAMP",
+        "NIST 800-53"
+      ],
+      "inspector": [],
+      "footer": "1,676 visible entities\n·\n1,719 rendered edges\nLayout indicates proximity, not legal authority",
+      "canvas": [
+        {
+          "engine": "three.js r180",
+          "keyboardFocus": "false"
+        }
+      ],
+      "flow": [],
+      "buttons": [
+        {
+          "text": "Everything1,676",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "FedRAMP 20xEXPLORE",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Accessible table",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Sources & coverage",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "View coverage",
+          "disabled": false
+        },
+        {
+          "text": "3D Map",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Flow chart",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Table",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "FedRAMP",
+          "label": "FedRAMP · FedRAMP Consolidated Rules for 2026",
+          "disabled": false
+        },
+        {
+          "text": "NIST 800-53",
+          "label": "NIST 800-53 · Electronic (OSCAL) Version of NIST SP 800-53 Rev 5.2.0 Controls and SP 800-53A Rev 5.2.0 Assessment Procedures",
+          "disabled": false
+        },
+        {
+          "text": "Pan",
+          "label": "Pan map",
+          "disabled": false
+        },
+        {
+          "text": "Orbit",
+          "label": "Orbit map",
+          "disabled": false
+        },
+        {
+          "text": "Fit connections",
+          "label": "Fit connections",
+          "disabled": false
+        },
+        {
+          "text": "Back",
+          "label": "Back view",
+          "disabled": true
+        },
+        {
+          "text": "",
+          "label": "Zoom in",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Zoom out",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Fit all entities",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Reset view",
+          "disabled": false
+        },
+        {
+          "text": "KSI-CNA-EISEnforcing Intended State",
+          "label": null,
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "name": "02-laptop-initial",
+      "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/",
+      "labels": [
+        "FedRAMP",
+        "NIST 800-53"
+      ],
+      "inspector": [],
+      "footer": "1,676 visible entities\n·\n1,719 rendered edges\nLayout indicates proximity, not legal authority",
+      "canvas": [
+        {
+          "engine": "three.js r180",
+          "keyboardFocus": "false"
+        }
+      ],
+      "flow": [],
+      "buttons": [
+        {
+          "text": "Everything1,676",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "FedRAMP 20xEXPLORE",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Accessible table",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Sources & coverage",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "View coverage",
+          "disabled": false
+        },
+        {
+          "text": "3D Map",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Flow chart",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Table",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "FedRAMP",
+          "label": "FedRAMP · FedRAMP Consolidated Rules for 2026",
+          "disabled": false
+        },
+        {
+          "text": "NIST 800-53",
+          "label": "NIST 800-53 · Electronic (OSCAL) Version of NIST SP 800-53 Rev 5.2.0 Controls and SP 800-53A Rev 5.2.0 Assessment Procedures",
+          "disabled": false
+        },
+        {
+          "text": "Pan",
+          "label": "Pan map",
+          "disabled": false
+        },
+        {
+          "text": "Orbit",
+          "label": "Orbit map",
+          "disabled": false
+        },
+        {
+          "text": "Fit connections",
+          "label": "Fit connections",
+          "disabled": false
+        },
+        {
+          "text": "Back",
+          "label": "Back view",
+          "disabled": true
+        },
+        {
+          "text": "",
+          "label": "Zoom in",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Zoom out",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Fit all entities",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Reset view",
+          "disabled": false
+        },
+        {
+          "text": "KSI-CNA-EISEnforcing Intended State",
+          "label": null,
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "name": "03-group-selected",
+      "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/?node=theme%3ACNA",
+      "labels": [
+        "FedRAMP",
+        "Cloud Native Architecture",
+        "KSI-CNA-MAT"
+      ],
+      "inspector": [
+        "theme:CNA"
+      ],
+      "footer": "1,676 visible entities\n·\n9 rendered edges\nLayout indicates proximity, not legal authority",
+      "canvas": [
+        {
+          "engine": "three.js r180",
+          "keyboardFocus": "false"
+        }
+      ],
+      "flow": [],
+      "buttons": [
+        {
+          "text": "Everything1,676",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "FedRAMP 20xEXPLORE",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Accessible table",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Sources & coverage",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "View coverage",
+          "disabled": false
+        },
+        {
+          "text": "3D Map",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Flow chart",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Table",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "All (9)",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Containment (9)",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "FedRAMP",
+          "label": "FedRAMP · FedRAMP Consolidated Rules for 2026",
+          "disabled": false
+        },
+        {
+          "text": "Cloud Native Architecture",
+          "label": "Cloud Native Architecture · Cloud Native Architecture",
+          "disabled": false
+        },
+        {
+          "text": "KSI-CNA-MAT",
+          "label": "KSI-CNA-MAT · Minimizing Attack Surface",
+          "disabled": false
+        },
+        {
+          "text": "Pan",
+          "label": "Pan map",
+          "disabled": false
+        },
+        {
+          "text": "Orbit",
+          "label": "Orbit map",
+          "disabled": false
+        },
+        {
+          "text": "Fit connections",
+          "label": "Fit connections",
+          "disabled": false
+        },
+        {
+          "text": "Back",
+          "label": "Back view",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Zoom in",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Zoom out",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Fit all entities",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Reset view",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Close inspector",
+          "disabled": false
+        },
+        {
+          "text": "Focus neighborhood",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "fedrampFedRAMP Consolidated Rules for 2026",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "KSI-CNA-DFPDefining Functionality and Privileges",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "KSI-CNA-EISEnforcing Intended State",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "KSI-CNA-IBPImplementing Best Practices",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "KSI-CNA-MATMinimizing Attack Surface",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "KSI-CNA-OFAOptimizing for Availability",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "KSI-CNA-RNTRestricting Network Traffic",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "KSI-CNA-RVPReviewing Protections",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "KSI-CNA-ULNUsing Logical Networking",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "name": "04-ksi-selected",
+      "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/?node=fr%3AKSI-CNA-EIS",
+      "labels": [
+        "ca-2.1",
+        "cm-6.2",
+        "cp-10.4",
+        "ir-9.4",
+        "sc-24",
+        "si-4.22",
+        "si-7.7",
+        "FRD-IRS",
+        "FRD-MBI",
+        "FRD-PER",
+        "KSI-CNA-EIS"
+      ],
+      "inspector": [
+        "KSI-CNA-EIS"
+      ],
+      "footer": "1,676 visible entities\n·\n16 rendered edges\nLayout indicates proximity, not legal authority",
+      "canvas": [
+        {
+          "engine": "three.js r180",
+          "keyboardFocus": "false"
+        }
+      ],
+      "flow": [],
+      "buttons": [
+        {
+          "text": "Everything1,676",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "FedRAMP 20xEXPLORE",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Accessible table",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Sources & coverage",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "View coverage",
+          "disabled": false
+        },
+        {
+          "text": "3D Map",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Flow chart",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Table",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "All (16)",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Published mappings (12)",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Definitions (3)",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Containment (1)",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "ca-2.1",
+          "label": "ca-2.1 · Independent Assessors",
+          "disabled": false
+        },
+        {
+          "text": "cm-6.2",
+          "label": "cm-6.2 · Respond to Unauthorized Changes",
+          "disabled": false
+        },
+        {
+          "text": "cp-10.4",
+          "label": "cp-10.4 · Restore Within Time Period",
+          "disabled": false
+        },
+        {
+          "text": "ir-9.4",
+          "label": "ir-9.4 · Exposure to Unauthorized Personnel",
+          "disabled": false
+        },
+        {
+          "text": "sc-24",
+          "label": "sc-24 · Fail in Known State",
+          "disabled": false
+        },
+        {
+          "text": "si-4.22",
+          "label": "si-4.22 · Unauthorized Network Services",
+          "disabled": false
+        },
+        {
+          "text": "si-7.7",
+          "label": "si-7.7 · Integration of Detection and Response",
+          "disabled": false
+        },
+        {
+          "text": "FRD-IRS",
+          "label": "FRD-IRS · Information Resource",
+          "disabled": false
+        },
+        {
+          "text": "FRD-MBI",
+          "label": "FRD-MBI · Machine-Based (Information Resources)",
+          "disabled": false
+        },
+        {
+          "text": "FRD-PER",
+          "label": "FRD-PER · Persistently",
+          "disabled": false
+        },
+        {
+          "text": "KSI-CNA-EIS",
+          "label": "KSI-CNA-EIS · Enforcing Intended State",
+          "disabled": false
+        },
+        {
+          "text": "→ Definitions",
+          "label": "Inspect relationship fr:KSI-CNA-EIS to fr:FRD-PER: DEFINED_BY",
+          "disabled": false
+        },
+        {
+          "text": "→ Published mapping",
+          "label": "Inspect relationship fr:KSI-CNA-EIS to nist:si-7.5: PUBLISHED_CONTROL_MAPPING",
+          "disabled": false
+        },
+        {
+          "text": "Pan",
+          "label": "Pan map",
+          "disabled": false
+        },
+        {
+          "text": "Orbit",
+          "label": "Orbit map",
+          "disabled": false
+        },
+        {
+          "text": "Fit connections",
+          "label": "Fit connections",
+          "disabled": false
+        },
+        {
+          "text": "Back",
+          "label": "Back view",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Zoom in",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Zoom out",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Fit all entities",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Reset view",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Close inspector",
+          "disabled": false
+        },
+        {
+          "text": "Focus neighborhood",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Common",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "A",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "B",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "C",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "D",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "ca-2.1Independent Assessors",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "cm-11User-installed Software",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "cm-6.2Respond to Unauthorized Changes",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "cp-10.4Restore Within Time Period",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "ir-9.4Exposure to Unauthorized Personnel",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "sc-24Fail in Known State",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "sc-7.18Fail Secure",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "si-4.22Unauthorized Network Services",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "si-7Software, Firmware, and Information Integrity",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "si-7.1Integrity Checks",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "si-7.5Automated Response to Integrity Violations",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "si-7.7Integration of Detection and Response",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Show all 16 connections",
+          "label": null,
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "name": "05-camera-back-selection-persists",
+      "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/?node=fr%3AKSI-CNA-EIS",
+      "labels": [
+        "KSI-CNA-EIS"
+      ],
+      "inspector": [
+        "KSI-CNA-EIS"
+      ],
+      "footer": "1,676 visible entities\n·\n16 rendered edges\nLayout indicates proximity, not legal authority",
+      "canvas": [
+        {
+          "engine": "three.js r180",
+          "keyboardFocus": "false"
+        }
+      ],
+      "flow": [],
+      "buttons": [
+        {
+          "text": "Everything1,676",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "FedRAMP 20xEXPLORE",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Accessible table",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Sources & coverage",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "View coverage",
+          "disabled": false
+        },
+        {
+          "text": "3D Map",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Flow chart",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Table",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "All (16)",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Published mappings (12)",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Definitions (3)",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Containment (1)",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "KSI-CNA-EIS",
+          "label": "KSI-CNA-EIS · Enforcing Intended State",
+          "disabled": false
+        },
+        {
+          "text": "→ Definitions",
+          "label": "Inspect relationship fr:KSI-CNA-EIS to fr:FRD-PER: DEFINED_BY",
+          "disabled": false
+        },
+        {
+          "text": "Pan",
+          "label": "Pan map",
+          "disabled": false
+        },
+        {
+          "text": "Orbit",
+          "label": "Orbit map",
+          "disabled": false
+        },
+        {
+          "text": "Fit connections",
+          "label": "Fit connections",
+          "disabled": false
+        },
+        {
+          "text": "Back",
+          "label": "Back view",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Zoom in",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Zoom out",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Fit all entities",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Reset view",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Close inspector",
+          "disabled": false
+        },
+        {
+          "text": "Focus neighborhood",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Common",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "A",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "B",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "C",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "D",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "ca-2.1Independent Assessors",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "cm-11User-installed Software",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "cm-6.2Respond to Unauthorized Changes",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "cp-10.4Restore Within Time Period",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "ir-9.4Exposure to Unauthorized Personnel",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "sc-24Fail in Known State",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "sc-7.18Fail Secure",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "si-4.22Unauthorized Network Services",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "si-7Software, Firmware, and Information Integrity",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "si-7.1Integrity Checks",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "si-7.5Automated Response to Integrity Violations",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "si-7.7Integration of Detection and Response",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Show all 16 connections",
+          "label": null,
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "name": "06-focus-hidden-context",
+      "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/?node=fr%3AKSI-CNA-EIS",
+      "labels": [
+        "ca-2.1",
+        "cm-6.2",
+        "cp-10.4",
+        "ir-9.4",
+        "sc-24",
+        "si-4.22",
+        "si-7.7",
+        "FRD-IRS",
+        "FRD-MBI",
+        "FRD-PER",
+        "KSI-CNA-EIS"
+      ],
+      "inspector": [
+        "KSI-CNA-EIS"
+      ],
+      "footer": "17 visible entities\n·\n16 rendered edges\nLayout indicates proximity, not legal authority",
+      "canvas": [
+        {
+          "engine": "three.js r180",
+          "keyboardFocus": "false"
+        }
+      ],
+      "flow": [],
+      "buttons": [
+        {
+          "text": "Everything1,676",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "FedRAMP 20xEXPLORE",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Accessible table",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Sources & coverage",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "View coverage",
+          "disabled": false
+        },
+        {
+          "text": "3D Map",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Flow chart",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Table",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "All (16)",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Published mappings (12)",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Definitions (3)",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Containment (1)",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "ca-2.1",
+          "label": "ca-2.1 · Independent Assessors",
+          "disabled": false
+        },
+        {
+          "text": "cm-6.2",
+          "label": "cm-6.2 · Respond to Unauthorized Changes",
+          "disabled": false
+        },
+        {
+          "text": "cp-10.4",
+          "label": "cp-10.4 · Restore Within Time Period",
+          "disabled": false
+        },
+        {
+          "text": "ir-9.4",
+          "label": "ir-9.4 · Exposure to Unauthorized Personnel",
+          "disabled": false
+        },
+        {
+          "text": "sc-24",
+          "label": "sc-24 · Fail in Known State",
+          "disabled": false
+        },
+        {
+          "text": "si-4.22",
+          "label": "si-4.22 · Unauthorized Network Services",
+          "disabled": false
+        },
+        {
+          "text": "si-7.7",
+          "label": "si-7.7 · Integration of Detection and Response",
+          "disabled": false
+        },
+        {
+          "text": "FRD-IRS",
+          "label": "FRD-IRS · Information Resource",
+          "disabled": false
+        },
+        {
+          "text": "FRD-MBI",
+          "label": "FRD-MBI · Machine-Based (Information Resources)",
+          "disabled": false
+        },
+        {
+          "text": "FRD-PER",
+          "label": "FRD-PER · Persistently",
+          "disabled": false
+        },
+        {
+          "text": "KSI-CNA-EIS",
+          "label": "KSI-CNA-EIS · Enforcing Intended State",
+          "disabled": false
+        },
+        {
+          "text": "→ Definitions",
+          "label": "Inspect relationship fr:KSI-CNA-EIS to fr:FRD-PER: DEFINED_BY",
+          "disabled": false
+        },
+        {
+          "text": "→ Published mapping",
+          "label": "Inspect relationship fr:KSI-CNA-EIS to nist:si-7.5: PUBLISHED_CONTROL_MAPPING",
+          "disabled": false
+        },
+        {
+          "text": "Pan",
+          "label": "Pan map",
+          "disabled": false
+        },
+        {
+          "text": "Orbit",
+          "label": "Orbit map",
+          "disabled": false
+        },
+        {
+          "text": "Fit connections",
+          "label": "Fit connections",
+          "disabled": false
+        },
+        {
+          "text": "Back",
+          "label": "Back view",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Zoom in",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Zoom out",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Fit all entities",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Reset view",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Close inspector",
+          "disabled": false
+        },
+        {
+          "text": "Show full graph",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Common",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "A",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "B",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "C",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "D",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "ca-2.1Independent Assessors",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "cm-11User-installed Software",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "cm-6.2Respond to Unauthorized Changes",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "cp-10.4Restore Within Time Period",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "ir-9.4Exposure to Unauthorized Personnel",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "sc-24Fail in Known State",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "sc-7.18Fail Secure",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "si-4.22Unauthorized Network Services",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "si-7Software, Firmware, and Information Integrity",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "si-7.1Integrity Checks",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "si-7.5Automated Response to Integrity Violations",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "si-7.7Integration of Detection and Response",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Show all 16 connections",
+          "label": null,
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "name": "07-close-to-return",
+      "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/",
+      "labels": [
+        "FedRAMP",
+        "NIST 800-53"
+      ],
+      "inspector": [],
+      "footer": "1,676 visible entities\n·\n1,719 rendered edges\nLayout indicates proximity, not legal authority",
+      "canvas": [
+        {
+          "engine": "three.js r180",
+          "keyboardFocus": "false"
+        }
+      ],
+      "flow": [],
+      "buttons": [
+        {
+          "text": "Everything1,676",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "FedRAMP 20xEXPLORE",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Accessible table",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Sources & coverage",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "View coverage",
+          "disabled": false
+        },
+        {
+          "text": "3D Map",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Flow chart",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Table",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "FedRAMP",
+          "label": "FedRAMP · FedRAMP Consolidated Rules for 2026",
+          "disabled": false
+        },
+        {
+          "text": "NIST 800-53",
+          "label": "NIST 800-53 · Electronic (OSCAL) Version of NIST SP 800-53 Rev 5.2.0 Controls and SP 800-53A Rev 5.2.0 Assessment Procedures",
+          "disabled": false
+        },
+        {
+          "text": "Pan",
+          "label": "Pan map",
+          "disabled": false
+        },
+        {
+          "text": "Orbit",
+          "label": "Orbit map",
+          "disabled": false
+        },
+        {
+          "text": "Fit connections",
+          "label": "Fit connections",
+          "disabled": false
+        },
+        {
+          "text": "Back",
+          "label": "Back view",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Zoom in",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Zoom out",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Fit all entities",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Reset view",
+          "disabled": false
+        },
+        {
+          "text": "KSI-CNA-EISEnforcing Intended State",
+          "label": null,
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "name": "08-flow-classes",
+      "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/?mode=flow&branch=classes",
+      "labels": [],
+      "inspector": [],
+      "footer": "4 visible entities\n·\n0 rendered edges\nLayout indicates proximity, not legal authority",
+      "canvas": [],
+      "flow": [
+        {
+          "id": "class:A",
+          "transform": "translate(28px, 28px)"
+        },
+        {
+          "id": "class:B",
+          "transform": "translate(28px, 174px)"
+        },
+        {
+          "id": "class:C",
+          "transform": "translate(28px, 320px)"
+        },
+        {
+          "id": "class:D",
+          "transform": "translate(28px, 466px)"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Everything1,676",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "FedRAMP 20xEXPLORE",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Accessible table",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Sources & coverage",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "View coverage",
+          "disabled": false
+        },
+        {
+          "text": "3D Map",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Flow chart",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Table",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Reset chart",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "CLASSClass AA",
+          "label": "Inspect A",
+          "disabled": false
+        },
+        {
+          "text": "CLASSClass BB",
+          "label": "Inspect B",
+          "disabled": false
+        },
+        {
+          "text": "CLASSClass CC",
+          "label": "Inspect C",
+          "disabled": false
+        },
+        {
+          "text": "CLASSClass DD",
+          "label": "Inspect D",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Zoom in flow chart",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Zoom out flow chart",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Fit flow chart",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Fit chart to view",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "name": "09-class-selected-moves",
+      "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/?node=class%3AB&mode=flow&branch=classes",
+      "labels": [],
+      "inspector": [
+        "B"
+      ],
+      "footer": "60 visible entities\n·\n59 rendered edges\nLayout indicates proximity, not legal authority",
+      "canvas": [],
+      "flow": [
+        {
+          "id": "class:B",
+          "transform": "translate(3556px, 320px)"
+        },
+        {
+          "id": "fr:AFC-CSO-ACK",
+          "transform": "translate(28px, 174px)"
+        },
+        {
+          "id": "fr:AFC-CSO-CRA",
+          "transform": "translate(1498px, 612px)"
+        },
+        {
+          "id": "fr:AFC-CSO-EMR",
+          "transform": "translate(322px, 320px)"
+        },
+        {
+          "id": "fr:AFC-CSO-IMA",
+          "transform": "translate(2380px, 466px)"
+        },
+        {
+          "id": "fr:AFC-CSO-INB",
+          "transform": "translate(1792px, 320px)"
+        },
+        {
+          "id": "fr:AFC-CSO-NOC",
+          "transform": "translate(1204px, 28px)"
+        },
+        {
+          "id": "fr:AFC-CSO-RCV",
+          "transform": "translate(1498px, 174px)"
+        },
+        {
+          "id": "fr:AFC-CSO-TFG",
+          "transform": "translate(28px, 28px)"
+        },
+        {
+          "id": "fr:AFC-FRP-CDS",
+          "transform": "translate(2968px, 320px)"
+        },
+        {
+          "id": "fr:AFC-FRP-COR",
+          "transform": "translate(1204px, 320px)"
+        },
+        {
+          "id": "fr:AFC-FRP-ERT",
+          "transform": "translate(2380px, 320px)"
+        },
+        {
+          "id": "fr:AFC-FRP-PNT",
+          "transform": "translate(616px, 612px)"
+        },
+        {
+          "id": "fr:AFC-FRP-RPM",
+          "transform": "translate(616px, 320px)"
+        },
+        {
+          "id": "fr:AFC-FRP-RQA",
+          "transform": "translate(616px, 28px)"
+        },
+        {
+          "id": "fr:AFC-FRP-UFS",
+          "transform": "translate(1792px, 612px)"
+        },
+        {
+          "id": "fr:AFC-FRP-VRE",
+          "transform": "translate(616px, 174px)"
+        },
+        {
+          "id": "fr:AGU-AGC-AIP",
+          "transform": "translate(2380px, 612px)"
+        },
+        {
+          "id": "fr:AGU-AGC-GRC",
+          "transform": "translate(2968px, 174px)"
+        },
+        {
+          "id": "fr:AGU-AGC-LIA",
+          "transform": "translate(616px, 466px)"
+        },
+        {
+          "id": "fr:AGU-AGC-NAA",
+          "transform": "translate(322px, 28px)"
+        },
+        {
+          "id": "fr:AGU-AGC-NAI",
+          "transform": "translate(3262px, 539px)"
+        },
+        {
+          "id": "fr:AGU-AGC-NAR",
+          "transform": "translate(28px, 612px)"
+        },
+        {
+          "id": "fr:AGU-AGC-SIN",
+          "transform": "translate(28px, 320px)"
+        },
+        {
+          "id": "fr:AGU-AGC-TPP",
+          "transform": "translate(1792px, 174px)"
+        },
+        {
+          "id": "fr:AGU-AGC-WKG",
+          "transform": "translate(2968px, 612px)"
+        },
+        {
+          "id": "fr:AGU-SPN-MRC",
+          "transform": "translate(322px, 612px)"
+        },
+        {
+          "id": "fr:AGU-USE-ABU",
+          "transform": "translate(2380px, 28px)"
+        },
+        {
+          "id": "fr:AGU-USE-AFR",
+          "transform": "translate(2968px, 28px)"
+        },
+        {
+          "id": "fr:AGU-USE-CLA",
+          "transform": "translate(910px, 28px)"
+        },
+        {
+          "id": "fr:AGU-USE-DSO",
+          "transform": "translate(2086px, 320px)"
+        },
+        {
+          "id": "fr:AGU-USE-NFC",
+          "transform": "translate(1792px, 466px)"
+        },
+        {
+          "id": "fr:AGU-USE-NPC",
+          "transform": "translate(322px, 466px)"
+        },
+        {
+          "id": "fr:AGU-USE-RCF",
+          "transform": "translate(1498px, 320px)"
+        },
+        {
+          "id": "fr:AGU-USE-RIR",
+          "transform": "translate(2674px, 174px)"
+        },
+        {
+          "id": "fr:AGU-USE-ROR",
+          "transform": "translate(2674px, 320px)"
+        },
+        {
+          "id": "fr:AGU-USE-RSG",
+          "transform": "translate(3262px, 247px)"
+        },
+        {
+          "id": "fr:CCM-AGM-CSC",
+          "transform": "translate(1498px, 466px)"
+        },
+        {
+          "id": "fr:CCM-AGM-ROR",
+          "transform": "translate(3262px, 101px)"
+        },
+        {
+          "id": "fr:CCM-OCR-AFS",
+          "transform": "translate(910px, 320px)"
+        },
+        {
+          "id": "fr:CCM-OCR-AVL",
+          "transform": "translate(2086px, 174px)"
+        },
+        {
+          "id": "fr:CCM-OCR-FBM",
+          "transform": "translate(3262px, 393px)"
+        },
+        {
+          "id": "fr:CCM-OCR-LSI",
+          "transform": "translate(2674px, 466px)"
+        },
+        {
+          "id": "fr:CCM-OCR-NRD",
+          "transform": "translate(322px, 174px)"
+        },
+        {
+          "id": "fr:CCM-OCR-RPS",
+          "transform": "translate(28px, 466px)"
+        },
+        {
+          "id": "fr:CCM-OCR-SOR",
+          "transform": "translate(1792px, 28px)"
+        },
+        {
+          "id": "fr:CCM-QTR-ACT",
+          "transform": "translate(2086px, 612px)"
+        },
+        {
+          "id": "fr:CCM-QTR-MTG",
+          "transform": "translate(1498px, 28px)"
+        },
+        {
+          "id": "fr:CCM-QTR-NID",
+          "transform": "translate(2086px, 466px)"
+        },
+        {
+          "id": "fr:CCM-QTR-NRD",
+          "transform": "translate(910px, 466px)"
+        },
+        {
+          "id": "fr:CCM-QTR-REG",
+          "transform": "translate(910px, 612px)"
+        },
+        {
+          "id": "fr:CCM-QTR-RTP",
+          "transform": "translate(1204px, 612px)"
+        },
+        {
+          "id": "fr:CCM-QTR-RTR",
+          "transform": "translate(2086px, 28px)"
+        },
+        {
+          "id": "fr:CCM-QTR-SAR",
+          "transform": "translate(2968px, 466px)"
+        },
+        {
+          "id": "fr:CCM-QTR-SCR",
+          "transform": "translate(2674px, 28px)"
+        },
+        {
+          "id": "fr:CCM-QTR-SRR",
+          "transform": "translate(910px, 174px)"
+        },
+        {
+          "id": "fr:CDS-CSF-TCM",
+          "transform": "translate(2380px, 174px)"
+        },
+        {
+          "id": "fr:CDS-CSO-AVR",
+          "transform": "translate(1204px, 466px)"
+        },
+        {
+          "id": "fr:CDS-CSO-CBF",
+          "transform": "translate(2674px, 612px)"
+        },
+        {
+          "id": "fr:CDS-CSO-FID",
+          "transform": "translate(1204px, 174px)"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Everything1,676",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "FedRAMP 20xEXPLORE",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Accessible table",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Sources & coverage",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "View coverage",
+          "disabled": false
+        },
+        {
+          "text": "3D Map",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Flow chart",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Table",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "All (215)",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Definitions (1)",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Class applicability (214)",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Reset chart",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "CLASSClass BB",
+          "label": "Inspect B",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Acknowledge ReceiptAFC-CSO-ACK",
+          "label": "Inspect AFC-CSO-ACK",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Complete Required ActionsAFC-CSO-CRA",
+          "label": "Inspect AFC-CSO-CRA",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Emergency Message RoutingAFC-CSO-EMR",
+          "label": "Inspect AFC-CSO-EMR",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Important Message ActionsAFC-CSO-IMA",
+          "label": "Inspect AFC-CSO-IMA",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Maintain a FedRAMP Security InboxAFC-CSO-INB",
+          "label": "Inspect AFC-CSO-INB",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Notification of ChangesAFC-CSO-NOC",
+          "label": "Inspect AFC-CSO-NOC",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Receive Email Without DisruptionAFC-CSO-RCV",
+          "label": "Inspect AFC-CSO-RCV",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Trust @fedramp.gov and @gsa.govAFC-CSO-TFG",
+          "label": "Inspect AFC-CSO-TFG",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Criticality DesignatorsAFC-FRP-CDS",
+          "label": "Inspect AFC-FRP-CDS",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Explain Corrective ActionsAFC-FRP-COR",
+          "label": "Inspect AFC-FRP-COR",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Elevated Reaction TimeframesAFC-FRP-ERT",
+          "label": "Inspect AFC-FRP-ERT",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Public Notice of Emergency TestsAFC-FRP-PNT",
+          "label": "Inspect AFC-FRP-PNT",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Reaction MetricsAFC-FRP-RPM",
+          "label": "Inspect AFC-FRP-RPM",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Required ActionsAFC-FRP-RQA",
+          "label": "Inspect AFC-FRP-RQA",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Use FedRAMP_Security Email in EmergenciesAFC-FRP-UFS",
+          "label": "Inspect AFC-FRP-UFS",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Verified EmailsAFC-FRP-VRE",
+          "label": "Inspect AFC-FRP-VRE",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Agency Internal PoliciesAGU-AGC-AIP",
+          "label": "Inspect AGU-AGC-AIP",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Governance, Risk, and Compliance ToolsAGU-AGC-GRC",
+          "label": "Inspect AGU-AGC-GRC",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Agency Liaison ProgramAGU-AGC-LIA",
+          "label": "Inspect AGU-AGC-LIA",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Notify FedRAMP After AuthorizationAGU-AGC-NAA",
+          "label": "Inspect AGU-AGC-NAA",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Notify Additional Information RequestsAGU-AGC-NAI",
+          "label": "Inspect AGU-AGC-NAI",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1No Additional Security RequirementsAGU-AGC-NAR",
+          "label": "Inspect AGU-AGC-NAR",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Shared FedRAMP InboxAGU-AGC-SIN",
+          "label": "Inspect AGU-AGC-SIN",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1No Certification Type or Path PreferencesAGU-AGC-TPP",
+          "label": "Inspect AGU-AGC-TPP",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1FedRAMP Working GroupsAGU-AGC-WKG",
+          "label": "Inspect AGU-AGC-WKG",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Most Recent Consolidated RulesAGU-SPN-MRC",
+          "label": "Inspect AGU-SPN-MRC",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Authorization Before UseAGU-USE-ABU",
+          "label": "Inspect AGU-USE-ABU",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Accept FedRAMP RulesAGU-USE-AFR",
+          "label": "Inspect AGU-USE-AFR",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Using FedRAMP Class A CertificationsAGU-USE-CLA",
+          "label": "Inspect AGU-USE-CLA",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Designate Senior OfficialAGU-USE-DSO",
+          "label": "Inspect AGU-USE-DSO",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Notify FedRAMP of Monitoring ConcernsAGU-USE-NFC",
+          "label": "Inspect AGU-USE-NFC",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Notify Provider of ConcernsAGU-USE-NPC",
+          "label": "Inspect AGU-USE-NPC",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Resolve Certification Package ConflictsAGU-USE-RCF",
+          "label": "Inspect AGU-USE-RCF",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Review All Information ResourcesAGU-USE-RIR",
+          "label": "Inspect AGU-USE-RIR",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Review Ongoing Certification ReportsAGU-USE-ROR",
+          "label": "Inspect AGU-USE-ROR",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Review Secure Configuration GuidesAGU-USE-RSG",
+          "label": "Inspect AGU-USE-RSG",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Consider Security CategoryCCM-AGM-CSC",
+          "label": "Inspect CCM-AGM-CSC",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Review Ongoing ReportsCCM-AGM-ROR",
+          "label": "Inspect CCM-AGM-ROR",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Anonymized Feedback SummaryCCM-OCR-AFS",
+          "label": "Inspect CCM-OCR-AFS",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Report AvailabilityCCM-OCR-AVL",
+          "label": "Inspect CCM-OCR-AVL",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Feedback MechanismCCM-OCR-FBM",
+          "label": "Inspect CCM-OCR-FBM",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Limit Sensitive InformationCCM-OCR-LSI",
+          "label": "Inspect CCM-OCR-LSI",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Next Report DateCCM-OCR-NRD",
+          "label": "Inspect CCM-OCR-NRD",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Responsible Public Certification Report SharingCCM-OCR-RPS",
+          "label": "Inspect CCM-OCR-RPS",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Spread Out ReportsCCM-OCR-SOR",
+          "label": "Inspect CCM-OCR-SOR",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Additional ContentCCM-QTR-ACT",
+          "label": "Inspect CCM-QTR-ACT",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Quarterly Review MeetingCCM-QTR-MTG",
+          "label": "Inspect CCM-QTR-MTG",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1No Irresponsible DisclosureCCM-QTR-NID",
+          "label": "Inspect CCM-QTR-NID",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Next Review DateCCM-QTR-NRD",
+          "label": "Inspect CCM-QTR-NRD",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Meeting Registration InfoCCM-QTR-REG",
+          "label": "Inspect CCM-QTR-REG",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Restrict Third PartiesCCM-QTR-RTP",
+          "label": "Inspect CCM-QTR-RTP",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Record/Transcribe ReviewsCCM-QTR-RTR",
+          "label": "Inspect CCM-QTR-RTR",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Schedule Around ReportsCCM-QTR-SAR",
+          "label": "Inspect CCM-QTR-SAR",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Share Content ResponsiblyCCM-QTR-SCR",
+          "label": "Inspect CCM-QTR-SCR",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Share Recordings ResponsiblyCCM-QTR-SRR",
+          "label": "Inspect CCM-QTR-SRR",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Trust Center MigrationCDS-CSF-TCM",
+          "label": "Inspect CDS-CSF-TCM",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Availability ReportingCDS-CSO-AVR",
+          "label": "Inspect CDS-CSO-AVR",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Consistency Between FormatsCDS-CSO-CBF",
+          "label": "Inspect CDS-CSO-CBF",
+          "disabled": false
+        },
+        {
+          "text": "RULE · LEVEL 1Always Include FedRAMP IDCDS-CSO-FID",
+          "label": "Inspect CDS-CSO-FID",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Zoom in flow chart",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Zoom out flow chart",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Fit flow chart",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Fit chart to view",
+          "disabled": false
+        },
+        {
+          "text": "Show 60 more",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Show all 216",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Close inspector",
+          "disabled": false
+        },
+        {
+          "text": "Show chart overview",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "FRD-CCLCertification Class",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "AFC-FRP-VREVerified Emails",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "AFC-FRP-CDSCriticality Designators",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "AFC-FRP-UFSUse FedRAMP_Security Email in Emergencies",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "AFC-FRP-PNTPublic Notice of Emergency Tests",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "AFC-FRP-RQARequired Actions",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "AFC-FRP-ERTElevated Reaction Timeframes",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "AFC-FRP-CORExplain Corrective Actions",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "AFC-FRP-RPMReaction Metrics",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "AFC-CSO-INBMaintain a FedRAMP Security Inbox",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "AFC-CSO-NOCNotification of Changes",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "AFC-CSO-TFGTrust @fedramp.gov and @gsa.gov",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Show all 215 connections",
+          "label": null,
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "name": "10-chart-overview-return",
+      "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/?mode=flow&branch=classes",
+      "labels": [],
+      "inspector": [],
+      "footer": "4 visible entities\n·\n0 rendered edges\nLayout indicates proximity, not legal authority",
+      "canvas": [],
+      "flow": [
+        {
+          "id": "class:A",
+          "transform": "translate(28px, 28px)"
+        },
+        {
+          "id": "class:B",
+          "transform": "translate(28px, 174px)"
+        },
+        {
+          "id": "class:C",
+          "transform": "translate(28px, 320px)"
+        },
+        {
+          "id": "class:D",
+          "transform": "translate(28px, 466px)"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Everything1,676",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "FedRAMP 20xEXPLORE",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Accessible table",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Sources & coverage",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "View coverage",
+          "disabled": false
+        },
+        {
+          "text": "3D Map",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Flow chart",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Table",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Reset chart",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "CLASSClass AA",
+          "label": "Inspect A",
+          "disabled": false
+        },
+        {
+          "text": "CLASSClass BB",
+          "label": "Inspect B",
+          "disabled": false
+        },
+        {
+          "text": "CLASSClass CC",
+          "label": "Inspect C",
+          "disabled": false
+        },
+        {
+          "text": "CLASSClass DD",
+          "label": "Inspect D",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Zoom in flow chart",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Zoom out flow chart",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Fit flow chart",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Fit chart to view",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "name": "11-mobile-initial",
+      "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/",
+      "labels": [
+        "FedRAMP",
+        "NIST 800-53"
+      ],
+      "inspector": [],
+      "footer": "1,676 visible entities\n·\n1,719 rendered edges",
+      "canvas": [
+        {
+          "engine": "three.js r180",
+          "keyboardFocus": "false"
+        }
+      ],
+      "flow": [],
+      "buttons": [
+        {
+          "text": " Filters",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "3D Map",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Flow chart",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Table",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "FedRAMP",
+          "label": "FedRAMP · FedRAMP Consolidated Rules for 2026",
+          "disabled": false
+        },
+        {
+          "text": "NIST 800-53",
+          "label": "NIST 800-53 · Electronic (OSCAL) Version of NIST SP 800-53 Rev 5.2.0 Controls and SP 800-53A Rev 5.2.0 Assessment Procedures",
+          "disabled": false
+        },
+        {
+          "text": "Pan",
+          "label": "Pan map",
+          "disabled": false
+        },
+        {
+          "text": "Orbit",
+          "label": "Orbit map",
+          "disabled": false
+        },
+        {
+          "text": "Fit connections",
+          "label": "Fit connections",
+          "disabled": false
+        },
+        {
+          "text": "Back",
+          "label": "Back view",
+          "disabled": true
+        },
+        {
+          "text": "",
+          "label": "Zoom in",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Zoom out",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Fit all entities",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Reset view",
+          "disabled": false
+        },
+        {
+          "text": "KSI-CNA-EISEnforcing Intended State",
+          "label": null,
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "name": "12-mobile-selected",
+      "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/?node=fr%3AKSI-CNA-EIS",
+      "labels": [
+        "ca-2.1",
+        "cm-6.2",
+        "cp-10.4",
+        "ir-9.4",
+        "sc-7.18",
+        "sc-24",
+        "si-4.22",
+        "FRD-IRS",
+        "FRD-MBI",
+        "FRD-PER",
+        "KSI-CNA-EIS"
+      ],
+      "inspector": [
+        "KSI-CNA-EIS"
+      ],
+      "footer": "1,676 visible entities\n·\n16 rendered edges",
+      "canvas": [
+        {
+          "engine": "three.js r180",
+          "keyboardFocus": "false"
+        }
+      ],
+      "flow": [],
+      "buttons": [
+        {
+          "text": " Filters",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "3D Map",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Flow chart",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Table",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "All (16)",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Published mappings (12)",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Definitions (3)",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Containment (1)",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "ca-2.1",
+          "label": "ca-2.1 · Independent Assessors",
+          "disabled": false
+        },
+        {
+          "text": "cm-6.2",
+          "label": "cm-6.2 · Respond to Unauthorized Changes",
+          "disabled": false
+        },
+        {
+          "text": "cp-10.4",
+          "label": "cp-10.4 · Restore Within Time Period",
+          "disabled": false
+        },
+        {
+          "text": "ir-9.4",
+          "label": "ir-9.4 · Exposure to Unauthorized Personnel",
+          "disabled": false
+        },
+        {
+          "text": "sc-7.18",
+          "label": "sc-7.18 · Fail Secure",
+          "disabled": false
+        },
+        {
+          "text": "sc-24",
+          "label": "sc-24 · Fail in Known State",
+          "disabled": false
+        },
+        {
+          "text": "si-4.22",
+          "label": "si-4.22 · Unauthorized Network Services",
+          "disabled": false
+        },
+        {
+          "text": "FRD-IRS",
+          "label": "FRD-IRS · Information Resource",
+          "disabled": false
+        },
+        {
+          "text": "FRD-MBI",
+          "label": "FRD-MBI · Machine-Based (Information Resources)",
+          "disabled": false
+        },
+        {
+          "text": "FRD-PER",
+          "label": "FRD-PER · Persistently",
+          "disabled": false
+        },
+        {
+          "text": "KSI-CNA-EIS",
+          "label": "KSI-CNA-EIS · Enforcing Intended State",
+          "disabled": false
+        },
+        {
+          "text": "→ Definitions",
+          "label": "Inspect relationship fr:KSI-CNA-EIS to fr:FRD-PER: DEFINED_BY",
+          "disabled": false
+        },
+        {
+          "text": "Pan",
+          "label": "Pan map",
+          "disabled": false
+        },
+        {
+          "text": "Orbit",
+          "label": "Orbit map",
+          "disabled": false
+        },
+        {
+          "text": "Fit connections",
+          "label": "Fit connections",
+          "disabled": false
+        },
+        {
+          "text": "Back",
+          "label": "Back view",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Zoom in",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Zoom out",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Fit all entities",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Reset view",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Close inspector",
+          "disabled": false
+        },
+        {
+          "text": "Focus neighborhood",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Common",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "A",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "B",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "C",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "D",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "ca-2.1Independent Assessors",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "cm-11User-installed Software",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "cm-6.2Respond to Unauthorized Changes",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "cp-10.4Restore Within Time Period",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "ir-9.4Exposure to Unauthorized Personnel",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "sc-24Fail in Known State",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "sc-7.18Fail Secure",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "si-4.22Unauthorized Network Services",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "si-7Software, Firmware, and Information Integrity",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "si-7.1Integrity Checks",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "si-7.5Automated Response to Integrity Violations",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "si-7.7Integration of Detection and Response",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Show all 16 connections",
+          "label": null,
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "name": "13-mobile-flow-selected",
+      "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/?node=fr%3AKSI-CNA-EIS&mode=flow",
+      "labels": [],
+      "inspector": [
+        "KSI-CNA-EIS"
+      ],
+      "footer": "17 visible entities\n·\n16 rendered edges",
+      "canvas": [],
+      "flow": [
+        {
+          "id": "fr:KSI-CNA-EIS",
+          "transform": "translate(1204px, 320px)"
+        },
+        {
+          "id": "fr:FRD-IRS",
+          "transform": "translate(28px, 28px)"
+        },
+        {
+          "id": "fr:FRD-MBI",
+          "transform": "translate(28px, 174px)"
+        },
+        {
+          "id": "fr:FRD-PER",
+          "transform": "translate(28px, 320px)"
+        },
+        {
+          "id": "nist:ca-2.1",
+          "transform": "translate(28px, 466px)"
+        },
+        {
+          "id": "nist:cm-11",
+          "transform": "translate(28px, 612px)"
+        },
+        {
+          "id": "nist:cm-6.2",
+          "transform": "translate(322px, 28px)"
+        },
+        {
+          "id": "nist:cp-10.4",
+          "transform": "translate(322px, 174px)"
+        },
+        {
+          "id": "nist:ir-9.4",
+          "transform": "translate(322px, 320px)"
+        },
+        {
+          "id": "nist:sc-24",
+          "transform": "translate(322px, 466px)"
+        },
+        {
+          "id": "nist:sc-7.18",
+          "transform": "translate(322px, 612px)"
+        },
+        {
+          "id": "nist:si-4.22",
+          "transform": "translate(616px, 28px)"
+        },
+        {
+          "id": "nist:si-7",
+          "transform": "translate(616px, 174px)"
+        },
+        {
+          "id": "nist:si-7.1",
+          "transform": "translate(616px, 320px)"
+        },
+        {
+          "id": "nist:si-7.5",
+          "transform": "translate(616px, 466px)"
+        },
+        {
+          "id": "nist:si-7.7",
+          "transform": "translate(616px, 612px)"
+        },
+        {
+          "id": "theme:CNA",
+          "transform": "translate(910px, 320px)"
+        }
+      ],
+      "buttons": [
+        {
+          "text": " Filters",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "3D Map",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Flow chart",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Table",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "All (16)",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Published mappings (12)",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Definitions (3)",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Containment (1)",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Reset chart",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "KSIEnforcing Intended StateKSI-CNA-EIS",
+          "label": "Inspect KSI-CNA-EIS",
+          "disabled": false
+        },
+        {
+          "text": "DEFINITION · LEVEL 1Information ResourceFRD-IRS",
+          "label": "Inspect FRD-IRS",
+          "disabled": false
+        },
+        {
+          "text": "DEFINITION · LEVEL 1Machine-Based (Information Resources)FRD-MBI",
+          "label": "Inspect FRD-MBI",
+          "disabled": false
+        },
+        {
+          "text": "DEFINITION · LEVEL 1PersistentlyFRD-PER",
+          "label": "Inspect FRD-PER",
+          "disabled": false
+        },
+        {
+          "text": "ENHANCEMENT · LEVEL 1Independent Assessorsca-2.1",
+          "label": "Inspect ca-2.1",
+          "disabled": false
+        },
+        {
+          "text": "CONTROL · LEVEL 1User-installed Softwarecm-11",
+          "label": "Inspect cm-11",
+          "disabled": false
+        },
+        {
+          "text": "ENHANCEMENT · LEVEL 1Respond to Unauthorized Changescm-6.2",
+          "label": "Inspect cm-6.2",
+          "disabled": false
+        },
+        {
+          "text": "ENHANCEMENT · LEVEL 1Restore Within Time Periodcp-10.4",
+          "label": "Inspect cp-10.4",
+          "disabled": false
+        },
+        {
+          "text": "ENHANCEMENT · LEVEL 1Exposure to Unauthorized Personnelir-9.4",
+          "label": "Inspect ir-9.4",
+          "disabled": false
+        },
+        {
+          "text": "CONTROL · LEVEL 1Fail in Known Statesc-24",
+          "label": "Inspect sc-24",
+          "disabled": false
+        },
+        {
+          "text": "ENHANCEMENT · LEVEL 1Fail Securesc-7.18",
+          "label": "Inspect sc-7.18",
+          "disabled": false
+        },
+        {
+          "text": "ENHANCEMENT · LEVEL 1Unauthorized Network Servicessi-4.22",
+          "label": "Inspect si-4.22",
+          "disabled": false
+        },
+        {
+          "text": "CONTROL · LEVEL 1Software, Firmware, and Information Integritysi-7",
+          "label": "Inspect si-7",
+          "disabled": false
+        },
+        {
+          "text": "ENHANCEMENT · LEVEL 1Integrity Checkssi-7.1",
+          "label": "Inspect si-7.1",
+          "disabled": false
+        },
+        {
+          "text": "ENHANCEMENT · LEVEL 1Automated Response to Integrity Violationssi-7.5",
+          "label": "Inspect si-7.5",
+          "disabled": false
+        },
+        {
+          "text": "ENHANCEMENT · LEVEL 1Integration of Detection and Responsesi-7.7",
+          "label": "Inspect si-7.7",
+          "disabled": false
+        },
+        {
+          "text": "THEME · LEVEL 1Cloud Native Architecturetheme:CNA",
+          "label": "Inspect theme:CNA",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Zoom in flow chart",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Zoom out flow chart",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Fit flow chart",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Fit chart to view",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Close inspector",
+          "disabled": false
+        },
+        {
+          "text": "Show chart overview",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Common",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "A",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "B",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "C",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "D",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "ca-2.1Independent Assessors",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "cm-11User-installed Software",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "cm-6.2Respond to Unauthorized Changes",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "cp-10.4Restore Within Time Period",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "ir-9.4Exposure to Unauthorized Personnel",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "sc-24Fail in Known State",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "sc-7.18Fail Secure",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "si-4.22Unauthorized Network Services",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "si-7Software, Firmware, and Information Integrity",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "si-7.1Integrity Checks",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "si-7.5Automated Response to Integrity Violations",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "si-7.7Integration of Detection and Response",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": " View edge evidence",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Show all 16 connections",
+          "label": null,
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "name": "14-mobile-branch",
+      "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/?mode=flow&branch=theme%3ACNA",
+      "labels": [],
+      "inspector": [],
+      "footer": "10 visible entities\n·\n9 rendered edges",
+      "canvas": [],
+      "flow": [
+        {
+          "id": "fedramp",
+          "transform": "translate(28px, 320px)"
+        },
+        {
+          "id": "theme:CNA",
+          "transform": "translate(322px, 320px)"
+        },
+        {
+          "id": "fr:KSI-CNA-DFP",
+          "transform": "translate(616px, 174px)"
+        },
+        {
+          "id": "fr:KSI-CNA-EIS",
+          "transform": "translate(910px, 174px)"
+        },
+        {
+          "id": "fr:KSI-CNA-IBP",
+          "transform": "translate(616px, 612px)"
+        },
+        {
+          "id": "fr:KSI-CNA-MAT",
+          "transform": "translate(616px, 28px)"
+        },
+        {
+          "id": "fr:KSI-CNA-OFA",
+          "transform": "translate(910px, 466px)"
+        },
+        {
+          "id": "fr:KSI-CNA-RNT",
+          "transform": "translate(616px, 466px)"
+        },
+        {
+          "id": "fr:KSI-CNA-RVP",
+          "transform": "translate(910px, 320px)"
+        },
+        {
+          "id": "fr:KSI-CNA-ULN",
+          "transform": "translate(616px, 320px)"
+        }
+      ],
+      "buttons": [
+        {
+          "text": " Filters",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "3D Map",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Flow chart",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Table",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Reset chart",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "SOURCE DOCUMENTFedRAMP 2026fedramp",
+          "label": "Inspect fedramp",
+          "disabled": false
+        },
+        {
+          "text": "THEMECloud Native Architecturetheme:CNA",
+          "label": "Inspect theme:CNA",
+          "disabled": false
+        },
+        {
+          "text": "KSIDefining Functionality and PrivilegesKSI-CNA-DFP",
+          "label": "Inspect KSI-CNA-DFP",
+          "disabled": false
+        },
+        {
+          "text": "KSIEnforcing Intended StateKSI-CNA-EIS",
+          "label": "Inspect KSI-CNA-EIS",
+          "disabled": false
+        },
+        {
+          "text": "KSIImplementing Best PracticesKSI-CNA-IBP",
+          "label": "Inspect KSI-CNA-IBP",
+          "disabled": false
+        },
+        {
+          "text": "KSIMinimizing Attack SurfaceKSI-CNA-MAT",
+          "label": "Inspect KSI-CNA-MAT",
+          "disabled": false
+        },
+        {
+          "text": "KSIOptimizing for AvailabilityKSI-CNA-OFA",
+          "label": "Inspect KSI-CNA-OFA",
+          "disabled": false
+        },
+        {
+          "text": "KSIRestricting Network TrafficKSI-CNA-RNT",
+          "label": "Inspect KSI-CNA-RNT",
+          "disabled": false
+        },
+        {
+          "text": "KSIReviewing ProtectionsKSI-CNA-RVP",
+          "label": "Inspect KSI-CNA-RVP",
+          "disabled": false
+        },
+        {
+          "text": "KSIUsing Logical NetworkingKSI-CNA-ULN",
+          "label": "Inspect KSI-CNA-ULN",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Zoom in flow chart",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Zoom out flow chart",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Fit flow chart",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Fit chart to view",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "name": "15-tablet-branch",
+      "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/?mode=flow&branch=theme%3ACNA",
+      "labels": [],
+      "inspector": [],
+      "footer": "10 visible entities\n·\n9 rendered edges",
+      "canvas": [],
+      "flow": [
+        {
+          "id": "fedramp",
+          "transform": "translate(28px, 320px)"
+        },
+        {
+          "id": "theme:CNA",
+          "transform": "translate(322px, 320px)"
+        },
+        {
+          "id": "fr:KSI-CNA-DFP",
+          "transform": "translate(616px, 174px)"
+        },
+        {
+          "id": "fr:KSI-CNA-EIS",
+          "transform": "translate(910px, 174px)"
+        },
+        {
+          "id": "fr:KSI-CNA-IBP",
+          "transform": "translate(616px, 612px)"
+        },
+        {
+          "id": "fr:KSI-CNA-MAT",
+          "transform": "translate(616px, 28px)"
+        },
+        {
+          "id": "fr:KSI-CNA-OFA",
+          "transform": "translate(910px, 466px)"
+        },
+        {
+          "id": "fr:KSI-CNA-RNT",
+          "transform": "translate(616px, 466px)"
+        },
+        {
+          "id": "fr:KSI-CNA-RVP",
+          "transform": "translate(910px, 320px)"
+        },
+        {
+          "id": "fr:KSI-CNA-ULN",
+          "transform": "translate(616px, 320px)"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Everything1,676",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "FedRAMP 20xEXPLORE",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Accessible table",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Sources & coverage",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "3D Map",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Flow chart",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Table",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "Reset chart",
+          "label": null,
+          "disabled": false
+        },
+        {
+          "text": "SOURCE DOCUMENTFedRAMP 2026fedramp",
+          "label": "Inspect fedramp",
+          "disabled": false
+        },
+        {
+          "text": "THEMECloud Native Architecturetheme:CNA",
+          "label": "Inspect theme:CNA",
+          "disabled": false
+        },
+        {
+          "text": "KSIDefining Functionality and PrivilegesKSI-CNA-DFP",
+          "label": "Inspect KSI-CNA-DFP",
+          "disabled": false
+        },
+        {
+          "text": "KSIEnforcing Intended StateKSI-CNA-EIS",
+          "label": "Inspect KSI-CNA-EIS",
+          "disabled": false
+        },
+        {
+          "text": "KSIImplementing Best PracticesKSI-CNA-IBP",
+          "label": "Inspect KSI-CNA-IBP",
+          "disabled": false
+        },
+        {
+          "text": "KSIMinimizing Attack SurfaceKSI-CNA-MAT",
+          "label": "Inspect KSI-CNA-MAT",
+          "disabled": false
+        },
+        {
+          "text": "KSIOptimizing for AvailabilityKSI-CNA-OFA",
+          "label": "Inspect KSI-CNA-OFA",
+          "disabled": false
+        },
+        {
+          "text": "KSIRestricting Network TrafficKSI-CNA-RNT",
+          "label": "Inspect KSI-CNA-RNT",
+          "disabled": false
+        },
+        {
+          "text": "KSIReviewing ProtectionsKSI-CNA-RVP",
+          "label": "Inspect KSI-CNA-RVP",
+          "disabled": false
+        },
+        {
+          "text": "KSIUsing Logical NetworkingKSI-CNA-ULN",
+          "label": "Inspect KSI-CNA-ULN",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Zoom in flow chart",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Zoom out flow chart",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Fit flow chart",
+          "disabled": false
+        },
+        {
+          "text": "",
+          "label": "Fit chart to view",
+          "disabled": false
+        }
+      ]
+    }
+  ]
+}

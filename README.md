@@ -19,7 +19,7 @@ Open the address Vite prints. The bundled public-source snapshots and generated 
 npm run ingest       # offline: verify hashes, validate both schemas, regenerate graph/report
 npm run lint
 npm run typecheck
-npm test             # 62 source fidelity, updater, navigation, and model tests
+npm test             # 66 source fidelity, updater, navigation, and model tests
 npm run build
 npm run preview      # serve the production build
 ```
@@ -38,6 +38,9 @@ The browser suite captures desktop and mobile screenshots in `docs/screenshots/`
 ## Explore
 
 - Choose **3D Map**, **Flow chart**, or **Table**. Presentation changes preserve the selection, filters, connection depth and FedRAMP 20x scope. Flow mode is shareable with `?mode=flow`; old `?view=table` links remain supported.
+- Use **Back** above the diagram (or browser Back/Forward) to restore previous selections, filters, branch scope and saved view. **Up** follows a verified containment parent; the containment breadcrumbs are clickable. **Overview** exits inspection. The bottom **Camera back** control only reverses camera movement. **Everything** clears retained selection/focus and filters, restoring both publisher hubs.
+- The 3D map retains eligible context points while inspecting or focusing a neighborhood. Unrelated points and source/group labels are dimmed and remain clickable; explicit layer/class filters still restrict availability. The available-source counts and **Clear filters** show how to recover a restricted scope.
+- Flow cards keep their coordinates during selection, including certification classes with incoming applicability links. Selection opens at a readable scale, follows the selected card on responsive resize, and preserves branch layouts across presentation changes. Published arrow direction and provenance are unchanged.
 - The flow chart now covers **all 459 imported FedRAMP entities**. **Explore branch** opens any of the 17 rulesets, 10 KSI themes, certification classes or definitions. **Include mapped NIST controls** adds published mapping targets and their real ancestors. Charts start with at most 60 cards; **Show 60 more** and **Show all** expose the complete filtered scope. The full FedRAMP scope has 1,922 internal verified links. Large charts open at a readable starting point; pan right or use Fit for the complete loaded diagram. Select a card for its one/two/three-level neighborhood or a connector for exact evidence. The prior compact example remains in the branch menu. Branch and mapping preferences are shareable as `?mode=flow&branch=theme:CNA&mapped=1`. Reset returns to the chosen branch and retains filters. Full coverage here means the pinned Consolidated Rules dataset, not the entire legal/policy ecosystem.
 - Drag to pan by default. Choose **Orbit** for rotation, or right-drag to rotate in Pan mode. Scroll toward the pointer or use +/- to zoom. Click points/labels to inspect without moving the camera; search fits the selected neighborhood. Use **Fit connections**, **Back**, and **Fit all** to frame the visible field. **Reset view** restores the starting orientation, center, zoom, and Pan mode.
 - Search identifiers (for example `KSI-CNA-EIS` or `ac-2.1`), titles, rule text, or definitions. Enter opens the first result.
@@ -111,3 +114,5 @@ The available checkout contained README.md, SPEC.md, AGENTS.md, and LICENSE. COD
 Future labeling research and flow-chart source coverage are tracked in [docs/backlog.md](docs/backlog.md).
 
 Legal and policy sources are the next ingestion milestone: see [the source roadmap](docs/policy-source-roadmap.md) and [literal citation inventory](docs/policy-reference-inventory.json). Run `npm run inventory:policy` to regenerate it from the active immutable snapshot. Run `npm run test:full-flow:e2e` against the local preview for complete-chart browser checks.
+
+Independent functional and UI/UX browser audits, baseline reproductions and fixed-build evidence are in [functional QA](docs/qa-functional-2026-10-30/REPORT.md) and [UI/UX QA](docs/qa-ux-2026-10-30/report.md). Testing used installed Chromium 154 with a local production build; branded Chrome and live Pages visual verification were unavailable. Run `npm run test:journey:e2e` for return-navigation regression checks.

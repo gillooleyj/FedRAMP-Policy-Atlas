@@ -1,0 +1,380 @@
+[
+  {
+    "test": "Everything after NIST focus",
+    "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/?node=nist",
+    "footer": "21 visible entities\n·\n20 rendered edges\nLayout indicates proximity, not legal authority",
+    "inspector": [
+      "nist"
+    ],
+    "labels": [
+      "NIST 800-53",
+      "Access Control",
+      "Audit and Accountability",
+      "Assessment, Authorization, and Monitoring",
+      "Contingency Planning",
+      "Identification and Authentication",
+      "Incident Response",
+      "Maintenance",
+      "Media Protection",
+      "Physical and Environmental Protection",
+      "Personnel Security",
+      "Personally Identifiable Information Processing and Transparency",
+      "Risk Assessment",
+      "System and Information Integrity",
+      "Supply Chain Risk Management"
+    ]
+  },
+  {
+    "test": "Keyboard Enter search selection",
+    "selected": "KSI-CNA-EIS"
+  },
+  {
+    "test": "Keyboard camera Escape",
+    "selected": "KSI-CNA-EIS"
+  },
+  {
+    "test": "Mobile filter dismissal by Escape",
+    "open": 1,
+    "dialog": 0
+  },
+  {
+    "test": "Mobile flow targets",
+    "buttons": [
+      {
+        "name": "Reset chart",
+        "w": 84.5625,
+        "h": 31
+      },
+      {
+        "name": "Inspect fedramp",
+        "w": 122.10000610351562,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect A",
+        "w": 122.10000610351562,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect B",
+        "w": 122.10000610351562,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect C",
+        "w": 122.10000610351562,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect D",
+        "w": 122.10000610351562,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect ruleset:AFC",
+        "w": 122.10000610351562,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect ruleset:AGU",
+        "w": 122.10003662109375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect ruleset:CCM",
+        "w": 122.10003662109375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect ruleset:CDS",
+        "w": 122.10003662109375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect ruleset:CMU",
+        "w": 122.10003662109375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect ruleset:CPO",
+        "w": 122.10000610351562,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect ruleset:FRC",
+        "w": 122.10000610351562,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect ruleset:IEC",
+        "w": 122.10003662109375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect ruleset:IVV",
+        "w": 122.0999755859375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect ruleset:MAS",
+        "w": 122.10003662109375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect ruleset:MKT",
+        "w": 122.10003662109375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect ruleset:REC",
+        "w": 122.10000610351562,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect ruleset:SCG",
+        "w": 122.10000610351562,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect ruleset:SCN",
+        "w": 122.0999755859375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect ruleset:SDR",
+        "w": 122.10003662109375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect ruleset:VDR",
+        "w": 122.0999755859375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect ruleset:VER",
+        "w": 122.10003662109375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect theme:CED",
+        "w": 122.10003662109375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect theme:CMT",
+        "w": 122.10000610351562,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect theme:CNA",
+        "w": 122.10000610351562,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect theme:IAM",
+        "w": 122.10003662109375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect theme:INR",
+        "w": 122.0999755859375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect theme:MLA",
+        "w": 122.10000610351562,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect theme:PIY",
+        "w": 122.0999755859375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect theme:RPL",
+        "w": 122.10000610351562,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect theme:SCR",
+        "w": 122.10003662109375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect theme:SVC",
+        "w": 122.10000610351562,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect subset:AFC:all:CSO",
+        "w": 122.0999755859375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect subset:AFC:all:FRP",
+        "w": 122.0999755859375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect subset:AGU:all:AGC",
+        "w": 122.0999755859375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect subset:AGU:all:SPN",
+        "w": 122.0999755859375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect subset:AGU:all:USE",
+        "w": 122.0999755859375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect subset:CCM:all:AGM",
+        "w": 122.099853515625,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect subset:CCM:all:OCR",
+        "w": 122.099853515625,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect subset:CCM:all:QTR",
+        "w": 122.0999755859375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect subset:CDS:all:CSO",
+        "w": 122.0999755859375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect subset:CDS:all:TRC",
+        "w": 122.0999755859375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect subset:CDS:all:UTC",
+        "w": 122.0999755859375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect subset:CDS:rev5:CSF",
+        "w": 122.0999755859375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect subset:CMU:all:CSO",
+        "w": 122.099853515625,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect subset:CPO:20x:CSX",
+        "w": 122.0999755859375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect subset:CPO:all:CSO",
+        "w": 122.0999755859375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect subset:CPO:rev5:CSF",
+        "w": 122.0999755859375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect subset:FRC:20x:CSX",
+        "w": 122.0999755859375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect subset:FRC:all:APP",
+        "w": 122.10009765625,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect subset:FRC:all:APS",
+        "w": 122.0999755859375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect subset:FRC:all:CCL",
+        "w": 122.0999755859375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect subset:FRC:all:CLA",
+        "w": 122.0999755859375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect subset:FRC:all:CSO",
+        "w": 122.10009765625,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect subset:FRC:rev5:CSF",
+        "w": 122.0999755859375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect subset:IEC:all:CSO",
+        "w": 122.0999755859375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect subset:IEC:all:FRP",
+        "w": 122.0999755859375,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect subset:IVV:20x:CSX",
+        "w": 122.10009765625,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect subset:IVV:all:CSO",
+        "w": 122.10009765625,
+        "h": 60.5
+      },
+      {
+        "name": "Inspect subset:IVV:all:IAS",
+        "w": 122.10009765625,
+        "h": 60.5
+      },
+      {
+        "name": "Zoom in flow chart",
+        "w": 30,
+        "h": 30
+      },
+      {
+        "name": "Zoom out flow chart",
+        "w": 30,
+        "h": 30
+      },
+      {
+        "name": "Fit flow chart",
+        "w": 30,
+        "h": 30
+      },
+      {
+        "name": "Fit chart to view",
+        "w": 33,
+        "h": 33
+      },
+      {
+        "name": "Show 60 more",
+        "w": 71.59375,
+        "h": 25
+      },
+      {
+        "name": "Show all 459",
+        "w": 64.828125,
+        "h": 25
+      }
+    ]
+  }
+]

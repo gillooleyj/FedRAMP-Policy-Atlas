@@ -3,6 +3,7 @@ import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import type {Entity,Edge} from '../data/types';
 import {entityColor,type Position} from './model';
 import {fittedBounds,hubKinds,labelPriority,placeLabels,type LabelCandidate,relationshipNames,labelLevel,labelKindVisible,labelBudget,type LabelLevel,canonicalView} from './navigation';
+import type {MapView} from './journey';
 import {regions,regionPoints,centroid} from './exploration';
 interface CameraFrame {position:THREE.Vector3;target:THREE.Vector3;region?:string;regionDistance?:number}
 interface Label {node:Entity;element:HTMLButtonElement;width:number;height:number}
@@ -101,7 +102,7 @@ export class UniverseEngine {
   if(selected&&selected!==this.selected)this.region=undefined;this.distances=distances;this.connectionDepth=connectionDepth;
   this.nodes=nodes;this.edges=edges;this.selected=selected;this.activeEdge=activeEdge;this.related=selected?new Set(distances.keys()):null;
   const coords:number[]=[],colors:number[]=[],sizes:number[]=[];
-  for(const n of nodes){coords.push(...this.positions.get(n.id)!);const color=new THREE.Color(entityColor(n));if(this.related)color.multiplyScalar(this.distances.has(n.id)?[1,1,.65,.4][this.distances.get(n.id)!]:.12);colors.push(color.r,color.g,color.b);sizes.push(n.id===selected?12:hubKinds.has(n.kind)?10:n.kind==='enhancement'?3.5:5.5);}
+  for(const n of nodes){coords.push(...this.positions.get(n.id)!);const color=new THREE.Color(entityColor(n));if(this.related)color.multiplyScalar(this.distances.has(n.id)?[1,1,.65,.4][this.distances.get(n.id)!]:.28);colors.push(color.r,color.g,color.b);sizes.push(n.id===selected?12:hubKinds.has(n.kind)?10:n.kind==='enhancement'?3.5:5.5);}
   const geometry=new THREE.BufferGeometry();geometry.setAttribute('position',new THREE.Float32BufferAttribute(coords,3));geometry.setAttribute('color',new THREE.Float32BufferAttribute(colors,3));geometry.setAttribute('size',new THREE.Float32BufferAttribute(sizes,1));this.points.geometry.dispose();this.points.geometry=geometry;
   const linePositions:number[]=[],lineColors:number[]=[];
   const line=(a:THREE.Vector3,b:THREE.Vector3,c:THREE.Color)=>{linePositions.push(a.x,a.y,a.z,b.x,b.y,b.z);lineColors.push(c.r,c.g,c.b,c.r,c.g,c.b);};
@@ -116,6 +117,8 @@ export class UniverseEngine {
   }
   this.lastLabelDraw=0;if(!this.initialized&&nodes.length){this.resetView(false);this.initialized=true;}if(this.fitPending){this.fitPending=false;this.fitConnections();}
  }
+ captureView():MapView{const frame=this.frame();return {position:frame.position.toArray() as Position,target:frame.target.toArray() as Position,region:frame.region,regionDistance:frame.regionDistance};}
+ restoreView(frame:MapView){this.labelAnchors.clear();this.lastLabelFrame=null;this.move({position:new THREE.Vector3(...frame.position),target:new THREE.Vector3(...frame.target),region:frame.region,regionDistance:frame.regionDistance},false);}
  private pick(e:PointerEvent){const rect=this.renderer.domElement.getBoundingClientRect();this.pointer.set((e.clientX-rect.left)/rect.width*2-1,-(e.clientY-rect.top)/rect.height*2+1);this.raycaster.params.Points={threshold:Math.max(.6,this.camera.position.distanceTo(this.controls.target)*.004)};this.raycaster.setFromCamera(this.pointer,this.camera);const hits=this.raycaster.intersectObject(this.points);const index=hits[0]?.index;return index===undefined?undefined:this.nodes[index];}
  private labelElement(id:string){return this.labelObjects.get(id)?.element??this.regionLabels.get(id)!.element;}
  private frame():CameraFrame{return {position:this.camera.position.clone(),target:this.controls.target.clone(),region:this.region,regionDistance:this.regionDistance};}
@@ -147,19 +150,19 @@ export class UniverseEngine {
   const nextLevel=this.region?(this.region==='classes'?'groups':this.region==='definitions'||distance<this.regionDistance*(this.level==='details'?.78:.65)?'details':'groups'):labelLevel(distance,this.overviewDistance,this.level);
   if(nextLevel!==this.level){this.labelAnchors.clear();}this.level=nextLevel;
   this.labelLayer.dataset.level=this.level;
-  this.levelHint.textContent=this.selected?`Selection · ${this.connectionDepth} connection level${this.connectionDepth===1?'':'s'} · Farther levels are dimmer`:this.level==='sources'?'Sources · Zoom in to explore regions':this.level==='regions'?'Regions · Select a region to travel into it':`${this.region?regions.find(r=>r.id===this.region)!.title:this.level==='groups'?'Groups':'Details'} · Labels nearest the center · Find every group in Explore groups`;
+  this.levelHint.textContent=this.selected?`Selection · ${this.connectionDepth} connection level${this.connectionDepth===1?'':'s'} · Dimmed context stays clickable`:this.level==='sources'?'Sources · Zoom in to explore regions':this.level==='regions'?'Regions · Select a region to travel into it':`${this.region?regions.find(r=>r.id===this.region)!.title:this.level==='groups'?'Groups':'Details'} · Labels nearest the center · Find every group in Explore groups`;
   this.levelHint.hidden=!this.labels;
   const view=new THREE.Vector3(),candidates:LabelCandidate[]=[];
   for(const n of this.nodes){const p=this.positions.get(n.id)!,label=this.labelObjects.get(n.id)!;view.set(...p).applyMatrix4(this.camera.matrixWorldInverse);const depth=-view.z;if(depth<=0)continue;const projected=new THREE.Vector3(...p).project(this.camera);if(projected.z>=1||Math.abs(projected.x)>1||Math.abs(projected.y)>1)continue;
-   const scale=-Math.hypot(projected.x,projected.y),priority=labelPriority(n.id,n.kind,this.selected,this.related)+(this.related?.has(n.id)&&n.id!==this.selected?(this.distances.get(n.id)??1)*.1:0);
+   const scale=-Math.hypot(projected.x,projected.y),priority=(n.kind==='source'&&this.selected&&n.id!==this.selected ? .5 : labelPriority(n.id,n.kind,this.selected,this.related))+(this.related?.has(n.id)&&n.id!==this.selected?(this.distances.get(n.id)??1)*.1:0);
    // Selection reveals direct neighbors; otherwise each zoom level has its own label set.
-   const eligible=n.id===this.selected||(this.labels&&(this.related?this.related.has(n.id):labelKindVisible(n.kind,this.level)&&(!this.region||regions.find(r=>r.id===this.region)!.kinds.includes(n.kind))));
+   const eligible=n.id===this.selected||(this.labels&&(this.related?(this.related.has(n.id)||n.kind==='source'||(hubKinds.has(n.kind)&&labelKindVisible(n.kind,this.level))):labelKindVisible(n.kind,this.level)&&(!this.region||regions.find(r=>r.id===this.region)!.kinds.includes(n.kind))));
    candidates.push({id:n.id,x:(projected.x*.5+.5)*w,y:(-projected.y*.5+.5)*h,width:label.width,height:label.height,priority,scale,eligible});
   }
   if(this.labels&&!this.selected&&this.level==='regions')for(const region of regions){const point=centroid(regionPoints(region.id,this.nodes,this.positions));if(!point)continue;const p=new THREE.Vector3(...point).project(this.camera);if(p.z>=1||Math.abs(p.x)>1||Math.abs(p.y)>1)continue;const label=this.regionLabels.get('region:'+region.id)!;candidates.push({id:'region:'+region.id,x:(p.x*.5+.5)*w,y:(-p.y*.5+.5)*h,width:label.width,height:label.height,priority:0,scale:0,eligible:true});}
   const placed=placeLabels(candidates,w,h,labelBudget(this.level,w<500,!!this.selected),this.labelAnchors);const visible=new Set(placed.map(p=>p.id));this.labelAnchors=new Map(placed.map(p=>[p.id,p.anchor]));
   for(const id of this.visibleLabelIds)if(!visible.has(id))this.labelElement(id).style.display='none';
-  for(const p of placed){const item=this.labelElement(p.id);item.dataset.distance=String(this.distances.get(p.id)??'');item.classList.toggle('selected',p.id===this.selected);item.classList.toggle('neighbor',!!this.related?.has(p.id));item.style.display='block';item.style.transform=`translate(${Math.round(p.left)}px,${Math.round(p.top)}px)`;}
+  for(const p of placed){const item=this.labelElement(p.id);item.dataset.distance=String(this.distances.get(p.id)??'');item.classList.toggle('selected',p.id===this.selected);item.classList.toggle('neighbor',!!this.related?.has(p.id));item.classList.toggle('context',!!this.related&&!this.related.has(p.id));item.style.display='block';item.style.transform=`translate(${Math.round(p.left)}px,${Math.round(p.top)}px)`;}
   this.visibleLabelIds=visible;
   const selectedPosition=this.selected&&this.nodes.some(n=>n.id===this.selected)?this.positions.get(this.selected):null;
   this.returnLabel.style.display=selectedPosition&&!visible.has(this.selected!)?'block':'none';if(selectedPosition){this.returnLabel.textContent=`↗ Return to ${this.labelObjects.get(this.selected!)!.node.sourceIdentifier??this.selected}`;}
