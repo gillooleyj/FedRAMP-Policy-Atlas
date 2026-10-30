@@ -1,0 +1,20 @@
+{
+  "testedAt": "2026-10-30T16:23:27.869Z",
+  "browser": "154.0.8037.57",
+  "checks": [
+    "Three primary destinations, filters closed, and a full-width explorer on initial load",
+    "Keyboard skip link reaches the explorer",
+    "Filter drawer contains keyboard focus, closes with Escape, and restores visible trigger focus",
+    "Selection keeps depth and mapping controls available while secondary connection shortcuts start collapsed",
+    "Filter changes apply to the actual dataset and survive closing/reopening without losing selection",
+    "Collapsed connection shortcuts and pinned per-edge evidence remain functional",
+    "Empty filtered scope explains recovery and Reset filters restores actual source records",
+    "768px reflow preserves chart, navigation and filter recovery without document overflow",
+    "390px reflow preserves chart, navigation and filter recovery without document overflow",
+    "320px reflow preserves chart, navigation and filter recovery without document overflow",
+    "Sources retain actual pinned URLs, coverage and current-page navigation",
+    "The accessible table remains available and scrolls within its own container on narrow screens",
+    "No uncaught browser errors"
+  ],
+  "errors": []
+}

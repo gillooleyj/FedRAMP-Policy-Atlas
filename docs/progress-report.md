@@ -126,3 +126,12 @@ The pinned source graph is unchanged: 1,676 entities, 3,696 verified relationshi
 Corrected section headings that overlapped incoming connectors. Headings now occupy reserved rows, with routing tracks below and a foreground label layer. Split misleading combined rule/KSI headings into separate, accurately named sections. Added explicit card type badges and icons, squared blue rule cards, rounded pink KSI cards and entity-colored selection outlines. Context and connection distance remain secondary footer text. Source records and verified relationships are unchanged.
 
 Validation: 71 automated tests, lint, TypeScript and production build pass. A new seven-state browser regression measures all rendered connector segments against heading bounds and checks type labels/icons/colors/shapes; no intersections or browser exceptions occurred. Desktop and mobile screenshots are in [the visual correction report](qa-flow-labels-2026-10-30/README.md).
+
+
+## FedRAMP research style and simpler navigation — October 30, 2026
+
+Applied the user-requested FedRAMP Site Style v1.0.0, selecting its research variant for this source-backed explorer. Read SKILL.md, design guidance, patterns and theme tokens. The warm light shell, serif headings, restrained accents and readable evidence panels preserve the independent project identity; no official branding, remote fonts or dependencies were added. The 3D canvas remains dark.
+
+Three primary destinations replace the permanent sidebar. Filters move to an accessible modal drawer, coverage becomes a compact row, and the explorer uses the full width until inspection. Secondary connection shortcuts and explanatory copy are expandable; depth, branch, mapped controls, Back/Up/Overview and provenance remain available. Existing source records, applicability, mappings and graph semantics are unchanged.
+
+Validation: 71 unit/integration tests, lint, TypeScript and Pages build pass. All 73 local Chromium browser checks pass: style/keyboard/responsive (13), flow (17), journey (11), label clearance (7), shared features (18), and source freshness (7). Checked 1440/768/390/320px layouts, filter focus trapping/restoration, empty-state recovery, drill-downs and pinned evidence. [Report and screenshots](qa-site-style-2026-10-30/README.md) record contrast samples and limitations. Live Pages visual access remains blocked; other engines, physical devices and exhaustive assistive-technology review remain open. The existing bundle-size warning and dense/mobile chart-navigation refinements remain.

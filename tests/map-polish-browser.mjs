@@ -10,7 +10,7 @@ const snapshot=()=>page.locator('.map-label:visible').evaluateAll(es=>es.map(e=>
 const roots=async()=>Promise.all(['fedramp','nist'].map(async id=>{const box=await page.locator(`[data-node-id="${id}"]`).boundingBox();return {x:box.x,y:box.y};}));
 const assertRoots=(a,b)=>{for(let i=0;i<a.length;i++){assert.ok(Math.abs(a[i].x-b[i].x)<=1&&Math.abs(a[i].y-b[i].y)<=1,`Root ${i} did not return to the starting view: ${JSON.stringify(a[i])} vs ${JSON.stringify(b[i])}`);}};
 try{
- await page.goto(base);await page.getByRole('heading',{name:'One ecosystem. Every connection.'}).waitFor();await page.locator('canvas').waitFor();await page.waitForTimeout(900);
+ await page.goto(base);await page.getByRole('heading',{name:'Explore the FedRAMP landscape.'}).waitFor();await page.locator('canvas').waitFor();await page.waitForTimeout(900);
  assert.equal(await leaves().count(),0);assert.deepEqual((await snapshot()).map(n=>n.id),['fedramp','nist']);record('Initial overview shows only FedRAMP and NIST 800-53');
  const labelStyle=await page.locator('[data-node-id="fedramp"]').evaluate(e=>{const s=window.getComputedStyle(e);return {border:s.borderWidth,background:s.backgroundColor,height:e.offsetHeight};});assert.equal(labelStyle.border,'0px');assert.equal(labelStyle.background,'rgba(0, 0, 0, 0)');assert.equal(labelStyle.height,26);record('Compact single-line labels have no surrounding boxes');
  const initial=await roots(),initialLayout=await snapshot(),canvas=page.locator('canvas'),box=await canvas.boundingBox();

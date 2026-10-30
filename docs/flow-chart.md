@@ -1,6 +1,6 @@
 # Flow chart alternative
 
-The explorer offers 3D Map, Flow chart and Table. Selection, source filters and connection depth are shared; flow branch and mapping preferences are encoded in the URL. The dark card design retains FedRAMP blue, KSI pink, class purple and NIST amber.
+The explorer offers 3D Map, Flow chart and Table. Selection, source filters and connection depth are shared; flow branch and mapping preferences are encoded in the URL. The light research design retains distinct FedRAMP blue, KSI pink, class purple and NIST amber, with explicit type badges and icons. Filters open on demand; connection shortcuts and chart interpretation are expandable. See the [research-style implementation and validation](qa-site-style-2026-10-30/README.md).
 
 ## Source hierarchy and association
 
