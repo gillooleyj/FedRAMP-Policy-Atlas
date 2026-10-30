@@ -1,8 +1,8 @@
 import {describe,it,expect} from 'vitest';
 import {readFileSync} from 'node:fs';
 import * as THREE from 'three';
-import {fittedBounds,placeLabels,labelPriority,type LabelCandidate} from '../src/graph/navigation';
-import {layout,neighbors} from '../src/graph/model';
+import {fittedBounds,placeLabels,labelPriority,detailLabelsEnabled,canonicalView,type LabelCandidate} from '../src/graph/navigation';
+import {layout,neighbors,entityColor,palette} from '../src/graph/model';
 import type {Graph} from '../src/data/types';
 const graph:Graph=JSON.parse(readFileSync('public/data/graph.json','utf8'));
 describe('navigation camera fitting and labels',()=>{
@@ -15,7 +15,11 @@ describe('navigation camera fitting and labels',()=>{
   }
  });
  it('handles empty and single-entity views without invalid bounds',()=>{expect(fittedBounds([],1)).toBeNull();const fit=fittedBounds([[1,2,3]],1)!;expect(fit.center).toEqual([1,2,3]);expect(fit.distance).toBeGreaterThan(8);expect(Number.isFinite(fit.distance)).toBe(true);});
- it('prioritizes selection, hover and direct neighbors before context labels',()=>{expect(labelPriority('selected','ksi','selected','hovered',new Set())).toBe(0);expect(labelPriority('hovered','control','selected','hovered',null)).toBe(1);expect(labelPriority('neighbor','enhancement','selected',undefined,new Set(['neighbor']))).toBe(2);expect(labelPriority('hub','family',undefined,undefined,null)).toBe(3);expect(labelPriority('leaf','rule',undefined,undefined,null)).toBe(4);});
+ it('keeps hover out of layout priorities while prioritizing selected entities and neighbors',()=>{expect(labelPriority('selected','ksi','selected',new Set())).toBe(0);expect(labelPriority('neighbor','enhancement','selected',new Set(['neighbor']))).toBe(1);expect(labelPriority('hub','family',undefined,null)).toBe(2);expect(labelPriority('leaf','rule',undefined,null)).toBe(3);});
+ it('reveals details only after zooming in, and uses a separate zoom-out threshold',()=>{expect(detailLabelsEnabled(800,800,false)).toBe(false);expect(detailLabelsEnabled(560,800,false)).toBe(false);expect(detailLabelsEnabled(480,800,false)).toBe(true);expect(detailLabelsEnabled(560,800,true)).toBe(true);expect(detailLabelsEnabled(620,800,true)).toBe(false);});
+ it('uses the same canonical front-facing view regardless of the previous orbit',()=>{const points=layout(graph.nodes),home=canonicalView([...points.values()],1.6)!;expect(home.position[0]).toBe(home.target[0]);expect(home.position[1]).toBe(home.target[1]);expect(home.position[2]).toBeGreaterThan(home.target[2]);expect(home).toEqual(canonicalView([...points.values()],1.6));});
+ it('distinguishes the two publisher hubs and their control/rule categories',()=>{expect(entityColor({kind:'source',sourceId:'fedramp'})).toBe(palette.rule);expect(entityColor({kind:'source',sourceId:'nist'})).toBe(palette.control);expect(palette.rule).not.toBe(palette.control);expect(entityColor({kind:'ksi',sourceId:'fedramp'})).toBe(palette.ksi);});
+ it('retains a previously valid label anchor rather than repacking it',()=>{const c={id:'label',x:300,y:220,width:140,height:39,priority:2,scale:8,eligible:true};const p=placeLabels([c],800,560,65,new Map([['label',3]]));expect(p[0].anchor).toBe(3);});
  it('measures collisions, tries alternative anchors, and retains selected labels before hubs',()=>{const base={x:240,y:200,width:140,height:39,scale:8,eligible:true};const candidates:LabelCandidate[]=[{...base,id:'hub',priority:3},{...base,id:'selected',priority:0}];const placed=placeLabels(candidates,800,560);expect(placed.map(x=>x.id)).toEqual(['selected','hub']);expect(placed[0].left).not.toBe(placed[1].left);});
  it('does not overlap labels or place them over reserved navigation regions',()=>{const candidates=Array.from({length:100},(_,i)=>({id:String(i),x:130+(i%10)*25,y:140+Math.floor(i/10)*25,width:100,height:39,priority:i?4:0,scale:8,eligible:true}));const labels=placeLabels(candidates,800,560,30);expect(labels.length).toBeGreaterThan(2);expect(labels.length).toBeLessThanOrEqual(30);expect(labels[0].id).toBe('0');for(let i=0;i<labels.length;i++){const a=labels[i];expect(a.top).toBeGreaterThanOrEqual(42);expect(a.top+a.height).toBeLessThanOrEqual(435);for(const b of labels.slice(i+1)){expect(a.left<b.left+b.width&&a.left+a.width>b.left&&a.top<b.top+b.height&&a.top+a.height>b.top).toBe(false);}}});
  it('keeps a selected label clear of navigation controls even near the lower edge',()=>{const labels=placeLabels([{id:'selected',x:300,y:505,width:140,height:39,priority:0,scale:8,eligible:true}],800,560);expect(labels).toHaveLength(1);expect(labels[0].top+labels[0].height).toBeLessThanOrEqual(435);});

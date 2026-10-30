@@ -1,5 +1,5 @@
 {
-  "executedAt": "2026-10-30T01:46:14.914Z",
+  "executedAt": "2026-10-30T09:52:21.168Z",
   "checks": [
     "Live no-change result displays check time and active revision",
     "Pending report exposes before/after values without activating the candidate",

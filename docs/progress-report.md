@@ -53,3 +53,9 @@ Published the application source to main and the production build to gh-pages. G
 ## Navigation and Node 24 Actions
 
 Updated the full Actions runtime chain to verified Node 24 releases and confirmed a successful GitHub deployment without the Node.js 20 annotation. Implemented default pan/explicit orbit, pointer-centered zoom, stable camera/layout across selections and filters, fitted neighborhoods, camera Back, individual labels revealed at close scale, selected-node identity, typed relationship chips/arrows, and direct canvas-edge evidence. The current data coverage is unchanged. See [implementation and validation](navigation-implementation.md) and refreshed desktop/mobile screenshots. NIST publication-reference and ISO-crosswalk expansion remain future ingestion work.
+
+## Map label and reset corrections
+
+Addressed the reported pointer-focus border, hover-driven label repacking loop, initial label hierarchy, similar FedRAMP/NIST colors, and lack of a canonical view reset. Added stationary-layout caching, independent detail eligibility, stable label anchors, explicit zoom tiers, keyboard-only canvas focus feedback, blue/amber publisher colors, and a dedicated Reset view alongside Fit all. Source data, revisions, and verified mappings are unchanged. Added focused hover/overview/color/reset browser checks; see map-polish-browser-results.json and updated navigation implementation notes.
+
+The label/reset corrections passed 40 automated tests and 54 production-browser checks, including repeated-hover label stability, initial group-only labels, keyboard focus preservation, and canonical reset after orbiting. See [map polish report](map-polish.md) for screenshots and evidence limits.

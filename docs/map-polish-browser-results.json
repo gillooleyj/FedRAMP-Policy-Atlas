@@ -1,0 +1,20 @@
+{
+  "executedAt": "2026-10-30T09:52:34.432Z",
+  "checks": [
+    "Initial overview shows family/group labels and no individual labels",
+    "Mouse click does not draw a focus border around the map",
+    "Keyboard tab navigation retains a visible map focus indicator",
+    "FedRAMP blue and NIST amber are distinct on the publisher labels",
+    "Hovering and leaving an overview label does not move or replace nearby labels",
+    "Individual labels remain hidden until the detail zoom threshold",
+    "Individual rule/KSI/control labels appear after zooming in far enough",
+    "Hovering individual labels leaves the entire close-up label layout stable",
+    "A separate zoom-out threshold returns to group labels without threshold chatter",
+    "Fit all preserves the current orbital orientation",
+    "Reset view restores starting orientation, center, zoom, group labels and Pan mode",
+    "Reset also works without camera animation",
+    "Group overview and separate reset controls remain usable on mobile",
+    "No uncaught browser errors"
+  ],
+  "errors": []
+}

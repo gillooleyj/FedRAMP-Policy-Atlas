@@ -1,5 +1,5 @@
 import {useEffect,useRef,useState} from 'react';
-import {ArrowLeft,Focus,Hand,Maximize2,Minus,Plus,Rotate3D} from 'lucide-react';
+import {ArrowLeft,Focus,Hand,Maximize2,Minus,Plus,Rotate3D,RotateCcw} from 'lucide-react';
 import type {Entity,Edge} from '../data/types';
 import type {Position} from '../graph/model';
 import {UniverseEngine} from '../graph/universe-engine';
@@ -15,6 +15,6 @@ export default function Universe({nodes,allNodes,positions,edges,selected,active
  return <><div className="universe" ref={host}>{failed&&<div className="webgl-fallback"><h2>Explore without WebGL</h2><p>Your browser could not render the 3D graph. Every imported entity and citation is available in the table.</p><button onClick={onFallback}>Open accessible table</button></div>}</div>
  {!failed&&<><div className="navigation-toolbar" aria-label="Map navigation"><div className="navigation-modes"><button aria-label="Pan map" aria-pressed={mode==='pan'} onClick={()=>setMode('pan')}><Hand size={14}/>Pan</button><button aria-label="Orbit map" aria-pressed={mode==='orbit'} onClick={()=>setMode('orbit')}><Rotate3D size={14}/>Orbit</button></div><button aria-label="Fit connections" title="Fit selection and connections (F)" onClick={()=>engine.current?.fitConnections()}><Focus size={14}/><span>Fit connections</span></button><button aria-label="Back view" disabled={!backAvailable} title="Previous camera view (Escape)" onClick={()=>engine.current?.back()}><ArrowLeft size={14}/><span>Back</span></button></div>
  <div className="graph-help"><span>DRAG <small>to {mode}</small></span><b>·</b><span>SCROLL <small>toward pointer</small></span><b>·</b><span>CLICK <small>to inspect</small></span></div>
- <div className="graph-controls"><button aria-label="Zoom in" onClick={()=>engine.current?.zoom(.8)}><Plus size={17}/></button><button aria-label="Zoom out" onClick={()=>engine.current?.zoom(1.25)}><Minus size={17}/></button><span/><button aria-label="Reset camera" title="Fit all visible entities (Home)" onClick={()=>engine.current?.fitAll()}><Maximize2 size={17}/></button></div></>}
+ <div className="graph-controls"><button aria-label="Zoom in" onClick={()=>engine.current?.zoom(.8)}><Plus size={17}/></button><button aria-label="Zoom out" onClick={()=>engine.current?.zoom(1.25)}><Minus size={17}/></button><span/><button aria-label="Fit all entities" title="Fit all visible entities; keep the current angle (Home)" onClick={()=>engine.current?.fitAll()}><Maximize2 size={17}/></button><button aria-label="Reset view" title="Restore starting orientation, center, zoom and Pan mode" onClick={()=>{setMode('pan');engine.current?.resetView();}}><RotateCcw size={17}/></button></div></>}
  </>;
 }

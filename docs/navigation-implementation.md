@@ -12,7 +12,7 @@ The approved dark 3D universe remains. This slice implements the navigation prio
 
 ## Labels and relationships
 
-Labels are available for every imported entity, with individual IDs/titles becoming eligible as their projected scale increases. Selected and hovered entities take priority, followed by direct neighbors, hubs and context. Text bounds account for different label widths, multiple anchors are attempted, and show/hide thresholds differ to reduce zoom-edge flicker. Label placement reserves space for navigation controls. Low-priority labels may be suppressed when space is unavailable; a selected entity that cannot be labeled in the viewport has a return-to-selection action.
+Labels are available for every imported entity, with individual IDs/titles becoming eligible as their projected scale increases. The selected entity takes priority, followed by direct neighbors, hubs and context. Hover changes styling only; it does not affect placement priority. Text bounds account for different label widths, multiple anchors are attempted, and show/hide thresholds differ to reduce zoom-edge flicker. Label placement reserves space for navigation controls. Low-priority labels may be suppressed when space is unavailable; a selected entity that cannot be labeled in the viewport has a return-to-selection action.
 
 The selected entity has a ring and a persistent named label, including when context labels are disabled. Its direct relationships are the default rendered edges during selection. Direction arrows, relationship chips/counts, typed canvas edge labels, and grouped inspector connections explain the visible associations. Clicking a canvas edge label expands its source evidence, including records beyond the inspector's initial collapsed list. Every connection remains grounded in the existing immutable source/JSON pointer.
 
@@ -20,8 +20,8 @@ Camera/controls persist across data visibility, labels, relationship filters and
 
 ## Validation
 
-- Nine navigation tests cover actual neighborhood fitting at desktop/mobile aspect ratios and two viewing angles, empty/single-entity fitting, label priority, collision exclusion, reserved regions, and deterministic placement. All 17 sample-neighborhood endpoints fit inside the tested view bounds.
-- Twelve existing ingestion/model tests and 15 updater lifecycle tests remain: 36 automated tests total.
+- Thirteen navigation tests cover actual neighborhood fitting at desktop/mobile aspect ratios and two viewing angles, empty/single-entity fitting, label priority, collision exclusion, reserved regions, and deterministic placement. All 17 sample-neighborhood endpoints fit inside the tested view bounds.
+- Twelve existing ingestion/model tests and 15 updater lifecycle tests remain: 40 automated tests total.
 - Fifteen navigation browser checks cover default pan, pan/orbit controls, zoom-revealed individual labels, selection/neighbor labeling, persistent canvas/camera, filter stability, fitted neighborhoods, canvas edge evidence, back/fit recovery, focused keyboard panning, reduced motion, mobile layout and uncaught errors.
 - Existing graph and update-status suites add 25 browser checks. See [navigation results](navigation-browser-results.json), [graph results](browser-results.json), and [status results](update-browser-results.json).
 - [Zoomed desktop](screenshots/navigation-zoom-desktop.png), [focused desktop](screenshots/navigation-connections-desktop.png), [focused mobile](screenshots/navigation-connections-mobile.png).
@@ -33,3 +33,11 @@ Browser screenshots use software WebGL with a simulated mobile viewport; they do
 The Node.js 20 annotation described the actions' embedded JavaScript runtimes, not the app's Node version. Both workflows now pin verified Node 24 action commits: checkout v5, setup-node v5, configure-pages v6, deploy-pages v5, direct artifact uploader v6, and Pages artifact uploader v5 (which uses a Node 24 uploader internally). The app continues to build with Node 24.
 
 The [Node 24 upgrade deployment](https://github.com/gillooleyj/FedRAMP-Policy-Atlas/actions/runs/40986494319) completed successfully. Its public annotations no longer contained the Node.js 20 deprecation warning. Existing Pages/environment protection rules were left intact.
+
+## Label and view polish
+
+The overview now has an explicit group-label tier; zooming enters and leaves individual detail at separate distance ratios to prevent threshold chatter. A selected neighborhood is an explicit exception so its endpoints stay readable. Label eligibility is tracked independently from collision visibility, valid anchor choices are retained, and stationary camera layouts are cached. Hover never triggers global placement changes.
+
+Mouse interactions clear the canvas focus outline; keyboard Tab/navigation retains an accessible blue focus indicator. FedRAMP rule/source nodes are blue and NIST control/source nodes amber throughout map labels, point colors, the legend, search, table, and inspector. Fit all keeps the current angle; Reset view restores the canonical front-facing camera and Pan mode while retaining current selection and data filters.
+
+See [the focused polish checks](map-polish-browser-results.json), [overview screenshot](screenshots/map-polish-overview.png), and [mobile screenshot](screenshots/map-polish-mobile.png). Physical-device interaction and broad accessibility conformance remain outside these browser checks.

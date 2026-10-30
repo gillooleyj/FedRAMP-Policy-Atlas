@@ -1,0 +1,36 @@
+import {chromium} from 'playwright';
+import assert from 'node:assert/strict';
+import {mkdir,writeFile} from 'node:fs/promises';
+const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH??'/usr/bin/chromium',headless:true,args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+const page=await browser.newPage({timezoneId:'America/New_York',viewport:{width:1512,height:1040}}),errors=[],checks=[];
+page.on('pageerror',e=>errors.push(String(e)));const record=s=>{checks.push(s);console.log('PASS '+s);};
+const base=(process.env.ATLAS_URL??'http://127.0.0.1:5173').replace(/\/+$/,'')+'/';
+const leaves=()=>page.locator('.map-label:not([data-kind="source"]):not([data-kind="family"]):not([data-kind="ruleset"]):not([data-kind="theme"]):not([data-kind="class"]):visible');
+const snapshot=()=>page.locator('.map-label:visible').evaluateAll(es=>es.map(e=>({id:e.dataset.nodeId,transform:e.style.transform})).sort((a,b)=>a.id.localeCompare(b.id)));
+const roots=async()=>Promise.all(['fedramp','nist'].map(async id=>{const box=await page.locator(`[data-node-id="${id}"]`).boundingBox();return {x:box.x,y:box.y};}));
+const assertRoots=(a,b)=>{for(let i=0;i<a.length;i++){assert.ok(Math.abs(a[i].x-b[i].x)<=1&&Math.abs(a[i].y-b[i].y)<=1,`Root ${i} did not return to the starting view: ${JSON.stringify(a[i])} vs ${JSON.stringify(b[i])}`);}};
+try{
+ await page.goto(base);await page.getByRole('heading',{name:'One ecosystem. Every connection.'}).waitFor();await page.locator('canvas').waitFor();await page.waitForTimeout(900);
+ assert.equal(await leaves().count(),0);assert.ok(await page.locator('.map-label[data-kind="family"]:visible').count());assert.ok(await page.locator('.map-label[data-kind="ruleset"]:visible').count());record('Initial overview shows family/group labels and no individual labels');
+ const initial=await roots(),initialLayout=await snapshot(),canvas=page.locator('canvas'),box=await canvas.boundingBox();
+ await page.mouse.click(box.x+24,box.y+75);assert.equal(await canvas.evaluate(e=>window.getComputedStyle(e).outlineStyle),'none');record('Mouse click does not draw a focus border around the map');
+ await page.locator('.map-label:visible').first().focus();await page.keyboard.press('Shift+Tab');assert.equal(await canvas.evaluate(e=>e===document.activeElement),true);assert.equal(await canvas.evaluate(e=>window.getComputedStyle(e).outlineStyle),'solid');record('Keyboard tab navigation retains a visible map focus indicator');
+ await page.mouse.click(box.x+24,box.y+75);assert.equal(await canvas.evaluate(e=>window.getComputedStyle(e).outlineStyle),'none');
+ const colors=await Promise.all(['fedramp','nist'].map(id=>page.locator(`[data-node-id="${id}"]`).evaluate(e=>window.getComputedStyle(e).color)));assert.equal(colors[0],'rgb(89, 169, 255)');assert.equal(colors[1],'rgb(243, 187, 98)');record('FedRAMP blue and NIST amber are distinct on the publisher labels');
+ await mkdir('docs/screenshots',{recursive:true});await page.screenshot({path:'docs/screenshots/map-polish-overview.png',fullPage:true});
+ const stable=await snapshot(),label=page.locator('[data-node-id="fedramp"]'),labelBox=await label.boundingBox();
+ for(let i=0;i<12;i++){await page.mouse.move(labelBox.x+20+i%5,labelBox.y+10+i%7);await page.waitForTimeout(60);assert.deepEqual(await snapshot(),stable);}
+ await page.mouse.move(box.x+24,box.y+75);await page.waitForTimeout(150);assert.deepEqual(await snapshot(),stable);record('Hovering and leaving an overview label does not move or replace nearby labels');
+ for(let i=0;i<2;i++)await page.getByRole('button',{name:'Zoom in',exact:true}).click();await page.waitForTimeout(200);assert.equal(await leaves().count(),0);record('Individual labels remain hidden until the detail zoom threshold');
+ await page.getByRole('button',{name:'Zoom in',exact:true}).click();await page.waitForTimeout(300);assert.ok(await leaves().count()>0);record('Individual rule/KSI/control labels appear after zooming in far enough');
+ const closeStable=await snapshot(),closeLabel=leaves().first(),closeBox=await closeLabel.boundingBox();
+ for(let i=0;i<12;i++){await page.mouse.move(closeBox.x+15+i%5,closeBox.y+12+i%5);await page.waitForTimeout(60);assert.deepEqual(await snapshot(),closeStable);}
+ await page.mouse.move(box.x+24,box.y+75);await page.waitForTimeout(250);assert.deepEqual(await snapshot(),closeStable);record('Hovering individual labels leaves the entire close-up label layout stable');
+ await page.getByRole('button',{name:'Zoom out',exact:true}).click();await page.waitForTimeout(200);assert.ok(await leaves().count()>0);await page.getByRole('button',{name:'Zoom out',exact:true}).click();await page.waitForTimeout(200);assert.equal(await leaves().count(),0);record('A separate zoom-out threshold returns to group labels without threshold chatter');
+ await page.getByRole('button',{name:'Orbit map',exact:true}).click();await page.mouse.move(box.x+24,box.y+75);await page.mouse.down();await page.mouse.move(box.x+154,box.y+155,{steps:12});await page.mouse.up();await page.waitForTimeout(700);
+ await page.getByRole('button',{name:'Fit all entities',exact:true}).click();await page.waitForTimeout(700);assert.notDeepEqual(await snapshot(),initialLayout);record('Fit all preserves the current orbital orientation');
+ await page.getByRole('button',{name:'Reset view',exact:true}).click();await page.waitForTimeout(800);assertRoots(await roots(),initial);assert.equal(await page.getByRole('button',{name:'Pan map',exact:true}).getAttribute('aria-pressed'),'true');assert.equal(await leaves().count(),0);record('Reset view restores starting orientation, center, zoom, group labels and Pan mode');
+ await page.getByRole('button',{name:'Zoom in',exact:true}).click();await page.getByRole('button',{name:'Zoom in',exact:true}).click();await page.getByRole('checkbox',{name:'Reduced motion',exact:true}).check();await page.getByRole('button',{name:'Reset view',exact:true}).click();await page.waitForTimeout(120);assertRoots(await roots(),initial);record('Reset also works without camera animation');
+ await page.setViewportSize({width:390,height:844});await page.getByRole('button',{name:'Reset view',exact:true}).click();await page.waitForTimeout(150);assert.equal(await leaves().count(),0);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth),false);assert.equal(await page.getByRole('button',{name:'Reset view',exact:true}).isVisible(),true);await page.screenshot({path:'docs/screenshots/map-polish-mobile.png',fullPage:true});record('Group overview and separate reset controls remain usable on mobile');
+ assert.deepEqual(errors,[]);record('No uncaught browser errors');await writeFile('docs/map-polish-browser-results.json',JSON.stringify({executedAt:new Date().toISOString(),checks,errors},null,2)+'\n');
+}finally{await browser.close();}

@@ -17,7 +17,7 @@ try{
  const matrix=()=>page.locator('.graph-labels button').evaluateAll(es=>es.slice(0,10).map(e=>e.style.transform).join('|'));
  const before=await matrix();await page.getByRole('button',{name:'Zoom in',exact:true}).click();await page.waitForTimeout(300);assert.notEqual(await matrix(),before);check('Zoom changes the camera projection');
  const canvas=page.locator('canvas'),box=await canvas.boundingBox();const orbitBefore=await matrix();await page.mouse.move(box.x+box.width*.6,box.y+box.height*.5);await page.mouse.down();await page.mouse.move(box.x+box.width*.6+90,box.y+box.height*.5+40,{steps:10});await page.mouse.up();await page.waitForTimeout(300);assert.notEqual(await matrix(),orbitBefore);check('Pointer drag pans the graph');
- await page.getByRole('button',{name:'Reset camera',exact:true}).click();
+ await page.getByRole('button',{name:'Fit all entities',exact:true}).click();
  const search=page.getByRole('textbox',{name:'Search entities'});await search.fill('KSI-CNA-EIS');await page.getByRole('listbox',{name:'Search results'}).getByRole('option').first().click();
  await page.getByRole('heading',{name:'Enforcing Intended State',exact:true}).waitFor();await page.waitForTimeout(500);check('Search selects a real KSI and opens its inspector');
  await page.locator('.class-tabs').getByRole('button',{name:'B',exact:true}).click();assert.match(await page.locator('.statement').innerText(),/Optional/);
