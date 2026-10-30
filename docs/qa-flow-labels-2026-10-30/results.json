@@ -1,0 +1,49 @@
+{
+  "testedAt": "2026-10-30T14:00:04.572Z",
+  "browser": "154.0.8037.57",
+  "checks": [
+    {
+      "name": "mixed-rule-ksi-overview",
+      "headingCount": 7,
+      "cardCount": 13,
+      "connectorHeadingCollisions": 0
+    },
+    {
+      "name": "class-b-drilldown",
+      "headingCount": 4,
+      "cardCount": 31,
+      "connectorHeadingCollisions": 0
+    },
+    {
+      "name": "rule-drilldown",
+      "headingCount": 4,
+      "cardCount": 9,
+      "connectorHeadingCollisions": 0
+    },
+    {
+      "name": "ksi-with-mappings",
+      "headingCount": 6,
+      "cardCount": 31,
+      "connectorHeadingCollisions": 0
+    },
+    {
+      "name": "fedramp-source",
+      "headingCount": 3,
+      "cardCount": 29,
+      "connectorHeadingCollisions": 0
+    },
+    {
+      "name": "nist-control",
+      "headingCount": 5,
+      "cardCount": 22,
+      "connectorHeadingCollisions": 0
+    },
+    {
+      "name": "mobile-ksi",
+      "headingCount": 6,
+      "cardCount": 31,
+      "connectorHeadingCollisions": 0
+    }
+  ],
+  "errors": []
+}

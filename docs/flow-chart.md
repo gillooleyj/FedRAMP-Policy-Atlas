@@ -4,7 +4,7 @@ The explorer offers 3D Map, Flow chart and Table. Selection, source filters and 
 
 ## Source hierarchy and association
 
-FedRAMP 2026 · CR26 and NIST SP 800-53 are peer source documents. Each source has a separate bounded group. Within FedRAMP, classes occupy a source-defined section, followed by rulesets/themes, subsets/KSIs, individual rules and referenced definitions. NIST has families, controls and enhancements. Rows express source organization, not shortest-path distance. Card badges explicitly say “links away” for connection depth.
+FedRAMP 2026 · CR26 and NIST SP 800-53 are peer source documents. Each source has a separate bounded group. Within FedRAMP, classes occupy a source-defined section, followed by separate ruleset, rule-subset, individual-rule, KSI-theme, KSI and definition sections. Headings describe only the types actually present. Each heading has reserved space above connector entry tracks. NIST has families, controls and enhancements. Rows express source organization, not shortest-path distance. Card badges explicitly say “links away” for connection depth.
 
 Classes are named in CR26's Certification Class definition. Their placement beneath CR26 is source-origin navigation; no synthetic source-to-class containment link is added. Rules retain their original APPLIES_TO arrows into classes. Solid connectors are verified containment; dashed connectors are associations, including published KSI mappings and definitions. Every rendered connector retains its original endpoints, direction, revision and locator. See the [source audit](qa-flow-structure-2026-10-30/source-review.md).
 
@@ -31,3 +31,9 @@ The status reports actual published mappings currently displayed, or explains th
 [The October 30 structure review](qa-flow-structure-2026-10-30/REPORT.md) records reproduced failures, source verification, independent mixed-session testing, desktop/tablet/mobile screenshots and remaining limits. Regression commands are `npm run test:flow:e2e`, `npm run test:full-flow:e2e` and `npm run test:journey:e2e`, with `ATLAS_URL` pointed at the local production preview. The independent review scripts are retained alongside their evidence.
 
 React Flow loads only when this presentation opens. No new source data, external service or paid integration was added. Coverage remains 1,676 entities, 3,696 verified relationships and 558 published KSI mappings. The existing main Three.js bundle-size advisory remains.
+
+## Heading clearance and card identity — October 30, 2026
+
+Removed the combined “Rulesets · KSI themes” and “Rule subsets · KSIs” headings. Rule and KSI branches now have separate, color-coded headings with type icons. Card badges spell out the entity type; rules use a document icon and squared corners, while KSIs use a shield icon and rounded pink cards. Groups, definitions, classes and NIST records each have their own type icon. Selection outlines retain the entity color, so selecting a rule does not give it the pink KSI outline. Context/distance is secondary footer text.
+
+Headings occupy dedicated 24px rows with space before the incoming connector track; they also render above the edge layer. This corrects actual connector geometry rather than only hiding lines with a text background. The browser regression checks every rendered orthogonal segment against every heading rectangle in seven overview/drill-down/mobile states. See [results and screenshots](qa-flow-labels-2026-10-30/README.md).

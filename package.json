@@ -24,7 +24,8 @@
     "test:flow:e2e": "node tests/flow-browser.mjs",
     "test:full-flow:e2e": "node tests/full-flow-browser.mjs",
     "inventory:policy": "node scripts/inventory-policy-references.mjs",
-    "test:journey:e2e": "node tests/journey-browser.mjs"
+    "test:journey:e2e": "node tests/journey-browser.mjs",
+    "test:flow-labels:e2e": "node tests/flow-labels-browser.mjs"
   },
   "dependencies": {
     "@dagrejs/dagre": "^3.1.3",
