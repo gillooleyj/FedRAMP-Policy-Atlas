@@ -1,0 +1,112 @@
+{
+  "purpose": "Literal mentions for source-ingestion review; no verified external-document relationships emitted.",
+  "activeGraph": "5cda3bb3c29d199d",
+  "source": {
+    "id": "fedramp",
+    "repo": "FedRAMP/rules",
+    "commit": "a89d78477ddea98dc57eca24f5007794c2b4eeb6",
+    "file": "fedramp-consolidated-rules.json",
+    "schema": "schemas/fedramp-consolidated-rules.schema.json",
+    "schemaRepo": "FedRAMP/rules",
+    "schemaCommit": "a89d78477ddea98dc57eca24f5007794c2b4eeb6",
+    "url": "https://raw.githubusercontent.com/FedRAMP/rules/a89d78477ddea98dc57eca24f5007794c2b4eeb6/fedramp-consolidated-rules.json",
+    "schemaUrl": "https://raw.githubusercontent.com/FedRAMP/rules/a89d78477ddea98dc57eca24f5007794c2b4eeb6/schemas/fedramp-consolidated-rules.schema.json",
+    "version": "2026.10.13.01",
+    "retrievedAt": "2026-10-29T23:42:12.099Z",
+    "contentHash": "fb48d677a85d77fb72735a325de2c1945a1e0ceab1d2e655292fe9ebe3e4e0b4",
+    "schemaHash": "eb4710bee0b06d0f8f803302ac2e88b934ef2bc942d0b548738c7304f0cb418f",
+    "validation": "passed"
+  },
+  "mentions": [
+    {
+      "document": "FedRAMP Authorization Act",
+      "sourceLocator": "/FRD/data/all/FRD-ASR/note",
+      "wording": "FedRAMP has transitioned from using the historical term \"Third-Party Assessment Organization (3PAO)\" to align with the explicit terminology used in the FedRAMP Authorization Act and to avoid the confusion caused when the same organizations provide both assessment and advisory services to different customers while being referred to as a 3PAO."
+    },
+    {
+      "document": "FedRAMP Authorization Act",
+      "sourceLocator": "/FRR/AGU/info/purpose",
+      "wording": "The Agency Use rules summarize the many demands made on agencies by the FedRAMP Authorization Act and OMB Memorandum M-24-15 in a simple, clear, easy-to-follow set of FedRAMP-style rules. These rules align agency policies, authorization letters, machine-readable tools, secure configuration review, continuous monitoring, and communication with FedRAMP so certifications can be reused consistently across government."
+    },
+    {
+      "document": "OMB M-24-15",
+      "sourceLocator": "/FRR/AGU/info/purpose",
+      "wording": "The Agency Use rules summarize the many demands made on agencies by the FedRAMP Authorization Act and OMB Memorandum M-24-15 in a simple, clear, easy-to-follow set of FedRAMP-style rules. These rules align agency policies, authorization letters, machine-readable tools, secure configuration review, continuous monitoring, and communication with FedRAMP so certifications can be reused consistently across government."
+    },
+    {
+      "document": "FedRAMP Authorization Act",
+      "sourceLocator": "/FRR/AGU/info/subsets/AGC/description",
+      "wording": "These rules apply to agencies based on the FedRAMP Authorization Act, OMB M-24-15, and related FedRAMP policies."
+    },
+    {
+      "document": "OMB M-24-15",
+      "sourceLocator": "/FRR/AGU/info/subsets/AGC/description",
+      "wording": "These rules apply to agencies based on the FedRAMP Authorization Act, OMB M-24-15, and related FedRAMP policies."
+    },
+    {
+      "document": "OMB M-24-15",
+      "sourceLocator": "/FRR/AGU/data/all/AGC/AGU-AGC-AIP/statement",
+      "wording": "Agencies MUST maintain agency-wide policy that aligns with the requirements in OMB Memorandum M-24-15."
+    },
+    {
+      "document": "OMB M-24-15",
+      "sourceLocator": "/FRR/AGU/data/all/AGC/AGU-AGC-NAI/note",
+      "wording": "Agencies are expected to notify FedRAMP under OMB Memorandum M-24-15 section IV (a)."
+    },
+    {
+      "document": "OMB M-24-15",
+      "sourceLocator": "/FRR/AGU/data/all/AGC/AGU-AGC-NAR/note",
+      "wording": "This is related to the Presumption of Adequacy for a FedRAMP Certification and notification is mandated by OMB Memorandum M-24-15 section IV (a)."
+    },
+    {
+      "document": "OMB M-24-15",
+      "sourceLocator": "/FRR/AGU/data/all/AGC/AGU-AGC-TPP/note",
+      "wording": "This is related to the Presumption of Adequacy for a FedRAMP Certification and notification is mandated by OMB Memorandum M-24-15 section IV (a)."
+    },
+    {
+      "document": "OMB M-24-15",
+      "sourceLocator": "/FRR/AGU/data/all/USE/AGU-USE-NFC/note",
+      "wording": "Agencies are expected to notify FedRAMP under OMB Memorandum M-24-15 section IV (a)."
+    },
+    {
+      "document": "OMB M-24-15",
+      "sourceLocator": "/FRR/AGU/data/all/USE/AGU-USE-ROR/note",
+      "wording": "This agency review supports agency responsibilities under 44 USC § 35, OMB Circular A-130, FIPS-200, and OMB Memorandum M-24-15."
+    },
+    {
+      "document": "OMB Circular A-130",
+      "sourceLocator": "/FRR/AGU/data/all/USE/AGU-USE-ROR/note",
+      "wording": "This agency review supports agency responsibilities under 44 USC § 35, OMB Circular A-130, FIPS-200, and OMB Memorandum M-24-15."
+    },
+    {
+      "document": "Title 44 USC chapter/section 35 (requires resolution)",
+      "sourceLocator": "/FRR/AGU/data/all/USE/AGU-USE-ROR/note",
+      "wording": "This agency review supports agency responsibilities under 44 USC § 35, OMB Circular A-130, FIPS-200, and OMB Memorandum M-24-15."
+    },
+    {
+      "document": "FIPS 200",
+      "sourceLocator": "/FRR/AGU/data/all/USE/AGU-USE-ROR/note",
+      "wording": "This agency review supports agency responsibilities under 44 USC § 35, OMB Circular A-130, FIPS-200, and OMB Memorandum M-24-15."
+    },
+    {
+      "document": "OMB M-24-15",
+      "sourceLocator": "/FRR/CCM/data/all/AGM/CCM-AGM-ROR/note",
+      "wording": "This is required by 44 USC § 35, OMB A-130, FIPS-200, and M-24-15."
+    },
+    {
+      "document": "OMB Circular A-130",
+      "sourceLocator": "/FRR/CCM/data/all/AGM/CCM-AGM-ROR/note",
+      "wording": "This is required by 44 USC § 35, OMB A-130, FIPS-200, and M-24-15."
+    },
+    {
+      "document": "Title 44 USC chapter/section 35 (requires resolution)",
+      "sourceLocator": "/FRR/CCM/data/all/AGM/CCM-AGM-ROR/note",
+      "wording": "This is required by 44 USC § 35, OMB A-130, FIPS-200, and M-24-15."
+    },
+    {
+      "document": "FIPS 200",
+      "sourceLocator": "/FRR/CCM/data/all/AGM/CCM-AGM-ROR/note",
+      "wording": "This is required by 44 USC § 35, OMB A-130, FIPS-200, and M-24-15."
+    }
+  ]
+}

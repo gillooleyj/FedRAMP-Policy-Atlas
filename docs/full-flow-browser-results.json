@@ -1,0 +1,17 @@
+{
+  "executedAt": "2026-10-30T11:44:54.601Z",
+  "checks": [
+    "Full FedRAMP is the default, with all 27 ruleset/theme branches, classes and definitions",
+    "Show all renders every one of the 459 imported FedRAMP entities and all 1,922 internal verified links",
+    "KSI branches expose all indicators and optionally their exact published NIST mappings",
+    "Branch and mapped-control choices survive reload through the URL",
+    "A complete ruleset branch includes its subsets and rules without unrelated themes",
+    "All four classes are reachable and selection reveals their evidenced applicability links",
+    "The definitions branch reaches all 80 definitions and their source",
+    "Relationship filters do not lose branch membership or restore excluded links",
+    "Invalid or unavailable deep-linked branches have an actionable empty state",
+    "Branch controls remain usable on mobile without page overflow",
+    "No uncaught browser errors"
+  ],
+  "errors": []
+}

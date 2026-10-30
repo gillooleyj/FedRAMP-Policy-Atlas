@@ -24,3 +24,9 @@ Focused evidence: the chart-only overview capture exposes card typography, legen
 Residual P3: very large expanded charts can remain dense; use relationship filters, zoom and the table. Investigate edge routing and broader labeling usability in the backlog.
 
 final result: passed
+
+## Full imported FedRAMP chart follow-up — 2026-10-30
+
+Implemented within the established card-and-connector design. Inspected local desktop screenshots at 1680×1246 and mobile screenshots at 390×844. The first full-scope fit reduced text excessively; changed automatic opening to the starting columns for large branches while retaining explicit full Fit. The default now begins at readable card scale and the branch selector reaches every ruleset/theme/class/definition. The AGU branch shows its complete 25-card source/subset/rule hierarchy. Mapped NIST context remains optional and sourced. Verified all 459 FedRAMP cards and 1,922 original internal edge IDs through browser assertions.
+
+Known limit: drawing every verified cross-link can be dense, and wrapped ranks can route curves behind intermediate cards. Branch selection and evidence inspection remain preferable for reading individual relationships; no shortcut edges are created. Physical touch devices and assistive-technology audits remain outstanding. Screenshots: `docs/screenshots/full-fedramp-desktop.png`, `full-fedramp-agency-branch.png`, `full-fedramp-ksi-branch.png`, `full-fedramp-mobile.png`.

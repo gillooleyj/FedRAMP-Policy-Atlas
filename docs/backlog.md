@@ -13,3 +13,5 @@ Requested after the regional-navigation iteration. Keep the current default and 
 ## Flow-chart coverage expansion
 
 The supplied flow-chart reference includes legislation, OMB policy, Rev. 5 baselines and additional NIST publications. Add these only through authoritative ingestion with pinned revisions, applicability and evidence for each relationship. Do not treat the visual reference as a source of verified edges. The first chart uses the atlas's existing FedRAMP rules, KSIs and NIST 800-53 data.
+
+The chart now reaches every imported FedRAMP branch. Next: implement the legal/policy ingestion vertical slice in [policy-source-roadmap.md](policy-source-roadmap.md), starting with the explicit references inventoried in the active FedRAMP snapshot.

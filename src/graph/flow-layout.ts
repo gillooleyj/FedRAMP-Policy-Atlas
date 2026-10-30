@@ -5,7 +5,9 @@ import {flowCard} from './flow';
 export function flowLayout(nodes:Entity[],edges:Edge[]){
  const graph=new dagre.graphlib.Graph({multigraph:true});graph.setGraph({rankdir:'LR',nodesep:34,ranksep:100,marginx:28,marginy:28});graph.setDefaultEdgeLabel(()=>({}));
  for(const n of [...nodes].sort((a,b)=>a.id.localeCompare(b.id)))graph.setNode(n.id,{...flowCard});
- for(const e of [...edges].sort((a,b)=>a.id.localeCompare(b.id)))if(graph.hasNode(e.from)&&graph.hasNode(e.to))graph.setEdge(e.from,e.to,{},e.id);
+ const hierarchy=edges.filter(e=>e.type==='CONTAINS');
+ // Place by hierarchy when present; cross-links retain their original endpoints and evidence.
+ for(const e of [...(hierarchy.length?hierarchy:edges)].sort((a,b)=>a.id.localeCompare(b.id)))if(graph.hasNode(e.from)&&graph.hasNode(e.to))graph.setEdge(e.from,e.to,{},e.id);
  dagre.layout(graph);
  const positions=new Map(nodes.map(n=>{const p=graph.node(n.id);return [n.id,{x:p.x-flowCard.width/2,y:p.y-flowCard.height/2}];}));
  const ranks=new Map<number,string[]>();for(const [id,p] of positions)ranks.set(p.x,[...(ranks.get(p.x)??[]),id]);

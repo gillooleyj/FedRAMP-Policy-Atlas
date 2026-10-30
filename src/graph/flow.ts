@@ -17,3 +17,28 @@ export function flowSlice(nodes:Entity[],edges:Edge[],selected:string,distances:
  const shown=candidates.slice(0,limit),ids=new Set(shown.map(n=>n.id));
  return {nodes:shown,edges:edges.filter(e=>e.provenanceStatus==='verified'&&ids.has(e.from)&&ids.has(e.to)),total:candidates.length};
 }
+
+export interface FlowBranch {id:string;label:string;count:number}
+/** Display scopes traverse only published containment. They create no graph records. */
+export function fedrampBranch(nodes:Entity[],structure:Edge[],branch='all',mappings=false){
+ const available=new Map(nodes.map(n=>[n.id,n]));
+ const fedramp=nodes.filter(n=>n.sourceId==='fedramp');
+ const ids=new Set(branch==='all'?fedramp.map(n=>n.id):branch==='classes'||branch==='definitions'?fedramp.filter(n=>n.kind===(branch==='classes'?'class':'definition')).map(n=>n.id):available.get(branch)?.sourceId==='fedramp'?[branch]:[]);
+ const contains=structure.filter(e=>e.type==='CONTAINS'&&e.provenanceStatus==='verified');
+ if(branch!=='all'&&branch!=='classes'&&branch!=='definitions'){
+  let changed=true;while(changed){changed=false;for(const e of contains)if(ids.has(e.from)&&available.get(e.to)?.sourceId==='fedramp'&&!ids.has(e.to)){ids.add(e.to);changed=true;}}
+ }
+ if(mappings)for(const e of structure)if(e.type==='PUBLISHED_CONTROL_MAPPING'&&e.provenanceStatus==='verified'&&ids.has(e.from)&&available.get(e.to)?.sourceId==='nist')ids.add(e.to);
+ // Exact ancestors give each branch context, but never restore a filtered entity.
+ let changed=true;while(changed){changed=false;for(const e of contains)if(ids.has(e.to)&&available.has(e.from)&&!ids.has(e.from)){ids.add(e.from);changed=true;}}
+ const rank:Record<string,number>={source:0,ruleset:1,theme:1,class:1,subset:2,family:2,ksi:3,rule:3,control:4,enhancement:5,definition:6};
+ return nodes.filter(n=>ids.has(n.id)).sort((a,b)=>(rank[a.kind]-rank[b.kind])||a.id.localeCompare(b.id));
+}
+export function flowBranches(nodes:Entity[],structure:Edge[]):FlowBranch[]{
+ const roots=nodes.filter(n=>n.sourceId==='fedramp'&&(n.kind==='ruleset'||n.kind==='theme')).sort((a,b)=>a.kind.localeCompare(b.kind)||a.id.localeCompare(b.id));
+ return [{id:'all',label:'Full FedRAMP',count:nodes.filter(n=>n.sourceId==='fedramp').length},...roots.map(n=>({id:n.id,label:`${n.kind==='theme'?'KSI theme':'Ruleset'} · ${n.sourceIdentifier??n.id} · ${n.title}`,count:fedrampBranch(nodes,structure,n.id).filter(n=>n.kind!=='source').length})),...(['classes','definitions'] as const).map(id=>({id,label:id==='classes'?'Certification classes':'Definitions',count:nodes.filter(n=>n.sourceId==='fedramp'&&n.kind===(id==='classes'?'class':'definition')).length})),{id:'example',label:'Example cross-framework path',count:flowOverview(nodes,structure).length}];
+}
+export function collectionSlice(nodes:Entity[],edges:Edge[],limit=60){
+ const shown=nodes.slice(0,limit),ids=new Set(shown.map(n=>n.id));
+ return {nodes:shown,edges:edges.filter(e=>e.provenanceStatus==='verified'&&ids.has(e.from)&&ids.has(e.to)),total:nodes.length};
+}
