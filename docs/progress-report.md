@@ -45,3 +45,7 @@ Added live upstream monitoring, immutable candidate snapshots, semantic before/a
 ## Recurring agent build goal
 
 Recorded the next operational goal in SPEC.md: an independent daily agent that updates the deployed site after validated source refreshes, publishes freshness on no-change runs, and verifies live revisions. Added release-policy, exception-review, persistence, failure recovery, rollback, and notification acceptance criteria. This is planned work; no agent, remote schedule, deployment, or publication was activated by this documentation change.
+
+## Initial public launch
+
+Published the application source to main and the production build to gh-pages. GitHub's branch-based Pages deployment succeeded; see [launch evidence and handoff](launch.md#initial-launch-result). Production testing under the project URL prefix passed 27 automated tests and 25 browser checks. The separate main deployment action is blocked by the existing github-pages environment's allowed-branch policy; an owner settings change is required for that automatic route. Direct public-site HTTP verification was blocked by this environment's network policy. No environment protection was bypassed.
