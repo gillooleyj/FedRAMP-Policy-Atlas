@@ -39,3 +39,10 @@ Before adding more source collections:
 - Benchmark label churn, frame time and target-finding at 5k/10k entities using clearly marked synthetic performance fixtures separate from public source data. The current implementation is validated against 1,676 real entities, not an unlimited-scale claim.
 - Evaluate overview-locator size, depth cues during orbit, touch panning, and travel breadcrumbs with users. The locator is a fixed front projection of the focal-plane viewing rectangle; it is not a 3D visibility test for every point.
 - Research searchable nearby-object lists and density budgets, so adding laws, policy documents, ISO mappings and more NIST publications does not add every label or edge to the initial view.
+
+## Follow-ups from the map and KSI-scope audit
+
+- Consider a class-specific KSI chart subview, so the 46 indicators are immediately reachable without expanding every process rule connected to a class. Retain the authoritative hierarchy and distinct process-rule force.
+- Evaluate density controls for large selected neighborhoods (KSI-CNA-EIS now reaches 845 entities at three levels). Do not represent indirect paths as new official mappings.
+- Keep tracking the five missing Class D KSI wording variants and separate source-backed program availability from class-scope membership. Future changes to governing wording/classes require extraction review.
+- Retain physical-device, other-browser and assistive-technology review, and continue measured contrast checks beyond the repaired light-map lines. Current evidence: qa-map-mappings-2026-10-30/REPORT.md.

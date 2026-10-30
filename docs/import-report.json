@@ -1,5 +1,5 @@
 {
-  "graphVersion": "5cda3bb3c29d199d",
+  "graphVersion": "8bebe1f392e5feb0",
   "sources": [
     {
       "id": "fedramp",
@@ -32,7 +32,7 @@
     }
   ],
   "nodeCount": 1676,
-  "edgeCount": 3696,
+  "edgeCount": 3841,
   "nodesByKind": {
     "class": 4,
     "control": 324,
@@ -47,7 +47,7 @@
     "theme": 10
   },
   "edgesByType": {
-    "APPLIES_TO": 682,
+    "APPLIES_TO": 827,
     "CONTAINS": 1670,
     "DEFINED_BY": 786,
     "PUBLISHED_CONTROL_MAPPING": 558
@@ -57,6 +57,6 @@
     "CTL": "Not imported: FedRAMP control guidance is distinct from the NIST catalog",
     "baselines": "Not imported",
     "history": "Source snapshots retained; legal chronology not imported",
-    "classes": "Names and explicit rule applicability only; no certification availability inferred"
+    "classes": "Names, explicit rule applicability, and governing process-rule KSI scope; process force is not indicator force. Five KSIs have no Class D-specific wording. No certification availability inferred"
   }
 }

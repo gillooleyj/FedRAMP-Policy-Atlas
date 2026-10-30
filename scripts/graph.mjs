@@ -1,4 +1,5 @@
 import { createHash } from 'node:crypto';
+import {ksiScopes} from './ksi-scope.mjs';
 export const hash = value => createHash('sha256').update(typeof value === 'string' || Buffer.isBuffer(value) ? value : JSON.stringify(value)).digest('hex');
 export const pointer = (...parts) => '/' + parts.map(p => String(p).replaceAll('~','~0').replaceAll('/','~1')).join('/');
 export function buildGraph(rules, catalog, sources) {
@@ -41,10 +42,12 @@ export function buildGraph(rules, catalog, sources) {
    }
   }
  }
+ const indicatorScopes=ksiScopes(rules);
  for(const [theme,v] of Object.entries(rules.KSI)) {
   const parent='theme:'+theme;node(parent,v.name,'theme','fedramp',pointer('KSI',theme),{...v,indicators:undefined},{group:'Key Security Indicators',status:v.status});edge('fedramp',parent,'CONTAINS','fedramp',pointer('KSI',theme));
   for(const [id,k] of Object.entries(v.indicators)) {
-   const p=pointer('KSI',theme,'indicators',id);node('fr:'+id,k.name,'ksi','fedramp',p,k,{sourceIdentifier:id,group:theme,status:v.status,framework:'20x',classes:Object.keys(k.varies_by_class??{}).map(x=>x.toUpperCase())});edge(parent,'fr:'+id,'CONTAINS','fedramp',p);
+   const p=pointer('KSI',theme,'indicators',id),scopes=indicatorScopes(id,k,p);node('fr:'+id,k.name,'ksi','fedramp',p,k,{sourceIdentifier:id,group:theme,status:v.status,framework:'20x',classes:scopes.map(s=>s.cls)});edge(parent,'fr:'+id,'CONTAINS','fedramp',p);
+   for(const scope of scopes)edge('fr:'+id,'class:'+scope.cls,'APPLIES_TO','fedramp',scope.locator,{applicability:scope.applicability,supportingEvidence:scope.supportingEvidence,extractionMethod:'Explicit governing process rule scope; indicator wording and qualifiers retained separately'});
    function mappings(cs,path,cls) {for(const [i,c] of (cs??[]).entries()) {if(!ids.has('nist:'+c)) {omissions.push({id,control:c,locator:path+'/'+i,reason:'Control not found in pinned NIST catalog'});continue;}edge('fr:'+id,'nist:'+c,'PUBLISHED_CONTROL_MAPPING','fedramp',path+'/'+i,{extractionMethod:'Exact published OSCAL control identifier',applicability:cls?{classes:[cls.toUpperCase()]}:{scope:'Common indicator mapping; no class scope inferred'}});}}
    mappings(k.controls,p+'/controls');for(const [cls,variant] of Object.entries(k.varies_by_class??{})) mappings(variant.controls,p+'/varies_by_class/'+cls+'/controls',cls);
   }
@@ -52,5 +55,5 @@ export function buildGraph(rules, catalog, sources) {
  const terms=new Map();for(const n of nodes.filter(n=>n.kind==='definition')) for(const t of [n.raw.term,...(n.raw.alts??[])]) {if(!terms.has(t)) terms.set(t,[]);if(!terms.get(t).includes(n)) terms.get(t).push(n);}
  for(const n of nodes.filter(n=>['rule','ksi'].includes(n.kind))) for(const [i,t] of (n.raw.terms??[]).entries()) {const matches=(terms.get(t)??[]).filter(x=>x.framework==='all'||x.framework===n.framework);if(matches.length===1)edge(n.id,matches[0].id,'DEFINED_BY','fedramp',n.sourceLocator+'/terms/'+i,{extractionMethod:'Exact unique controlled term match'});else omissions.push({id:n.id,term:t,reason:'Missing or ambiguous controlled term'});}
  for(const e of edges) if(!ids.has(e.from)||!ids.has(e.to)) throw new Error('Dangling relationship');
- return {schemaVersion:1,sources,nodes,edges,omissions,coverage:{CTL:'Not imported: FedRAMP control guidance is distinct from the NIST catalog',baselines:'Not imported',history:'Source snapshots retained; legal chronology not imported',classes:'Names and explicit rule applicability only; no certification availability inferred'}};
+ return {schemaVersion:1,sources,nodes,edges,omissions,coverage:{CTL:'Not imported: FedRAMP control guidance is distinct from the NIST catalog',baselines:'Not imported',history:'Source snapshots retained; legal chronology not imported',classes:'Names, explicit rule applicability, and governing process-rule KSI scope; process force is not indicator force. Five KSIs have no Class D-specific wording. No certification availability inferred'}};
 }

@@ -1,8 +1,8 @@
 {
-  "state": "up-to-date",
+  "state": "promoted",
   "lastAttemptAt": "2026-10-30T00:28:09.701Z",
   "lastSuccessfulCheckAt": "2026-10-30T00:28:09.701Z",
-  "activeVersion": "5cda3bb3c29d199d",
+  "activeVersion": "8bebe1f392e5feb0",
   "pendingCandidate": null,
   "schedule": "Daily workflow supplied; activation and deployment not verified",
   "observedSources": [
@@ -15,5 +15,6 @@
       "commit": "f0de6d8d8c059d374f15e0ae07508d82e370fc1d"
     }
   ],
-  "lastError": null
+  "lastError": null,
+  "promotedAt": "2026-10-30T17:24:50.700Z"
 }

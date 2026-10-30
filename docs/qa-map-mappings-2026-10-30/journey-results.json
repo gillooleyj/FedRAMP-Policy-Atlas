@@ -1,0 +1,17 @@
+{
+  "executedAt": "2026-10-30T17:28:33.518Z",
+  "checks": [
+    "Focusing NIST retains the complete clickable context instead of removing FedRAMP",
+    "Everything exits stale NIST selection and restores both source hubs",
+    "Toolbar Back and native browser Back/Forward restore actual selections",
+    "Up follows the published KSI→theme→source containment path and Overview exits inspection",
+    "Dimmed source context is visibly labeled and clickable during selection",
+    "Selecting a class retains its source group and readable zoom",
+    "Class placement also survives switching between map and flow",
+    "Back restores an expanded branch without requiring the inspector close button",
+    "Mobile keeps the selected card onscreen and return controls above the diagram",
+    "Escape closes mobile filters and restores focus to the trigger",
+    "No uncaught browser errors"
+  ],
+  "errors": []
+}

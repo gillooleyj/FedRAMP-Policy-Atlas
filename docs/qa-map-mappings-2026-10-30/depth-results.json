@@ -1,0 +1,21 @@
+{
+  "checks": [
+    {
+      "depth": 1,
+      "entities": 20,
+      "edges": 19
+    },
+    {
+      "depth": 2,
+      "entities": 310,
+      "edges": 972
+    },
+    {
+      "depth": 3,
+      "entities": 845,
+      "edges": 2690
+    }
+  ],
+  "allLinks": 3841,
+  "errors": []
+}

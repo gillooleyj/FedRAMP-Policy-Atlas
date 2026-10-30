@@ -34,3 +34,14 @@ a:hover{text-decoration:underline;text-underline-offset:4px}button:focus-visible
 :root{--atlas-action:#245d84;--atlas-action-ink:#fff;--atlas-flow-edge:#7b8d98;--atlas-flow-dots:#c8d3d3}:root[data-theme=dark]{--atlas-action:#8cc9f3;--atlas-action-ink:#102638;--atlas-flow-edge:#7895a8;--atlas-flow-dots:#3c5363}
 .filter-actions .apply-filters,.class-tabs button.active,.update-actions button{background:var(--atlas-action);color:var(--atlas-action-ink);border-color:var(--atlas-action)}
 .flow-source-lane{background:color-mix(in srgb,var(--atlas-soft) 12%,transparent)}.flow-help{background:var(--atlas-flow)}
+
+/* Scope summaries stay distinct from indicator wording and control associations. */
+.scope-item {padding:12px 0;border-bottom:1px solid var(--atlas-rule);}
+.scope-item p {margin:5px 0;font-size:13px;}
+.scope-item small {display:block;}
+.scope-item details {margin-top:10px;}
+.scope-evidence code {display:block;overflow-wrap:anywhere;font-size:11px;margin-top:5px;}
+.scope-evidence>div {margin:14px 0;}
+.scope-evidence p {font-size:13px;line-height:1.6;}
+.scope-target {display:block;width:100%;text-align:left;padding:10px 0;background:transparent;color:var(--atlas-ink);border:0;border-bottom:1px solid var(--atlas-rule);font-size:12px;line-height:1.5;}
+.scope-target:hover {text-decoration:underline;}

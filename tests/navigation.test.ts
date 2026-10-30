@@ -7,7 +7,7 @@ import type {Graph} from '../src/data/types';
 const graph:Graph=JSON.parse(readFileSync('public/data/graph.json','utf8'));
 describe('navigation camera fitting and labels',()=>{
  it.each([.65,1,1.6])('fits every actual selected-neighborhood endpoint at aspect %s',(aspect)=>{
-  const positions=layout(graph.nodes),ids=neighbors('fr:KSI-CNA-EIS',graph.edges),points=[...ids].map(id=>positions.get(id)!);expect(points).toHaveLength(17);
+  const positions=layout(graph.nodes),ids=neighbors('fr:KSI-CNA-EIS',graph.edges),points=[...ids].map(id=>positions.get(id)!);expect(points).toHaveLength(20);
   const bounds=fittedBounds(points,aspect)!;
   for(const direction of [new THREE.Vector3(0,0,1),new THREE.Vector3(1,.7,1).normalize()]){
    const camera=new THREE.PerspectiveCamera(45,aspect,.1,10000);camera.position.set(...bounds.center).addScaledVector(direction,bounds.distance);camera.lookAt(new THREE.Vector3(...bounds.center));camera.updateMatrixWorld();

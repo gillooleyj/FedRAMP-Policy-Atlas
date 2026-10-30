@@ -4,7 +4,7 @@ import {mkdir,writeFile} from 'node:fs/promises';
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH??'/usr/bin/chromium',headless:true,args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
 const page=await browser.newPage({viewport:{width:1440,height:1000},colorScheme:'light'}),checks=[],errors=[];
 page.on('pageerror',e=>errors.push(String(e)));
-const base=(process.env.ATLAS_URL??'http://127.0.0.1:4189/FedRAMP-Policy-Atlas').replace(/\/+$/,'')+'/',out='docs/qa-galaxy-2026-10-30';await mkdir(out,{recursive:true});
+const base=(process.env.ATLAS_URL??'http://127.0.0.1:4189/FedRAMP-Policy-Atlas').replace(/\/+$/,'')+'/',out=process.env.ATLAS_QA_DIR??'docs/qa-galaxy-2026-10-30';await mkdir(out,{recursive:true});
 const settle=()=>page.waitForTimeout(750),record=s=>{checks.push(s);console.log('PASS '+s);},shot=async n=>page.screenshot({path:`${out}/${n}.png`,fullPage:true});
 const target=()=>page.locator('.overview-target').getAttribute('transform'),footprint=()=>page.locator('.overview-footprint').getAttribute('points');
 async function appearance(site,map){if(!await page.locator('.appearance').evaluate(e=>e.open))await page.locator('.appearance>summary').click();if(site)await page.getByRole('combobox',{name:'Site theme',exact:true}).selectOption(site);if(map)await page.getByRole('combobox',{name:'Map theme',exact:true}).selectOption(map);await page.keyboard.press('Escape');await settle();}

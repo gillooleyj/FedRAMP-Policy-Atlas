@@ -1,0 +1,26 @@
+{
+  "testedAt": "2026-10-30T17:28:44.423Z",
+  "browser": "154.0.8037.57",
+  "checks": [
+    "Light overview retains two source labels with crisp markers and visible source structure",
+    "Both map palettes render the same regional view with solid cores, separated rings and restrained dark glow",
+    "KSI inspector separates B optional wording, C wording and D missing wording from SHOULD process scope",
+    "Scope evidence exposes exact process and indicator pointers, timing and pinned source",
+    "Class-specific source tabs do not substitute B or C wording into D",
+    "Selected KSI flow chart shows all three evidenced class links and its twelve published NIST associations",
+    "NIST toggle works after KSI selection without removing class links",
+    "Class A exposes all 7 KSIs in the inspector and expanded chart with exact verified edges",
+    "Class A table filter includes 7 indicators, including shared wording",
+    "Class B exposes all 46 KSIs in the inspector and expanded chart with exact verified edges",
+    "Class B table filter includes 46 indicators, including shared wording",
+    "Class C exposes all 46 KSIs in the inspector and expanded chart with exact verified edges",
+    "Class C table filter includes 46 indicators, including shared wording",
+    "Class D exposes all 46 KSIs in the inspector and expanded chart with exact verified edges",
+    "Class D table filter includes 46 indicators, including shared wording",
+    "A named Class A indicator has four class links and the exact mandatory named-list citation",
+    "Mobile class-scope links and Back preserve a fluid drilldown without horizontal overflow",
+    "High-density Chromium render preserves CSS-sized cores and thin rings",
+    "No uncaught JavaScript or WebGL shader errors"
+  ],
+  "errors": []
+}
