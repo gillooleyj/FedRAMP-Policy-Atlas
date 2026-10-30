@@ -19,7 +19,7 @@ Open the address Vite prints. The bundled public-source snapshots and generated 
 npm run ingest       # offline: verify hashes, validate both schemas, regenerate graph/report
 npm run lint
 npm run typecheck
-npm test             # 50 source fidelity, updater, navigation, and model tests
+npm test             # 58 source fidelity, updater, navigation, and model tests
 npm run build
 npm run preview      # serve the production build
 ```
@@ -37,6 +37,8 @@ The browser suite captures desktop and mobile screenshots in `docs/screenshots/`
 
 ## Explore
 
+- Choose **3D Map**, **Flow chart**, or **Table**. Presentation changes preserve the selection, filters, connection depth and FedRAMP 20x scope. Flow mode is shareable with `?mode=flow`; old `?view=table` links remain supported.
+- The flow chart adapts the supplied card-and-connector reference to verified atlas data. Its unselected overview shows 13 entities and 12 relationships across representative FedRAMP and NIST branches, including a published KSI mapping. Select a card or search any entity to explore its neighborhood. Select a connector with the mouse or keyboard to inspect its exact evidence. Drag to pan, use the zoom/fit controls, and **Reset chart** to return to the overview. Larger neighborhoods initially show 60 entities with an explicit total and **Show 60 more**; the inspected edge's endpoints stay visible. Hover/focus reveals relationship labels without moving cards.
 - Drag to pan by default. Choose **Orbit** for rotation, or right-drag to rotate in Pan mode. Scroll toward the pointer or use +/- to zoom. Click points/labels to inspect without moving the camera; search fits the selected neighborhood. Use **Fit connections**, **Back**, and **Fit all** to frame the visible field. **Reset view** restores the starting orientation, center, zoom, and Pan mode.
 - Search identifiers (for example `KSI-CNA-EIS` or `ac-2.1`), titles, rule text, or definitions. Enter opens the first result.
 - Toggle layers, choose a class, or filter relationship types without resetting the camera or changing node coordinates. Overview edges are sparse. Selection shows its direct connections; enable **All links** for all filtered edges. The starting overview labels only FedRAMP and NIST 800-53. Slight zoom shows five navigational regions: Classes, Families, Rulesets, KSI themes and Definitions. Click a region to travel into it; closer zoom shows its groups and individual identifiers. **Explore groups** lists every filtered family, ruleset, theme, class and definition alphabetically, even when its map label is hidden to avoid overlap. Labels favor the screen center, then stable identifiers, rather than camera depth. Compact, box-free labels are limited to 10 groups or 18 details on desktop (5 or 8 on mobile). Separate zoom-in/out thresholds prevent chatter. Selection defaults to direct neighbors. **Connection levels** expands to two or three hops, fits the camera, and reports counts by shortest-path distance. Farther levels are dimmer. Traversal follows incoming and outgoing verified relationships within all active filters; no transitive mappings or compliance claims are created. **Focus neighborhood** uses the selected depth, and depth is retained in the URL. Full titles remain in tooltips and the inspector. Hover underlines labels without repacking them.
@@ -80,6 +82,8 @@ npm run test:updates:e2e  # with the local app running and Chromium installed
 - `src/data/types.ts`: client contracts.
 - `src/graph/model.ts`: deterministic 3D clustered layout, filtering, search, neighborhood queries.
 - `src/components/Universe.tsx`: accessible pan/orbit/fit/back controls and persistent renderer lifecycle.
+- `src/graph/flow.ts` / `flow-layout.ts`: bounded source-backed chart slices and deterministic layouts with wrapped fan-outs.
+- `src/components/FlowChart.tsx`: lazy-loaded React Flow cards, connections, evidence interactions and responsive navigation.
 - `src/graph/exploration.ts`: bounded, filter-respecting connection traversal and display-only navigation regions.
 - `src/graph/universe-engine.ts`: batched points/lines, stable camera, selection ring, directional relationships, picking, semantic labels and cleanup.
 - `src/graph/navigation.ts`: camera-fitting math and deterministic label placement.
@@ -103,3 +107,5 @@ The existing scheduled-check workflow is a foundation for this goal; unattended 
 [Progress report](docs/progress-report.md) records delivered features, validation, and remaining work. Not yet included: FedRAMP CTL guidance, SP 800-53B baseline ingestion, legal/OMB chronology, transitive publication-reference ingestion, historical comparison UI, pathfinding, or 10k+ node benchmarks. No inferred relationships are marked verified. Historical update logs are preserved as source records, not interpreted as independently imported historical snapshots.
 
 The available checkout contained README.md, SPEC.md, AGENTS.md, and LICENSE. CODEX_START_PROMPT.md and visual reference attachments were not available; the UI follows the written dark, clustered 3D design brief in SPEC.md.
+
+Future labeling research and flow-chart source coverage are tracked in [docs/backlog.md](docs/backlog.md).

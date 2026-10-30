@@ -1,0 +1,23 @@
+{
+  "executedAt": "2026-10-30T11:29:45.450Z",
+  "checks": [
+    "Flow chart is the second of three views and loads a compact source-backed overview",
+    "Every chart card and connector resolves to an existing authoritative graph record",
+    "Flow zoom, background panning and reset controls work",
+    "Selecting a KSI opens the shared inspector and its exact direct neighborhood",
+    "Keyboard activation of a connector opens its exact pinned source evidence",
+    "Selection survives switching among Flow chart, Table and 3D Map",
+    "Two-hop neighborhoods show honest limits and expand to every reached entity",
+    "Relationship filters constrain the flow chart at every connection level",
+    "Flow mode, selection, depth and filters survive a URL reload",
+    "The inspector can return to the chart overview",
+    "Chart and table presentations preserve the FedRAMP 20x dataset scope",
+    "Pointer activation of overview connections opens evidence for the correct source endpoint",
+    "Reset restores the original overview after inspecting a connection",
+    "All three views and chart controls remain accessible without horizontal overflow on mobile",
+    "Legacy table deep links remain supported",
+    "Sidebar table navigation leaves Sources and returns to the explorer",
+    "No uncaught browser errors"
+  ],
+  "errors": []
+}
