@@ -1,0 +1,22 @@
+import {chromium} from 'playwright';
+import assert from 'node:assert/strict';
+import {writeFile} from 'node:fs/promises';
+const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH??'/usr/bin/chromium',headless:true,args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+const page=await browser.newPage({timezoneId:'America/New_York',viewport:{width:1512,height:1040}}),checks=[],errors=[];
+const base=process.env.ATLAS_URL??'http://127.0.0.1:5173';
+page.on('pageerror',e=>errors.push(String(e)));
+const record=name=>{checks.push(name);console.log('PASS '+name);};
+try{
+ await page.goto(base+'/?view=sources');await page.getByRole('heading',{name:'Monitored source revisions match the active graph'}).waitFor();await page.getByText('LAST SUCCESSFUL CHECK',{exact:true}).waitFor();record('Live no-change result displays check time and active revision');
+ await page.screenshot({path:'docs/screenshots/source-watch-desktop.png',fullPage:true});
+ const active=await (await page.request.get(base+'/data/active.json')).json();const candidate='a'.repeat(16);
+ let state={state:'pending-review',activeVersion:active.version,pendingCandidate:candidate,lastSuccessfulCheckAt:new Date().toISOString(),lastAttemptAt:new Date().toISOString(),summary:{nodesAdded:0,nodesRemoved:0,nodesChanged:1,mappingsAdded:1,mappingsRemoved:1}};
+ await page.route('**/data/updates/status.json',route=>route.fulfill({json:state}));
+ const report={candidate,baseVersion:active.version,checkedAt:new Date().toISOString(),summary:state.summary,nodes:{added:[],removed:[],changed:[{id:'fr:KSI-CNA-EIS',before:{id:'fr:KSI-CNA-EIS',title:'Enforcing Intended State',raw:{controls:['ac-1']}},after:{id:'fr:KSI-CNA-EIS',title:'Enforcing Intended State',raw:{controls:['ac-2']}}}]},edges:{added:[],removed:[],changed:[]}};
+ await page.route(`**/data/updates/reports/${candidate}.json`,route=>route.fulfill({json:report}));await page.reload();await page.getByRole('heading',{name:'Validated update awaiting review'}).waitFor();await page.getByRole('button',{name:'Inspect change report'}).click();await page.getByRole('heading',{name:`Changes from ${active.version} to ${candidate}`}).waitFor();await page.getByText('changed: 1',{exact:true}).click();await page.locator('summary').filter({hasText:'Enforcing Intended State'}).click();assert.match(await page.locator('.changed-record pre').innerText(),/ac-1/);assert.match(await page.locator('.changed-record pre').innerText(),/ac-2/);record('Pending report exposes before/after values without activating the candidate');
+ assert.equal(await page.getByRole('button',{name:/promote|publish|approve/i}).count(),0);record('Public interface has no write or promotion controls');
+ state={...state,state:'failed',lastError:'Test source check failed',lastSuccessfulCheckAt:'2020-01-01T00:00:00.000Z'};await page.reload();await page.getByRole('heading',{name:'Latest check failed — active graph retained'}).waitFor();await page.getByText(/Last successful check is over 36 hours old/).waitFor();assert.match(await page.locator('.update-panel').innerText(),/Test source check failed/);record('Failure preserves pending review and flags stale freshness');
+ await page.unroute('**/data/updates/status.json');await page.route('**/data/updates/status.json',route=>route.fulfill({status:404,body:'not found'}));await page.reload();await page.getByRole('heading',{name:'Update status unavailable'}).waitFor();await page.getByText('Upstream freshness cannot be confirmed. The pinned graph remains available.').waitFor();record('Missing status reports unavailable freshness while source records remain usable');
+ await page.unroute('**/data/updates/status.json');await page.setViewportSize({width:390,height:844});await page.reload();await page.getByRole('heading',{name:'Monitored source revisions match the active graph'}).waitFor();assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth),false);await page.screenshot({path:'docs/screenshots/source-watch-mobile.png',fullPage:true});record('Source-watch panel fits mobile viewport');
+ assert.deepEqual(errors,[]);record('No uncaught browser errors');await writeFile('docs/update-browser-results.json',JSON.stringify({executedAt:new Date().toISOString(),checks,errors,note:'Pending, failure, and missing-status cases use intercepted test responses; screenshots show actual live-check data.'},null,2)+'\n');
+}finally{await browser.close();}

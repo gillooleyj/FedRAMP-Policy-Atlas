@@ -1,0 +1,16 @@
+{
+  "id": "fedramp",
+  "repo": "FedRAMP/rules",
+  "commit": "a89d78477ddea98dc57eca24f5007794c2b4eeb6",
+  "file": "fedramp-consolidated-rules.json",
+  "schema": "schemas/fedramp-consolidated-rules.schema.json",
+  "schemaRepo": "FedRAMP/rules",
+  "schemaCommit": "a89d78477ddea98dc57eca24f5007794c2b4eeb6",
+  "url": "https://raw.githubusercontent.com/FedRAMP/rules/a89d78477ddea98dc57eca24f5007794c2b4eeb6/fedramp-consolidated-rules.json",
+  "schemaUrl": "https://raw.githubusercontent.com/FedRAMP/rules/a89d78477ddea98dc57eca24f5007794c2b4eeb6/schemas/fedramp-consolidated-rules.schema.json",
+  "version": "2026.10.13.01",
+  "retrievedAt": "2026-10-29T23:42:12.099Z",
+  "contentHash": "fb48d677a85d77fb72735a325de2c1945a1e0ceab1d2e655292fe9ebe3e4e0b4",
+  "schemaHash": "eb4710bee0b06d0f8f803302ac2e88b934ef2bc942d0b548738c7304f0cb418f",
+  "validation": "passed"
+}

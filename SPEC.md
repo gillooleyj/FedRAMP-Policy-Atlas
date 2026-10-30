@@ -149,6 +149,23 @@ Relationship {
 - [ ] Visible counts and coverage for ingested sources, with no claim of perfect coverage.
 - [ ] Tests, lint, typecheck, build, screenshots, and accurate implementation report.
 
+### Operational build goal: Recurring update agent
+
+Build a recurring agent that keeps the deployed website current, starting with a daily cycle for the official FedRAMP rules/KSI and NIST OSCAL sources. This is a near-term operational priority following the first functional graph slice. Completing a scheduled source check alone does not satisfy this goal: the agent must also update the live site under a configured publication policy.
+
+- [ ] Run independently of an open chat or development machine, with persistent state, bounded retries, exclusive runs, and durable execution records.
+- [ ] Discover upstream revisions; retain immutable source snapshots; validate schemas, provenance, class applicability, normative wording, mappings, and graph integrity; generate a complete change report.
+- [ ] Evaluate changes against an explicit release policy. The intended operating mode is automatic publication of routine, validated source refreshes. Escalate schema/connector changes, ambiguous interpretation, unresolved references, and failed checks for review; do not invent relationships or weaken validation to publish.
+- [ ] Promote an eligible candidate against its expected active version, build/test the site, deploy versioned assets, and verify that the public site serves the intended graph and source revisions before reporting success.
+- [ ] Publish the latest successful check time even when source content is unchanged. Distinguish last attempt, last successful check, active source revisions, and last successful deployment.
+- [ ] Keep the last working site available on failure; support tested rollback, stale-update detection, and configured operator notifications with actionable reports.
+- [ ] Preserve the approved visual design, source history, public-data boundary, and the distinction between published associations and compliance equivalence.
+- [ ] Configure production hosting, scheduler, storage, and narrowly scoped deployment authorization before enabling unattended publication. Treat fetched text as data, not executable agent instructions.
+
+**Acceptance:** A scheduled run detects a controlled authoritative-source change, produces a validated diff, updates the deployed site according to policy, and verifies the served revision. A no-change run refreshes public check status. Failure and rollback exercises demonstrate that invalid or broken updates do not replace the working site. Execution must continue without this chat being open.
+
+The current implementation supplies source monitoring, staged reports, explicit local promotion, and a workflow definition. An autonomous publishing agent and production deployment are not yet implemented or activated. The current manual promotion rule remains in effect until the agent's release policy and deployment integration are implemented and tested.
+
 ### Milestone 2: Authority + history
 - [ ] Official legal/policy chronology and versioned nodes from public primary sources.
 - [ ] Supersession/amendment relationships proved by a citation.

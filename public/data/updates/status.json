@@ -1,0 +1,19 @@
+{
+  "state": "up-to-date",
+  "lastAttemptAt": "2026-10-30T00:28:09.701Z",
+  "lastSuccessfulCheckAt": "2026-10-30T00:28:09.701Z",
+  "activeVersion": "5cda3bb3c29d199d",
+  "pendingCandidate": null,
+  "schedule": "Daily workflow supplied; activation and deployment not verified",
+  "observedSources": [
+    {
+      "id": "fedramp",
+      "commit": "a89d78477ddea98dc57eca24f5007794c2b4eeb6"
+    },
+    {
+      "id": "nist",
+      "commit": "f0de6d8d8c059d374f15e0ae07508d82e370fc1d"
+    }
+  ],
+  "lastError": null
+}

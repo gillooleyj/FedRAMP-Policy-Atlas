@@ -1,0 +1,62 @@
+{
+  "graphVersion": "5cda3bb3c29d199d",
+  "sources": [
+    {
+      "id": "fedramp",
+      "repo": "FedRAMP/rules",
+      "commit": "a89d78477ddea98dc57eca24f5007794c2b4eeb6",
+      "file": "fedramp-consolidated-rules.json",
+      "schema": "schemas/fedramp-consolidated-rules.schema.json",
+      "schemaRepo": "FedRAMP/rules",
+      "schemaCommit": "a89d78477ddea98dc57eca24f5007794c2b4eeb6",
+      "url": "https://raw.githubusercontent.com/FedRAMP/rules/a89d78477ddea98dc57eca24f5007794c2b4eeb6/fedramp-consolidated-rules.json",
+      "schemaUrl": "https://raw.githubusercontent.com/FedRAMP/rules/a89d78477ddea98dc57eca24f5007794c2b4eeb6/schemas/fedramp-consolidated-rules.schema.json",
+      "version": "2026.10.13.01",
+      "retrievedAt": "2026-10-29T23:42:12.099Z",
+      "contentHash": "fb48d677a85d77fb72735a325de2c1945a1e0ceab1d2e655292fe9ebe3e4e0b4",
+      "schemaHash": "eb4710bee0b06d0f8f803302ac2e88b934ef2bc942d0b548738c7304f0cb418f",
+      "validation": "passed"
+    },
+    {
+      "id": "nist",
+      "repo": "usnistgov/oscal-content",
+      "commit": "f0de6d8d8c059d374f15e0ae07508d82e370fc1d",
+      "file": "nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+      "schemaUrl": "https://github.com/usnistgov/OSCAL/releases/download/v1.2.3/oscal_catalog_schema.json",
+      "url": "https://raw.githubusercontent.com/usnistgov/oscal-content/f0de6d8d8c059d374f15e0ae07508d82e370fc1d/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+      "version": "5.2.0",
+      "retrievedAt": "2026-10-29T23:42:13.564Z",
+      "contentHash": "64ca6b4161de51ab6af098a7d101d326f14c95e1abf721396cd8a049e8115eeb",
+      "schemaHash": "ab95836e9e8dfeb6fde80007f6cc76fa3192f595d427c751a3f3923c3f474fc2",
+      "validation": "passed"
+    }
+  ],
+  "nodeCount": 1676,
+  "edgeCount": 3696,
+  "nodesByKind": {
+    "class": 4,
+    "control": 324,
+    "definition": 80,
+    "enhancement": 872,
+    "family": 20,
+    "ksi": 46,
+    "rule": 245,
+    "ruleset": 17,
+    "source": 2,
+    "subset": 56,
+    "theme": 10
+  },
+  "edgesByType": {
+    "APPLIES_TO": 682,
+    "CONTAINS": 1670,
+    "DEFINED_BY": 786,
+    "PUBLISHED_CONTROL_MAPPING": 558
+  },
+  "omissions": [],
+  "coverage": {
+    "CTL": "Not imported: FedRAMP control guidance is distinct from the NIST catalog",
+    "baselines": "Not imported",
+    "history": "Source snapshots retained; legal chronology not imported",
+    "classes": "Names and explicit rule applicability only; no certification availability inferred"
+  }
+}

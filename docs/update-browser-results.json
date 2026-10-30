@@ -1,0 +1,14 @@
+{
+  "executedAt": "2026-10-30T00:43:41.855Z",
+  "checks": [
+    "Live no-change result displays check time and active revision",
+    "Pending report exposes before/after values without activating the candidate",
+    "Public interface has no write or promotion controls",
+    "Failure preserves pending review and flags stale freshness",
+    "Missing status reports unavailable freshness while source records remain usable",
+    "Source-watch panel fits mobile viewport",
+    "No uncaught browser errors"
+  ],
+  "errors": [],
+  "note": "Pending, failure, and missing-status cases use intercepted test responses; screenshots show actual live-check data."
+}

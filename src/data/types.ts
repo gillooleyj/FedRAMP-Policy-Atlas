@@ -1,0 +1,7 @@
+export interface OscalPart {prose?:string;name?:string;parts?:OscalPart[];props?:{name:string;value:string}[]}
+export type Kind='source'|'family'|'control'|'enhancement'|'definition'|'class'|'ruleset'|'subset'|'rule'|'theme'|'ksi';
+export interface Variant {statement?:string;force?:string;controls?:string[];effective_date?:unknown;[key:string]:unknown}
+export interface Entity {id:string;title:string;kind:Kind;group?:string;framework?:string;classes?:string[];sourceIdentifier?:string;status:string;sourceId:string;sourceVersion:string;sourceCommit:string;sourceUrl:string;sourceLocator:string;contentHash:string;retrievedAt:string;effective?:unknown;applicability?:{classes?:string[];types?:string[];paths?:string[];affects?:string[]};raw:{statement?:string;definition?:string;purpose?:string;description?:string;force?:string;varies_by_class?:Record<string,Variant>;parts?:OscalPart[];controls?:string[];updated?:{date:string;comment:string}[];[key:string]:unknown};}
+export interface Edge {id:string;from:string;to:string;type:string;provenanceStatus:string;sourceId:string;sourceVersion:string;sourceCommit:string;sourceUrl:string;sourceLocator:string;extractionMethod:string;applicability?:{classes?:string[];scope?:string}}
+export interface Source {id:string;version:string;commit:string;url:string;retrievedAt:string;contentHash:string;schemaHash:string;schemaUrl:string;validation:string}
+export interface Graph {nodes:Entity[];edges:Edge[];sources:Source[];omissions:unknown[];coverage:Record<string,string>}

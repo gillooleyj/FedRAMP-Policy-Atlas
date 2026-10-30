@@ -1,0 +1,43 @@
+name: Daily authoritative source check
+on:
+  schedule:
+    - cron: '23 10 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: daily-source-check
+  cancel-in-progress: false
+jobs:
+  validate-sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Check upstreams and stage a validated candidate
+        run: npm run updates:check
+      - name: Validate application
+        run: npm run lint && npm run typecheck && npm test && npm run build
+      - name: Save status, review report, and reproducible snapshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: authoritative-source-review-${{ github.run_id }}
+          path: |
+            public/data/
+            docs/import-report.*
+          retention-days: 30
+          if-no-files-found: error
+      - name: Write run summary
+        if: always()
+        run: |
+          node --input-type=module <<'JS'
+          import {readFileSync,appendFileSync} from 'node:fs';
+          const s=JSON.parse(readFileSync('public/data/updates/status.json','utf8'));
+          appendFileSync(process.env.GITHUB_STEP_SUMMARY,`## Authoritative source check\n\nState: **${s.state}**\n\nActive graph: \`${s.activeVersion}\`\n\nLast attempt: ${s.lastAttemptAt ?? 'not checked'}\n\nCandidate: \`${s.pendingCandidate ?? 'none'}\`\n\nDownload this run's artifact for the complete status, snapshots, and change report. No data is promoted or deployed by this workflow.\n`);
+          JS

@@ -1,0 +1,24 @@
+{
+  "executedAt": "2026-10-30T00:44:14.731Z",
+  "checks": [
+    "Application loads the actual graph and renders WebGL",
+    "All-links toggle exposes every filtered edge",
+    "Relationship filter preserves all 558 exact published mappings",
+    "Zoom changes the camera projection",
+    "Pointer drag orbits the graph",
+    "Search selects a real KSI and opens its inspector",
+    "Class variants retain Optional wording and missing-class semantics",
+    "Published mapping evidence exposes exact pointer and pinned revision",
+    "Neighborhood view can be focused",
+    "Entity deep link survives reload",
+    "Accessible table search and inspect work",
+    "NIST inspector renders nested control statements",
+    "Class filter narrows imported entities",
+    "Source coverage reports both schema validations",
+    "FedRAMP 20x view loads",
+    "Mobile layout fits viewport without horizontal overflow",
+    "Mobile navigation exposes accessible fallback",
+    "No uncaught browser errors"
+  ],
+  "errors": []
+}

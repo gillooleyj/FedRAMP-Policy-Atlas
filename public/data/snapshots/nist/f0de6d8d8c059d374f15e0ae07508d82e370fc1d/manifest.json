@@ -1,0 +1,13 @@
+{
+  "id": "nist",
+  "repo": "usnistgov/oscal-content",
+  "commit": "f0de6d8d8c059d374f15e0ae07508d82e370fc1d",
+  "file": "nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+  "schemaUrl": "https://github.com/usnistgov/OSCAL/releases/download/v1.2.3/oscal_catalog_schema.json",
+  "url": "https://raw.githubusercontent.com/usnistgov/oscal-content/f0de6d8d8c059d374f15e0ae07508d82e370fc1d/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+  "version": "5.2.0",
+  "retrievedAt": "2026-10-29T23:42:13.564Z",
+  "contentHash": "64ca6b4161de51ab6af098a7d101d326f14c95e1abf721396cd8a049e8115eeb",
+  "schemaHash": "ab95836e9e8dfeb6fde80007f6cc76fa3192f595d427c751a3f3923c3f474fc2",
+  "validation": "passed"
+}

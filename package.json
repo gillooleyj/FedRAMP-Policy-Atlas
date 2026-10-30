@@ -1,0 +1,44 @@
+{
+  "name": "fedramp-policy-atlas",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "typecheck": "tsc -b",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "ingest": "node scripts/ingest.mjs",
+    "test:e2e": "node tests/browser.mjs",
+    "updates:init": "node scripts/update.mjs init",
+    "updates:check": "node scripts/update.mjs check",
+    "updates:promote": "node scripts/update.mjs promote",
+    "test:updates:e2e": "node tests/update-browser.mjs",
+    "build:pages": "npm run build -- --base=/FedRAMP-Policy-Atlas/",
+    "deploy:pages": "node scripts/deploy-pages.mjs"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "three": "^0.180.0",
+    "lucide-react": "^0.468.0",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@types/three": "^0.180.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "eslint": "^9.0.0",
+    "@eslint/js": "^9.0.0",
+    "typescript-eslint": "^8.0.0",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.0",
+    "vitest": "^3.2.0",
+    "playwright": "^1.56.0"
+  }
+}
