@@ -19,7 +19,7 @@ Open the address Vite prints. The bundled public-source snapshots and generated 
 npm run ingest       # offline: verify hashes, validate both schemas, regenerate graph/report
 npm run lint
 npm run typecheck
-npm test             # 12 source fidelity, provenance, revision, and model tests
+npm test             # 36 source fidelity, updater, navigation, and model tests
 npm run build
 npm run preview      # serve the production build
 ```
@@ -29,6 +29,7 @@ Browser checks require Chromium (installed here at `/usr/bin/chromium`):
 ```sh
 # With npm run dev running in another terminal:
 npm run test:e2e
+npm run test:navigation:e2e
 # Optional: CHROMIUM_PATH=/path/to/chromium ATLAS_URL=http://127.0.0.1:5173 npm run test:e2e
 ```
 
@@ -36,11 +37,11 @@ The browser suite captures desktop and mobile screenshots in `docs/screenshots/`
 
 ## Explore
 
-- Drag to orbit; right-drag / Shift-drag to pan; scroll or use +/- to zoom. Click nodes or labels to inspect them; reset restores the overview.
+- Drag to pan by default. Choose **Orbit** for rotation, or right-drag to rotate in Pan mode. Scroll toward the pointer or use +/- to zoom. Click points/labels to inspect without moving the camera; search fits the selected neighborhood. Use **Fit connections**, **Back**, and the fit-all button to recover your view.
 - Search identifiers (for example `KSI-CNA-EIS` or `ac-2.1`), titles, rule text, or definitions. Enter opens the first result.
-- Toggle entity layers, select a class, or filter relationship types. Default rendering uses sparse edges and collision-managed hub labels; enable **All links** to draw all filtered edges.
+- Toggle layers, choose a class, or filter relationship types without resetting the camera or changing node coordinates. Overview edges are sparse. Selection shows its direct connections; enable **All links** for all filtered edges. Zoom reveals individual labels as room becomes available; the selected label takes priority.
 - Select an entity to read its source wording, class variants, published mappings, source update log, inherited applicability/effective metadata, full raw record, and exact source revision.
-- Use **Focus neighborhood** to isolate adjacent entities. Every listed relationship has its own **View edge evidence** control.
+- Use **Focus neighborhood** to isolate and frame adjacent entities. Relationship chips isolate published mappings, definitions, containment, or applicability. Selected edges show direction arrows; clicking a canvas relationship label opens its exact evidence in the inspector. Every listed relationship also has **View edge evidence**.
 - **FedRAMP 20x** filters the data to KSI themes/indicators, classes, shared and 20x process rules, definitions, and source documents. KSI control mappings remain inspectable in the drawer; choose Everything to render the NIST endpoints.
 - **Accessible table** supports search, pagination, keyboard inspection, and the same provenance drawer. It also works when WebGL is unavailable. Reduced motion respects the system preference and has an explicit checkbox.
 - URL parameters preserve entity selection, view, class, and relationship filters. Entity layer toggles, camera coordinates, and neighborhood focus are local session state.
@@ -63,7 +64,7 @@ Pinned upstreams:
 
 To monitor newer source revisions, run `npm run updates:check`. Validated changes are staged with a before/after report, and explicit review precedes `npm run updates:promote -- <candidate> --expect-active <base-version>`. The website shows check status and pending reports under Sources & coverage. Offline ingestion follows the active version and preserves older snapshots.
 
-See [daily update operations](docs/daily-updates.md) for failure handling, source/version contracts, review/promotion, scheduler activation, and deployment requirements. The supplied GitHub Actions workflow checks daily but is not active until committed to the default branch and enabled. It saves artifacts; it does not automatically deploy the site.
+See [daily update operations](docs/daily-updates.md) for failure handling, source/version contracts, review/promotion, scheduler activation, and deployment requirements. The daily GitHub Actions workflow is committed to the default branch; scheduled execution requires Actions to remain enabled. It saves artifacts; it does not automatically deploy the site.
 
 ```sh
 npm run updates:check
@@ -78,11 +79,13 @@ npm run test:updates:e2e  # with the local app running and Chromium installed
 - `scripts/graph.mjs`: pure graph transforms with typed relationship semantics and provenance.
 - `src/data/types.ts`: client contracts.
 - `src/graph/model.ts`: deterministic 3D clustered layout, filtering, search, neighborhood queries.
-- `src/components/Universe.tsx`: batched WebGL points/lines, orbit controls, picking, sparse edge rendering, label spacing, cleanup, and fallback.
+- `src/components/Universe.tsx`: accessible pan/orbit/fit/back controls and persistent renderer lifecycle.
+- `src/graph/universe-engine.ts`: batched points/lines, stable camera, selection ring, directional relationships, picking, semantic labels and cleanup.
+- `src/graph/navigation.ts`: camera-fitting math and deterministic label placement.
 - `src/App.tsx`: accessible navigation, filters, table, inspector, evidence, source coverage.
 - `tests/`: automated source fidelity/model tests and functional Chromium checks.
 
-Layout is navigational and seeded, not an assertion of hierarchy or legal authority. Rendering uses two GPU geometries rather than a mesh per entity. Point sizing changes with distance; hub labels are collision-managed. This is not yet a force simulation, community detection, or a demonstrated tens-of-thousands-node implementation.
+Layout is navigational and seeded, not an assertion of hierarchy or legal authority. Rendering uses two GPU geometries rather than a mesh per entity. Point sizing changes with distance; hub and individual labels are collision-managed with zoom-dependent detail. This is not yet a force simulation, community detection, or a demonstrated tens-of-thousands-node implementation.
 
 ## Website deployment
 

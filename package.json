@@ -17,7 +17,8 @@
     "updates:promote": "node scripts/update.mjs promote",
     "test:updates:e2e": "node tests/update-browser.mjs",
     "build:pages": "npm run build -- --base=/FedRAMP-Policy-Atlas/",
-    "deploy:pages": "node scripts/deploy-pages.mjs"
+    "deploy:pages": "node scripts/deploy-pages.mjs",
+    "test:navigation:e2e": "node tests/navigation-browser.mjs"
   },
   "dependencies": {
     "react": "^19.2.0",

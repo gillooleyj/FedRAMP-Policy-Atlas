@@ -42,3 +42,7 @@ GitHub reports the branch-based [Pages build and deployment](https://github.com/
 The separate [main-branch deployment](https://github.com/gillooleyj/FedRAMP-Policy-Atlas/actions/runs/40981600231) built successfully but its deploy job was rejected: `Branch "main" is not allowed to deploy to github-pages due to environment protection rules.` The protection rule was not changed or bypassed. This does not affect the successful gh-pages publication.
 
 For automatic official-action redeployments from main, the repository owner must allow main under Settings → Environments → github-pages → Deployment branches and tags, and select GitHub Actions as the Pages source, then rerun the deployment workflow. Until that is configured, the verified launch path is manual publication to gh-pages with `npm run build:pages` and `npm run deploy:pages`. The published website is available for feature evaluation now.
+
+## Node 24 workflow update
+
+The main-branch deployment at [run 40986494319](https://github.com/gillooleyj/FedRAMP-Policy-Atlas/actions/runs/40986494319) succeeded after the owner deployment configuration change and the Node 24 action upgrades. The earlier allowed-branch failure is historical. No deployment environment protections were changed by the agent. All direct JavaScript actions and the Pages uploader’s nested action now use verified Node 24 runtimes.

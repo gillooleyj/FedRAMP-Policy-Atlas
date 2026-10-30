@@ -1,11 +1,11 @@
 {
-  "executedAt": "2026-10-30T00:44:14.731Z",
+  "executedAt": "2026-10-30T01:46:27.564Z",
   "checks": [
     "Application loads the actual graph and renders WebGL",
     "All-links toggle exposes every filtered edge",
     "Relationship filter preserves all 558 exact published mappings",
     "Zoom changes the camera projection",
-    "Pointer drag orbits the graph",
+    "Pointer drag pans the graph",
     "Search selects a real KSI and opens its inspector",
     "Class variants retain Optional wording and missing-class semantics",
     "Published mapping evidence exposes exact pointer and pinned revision",

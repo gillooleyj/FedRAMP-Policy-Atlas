@@ -1,0 +1,21 @@
+{
+  "executedAt": "2026-10-30T01:49:35.899Z",
+  "checks": [
+    "Pan is the discoverable default mode",
+    "Ordinary drag pans the field",
+    "Orbit is explicitly selectable",
+    "Closer zoom reveals individual entity labels",
+    "Search fits actual connections and labels the selected KSI and neighbors",
+    "Selection preserves the renderer instead of recreating the camera",
+    "Label toggles preserve camera position and selected identity",
+    "Relationship chips isolate mappings without resetting the camera",
+    "Neighborhood focus fits the selection and retains stable visible endpoints",
+    "Canvas relationship labels open authoritative edge evidence",
+    "Fit and Back view restore different camera views without no-op history entries",
+    "Focused map supports keyboard panning",
+    "Reduced-motion focus reaches the requested view",
+    "Mobile map controls and selection fit the viewport",
+    "No uncaught browser errors"
+  ],
+  "errors": []
+}

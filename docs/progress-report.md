@@ -49,3 +49,7 @@ Recorded the next operational goal in SPEC.md: an independent daily agent that u
 ## Initial public launch
 
 Published the application source to main and the production build to gh-pages. GitHub's branch-based Pages deployment succeeded; see [launch evidence and handoff](launch.md#initial-launch-result). Production testing under the project URL prefix passed 27 automated tests and 25 browser checks. The separate main deployment action is blocked by the existing github-pages environment's allowed-branch policy; an owner settings change is required for that automatic route. Direct public-site HTTP verification was blocked by this environment's network policy. No environment protection was bypassed.
+
+## Navigation and Node 24 Actions
+
+Updated the full Actions runtime chain to verified Node 24 releases and confirmed a successful GitHub deployment without the Node.js 20 annotation. Implemented default pan/explicit orbit, pointer-centered zoom, stable camera/layout across selections and filters, fitted neighborhoods, camera Back, individual labels revealed at close scale, selected-node identity, typed relationship chips/arrows, and direct canvas-edge evidence. The current data coverage is unchanged. See [implementation and validation](navigation-implementation.md) and refreshed desktop/mobile screenshots. NIST publication-reference and ISO-crosswalk expansion remain future ingestion work.
