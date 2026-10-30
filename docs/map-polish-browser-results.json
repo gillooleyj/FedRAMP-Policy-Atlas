@@ -1,5 +1,5 @@
 {
-  "executedAt": "2026-10-30T10:12:46.706Z",
+  "executedAt": "2026-10-30T10:44:15.496Z",
   "checks": [
     "Initial overview shows only FedRAMP and NIST 800-53",
     "Compact single-line labels have no surrounding boxes",
@@ -7,8 +7,8 @@
     "Keyboard tab navigation retains a visible map focus indicator",
     "FedRAMP blue and NIST amber are distinct on the publisher labels",
     "Hovering and leaving an overview label does not move or replace nearby labels",
-    "One zoom step replaces source labels with a sparse group layer",
-    "Group labels retain a distinct zoom band before individual labels appear",
+    "One zoom step shows all five navigation regions and no individual classes",
+    "Closer zoom reveals a separate group layer",
     "Detail zoom replaces group labels with at most 18 individual labels",
     "Hovering individual labels leaves the entire close-up label layout stable",
     "A separate zoom-out threshold returns to group labels without threshold chatter",
@@ -16,7 +16,7 @@
     "Reset view restores starting orientation, center, zoom, source labels and Pan mode",
     "Reset also works without camera animation",
     "Source overview and separate reset controls remain usable on mobile",
-    "Mobile group layer stays within five labels",
+    "Mobile overview exposes all five navigation regions",
     "Mobile detail layer reveals individual labels within an eight-label limit",
     "No uncaught browser errors"
   ],

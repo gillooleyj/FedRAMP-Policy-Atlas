@@ -1,0 +1,22 @@
+{
+  "executedAt": "2026-10-30T10:46:07.270Z",
+  "checks": [
+    "First zoom labels Classes once alongside Families, Rulesets, KSI themes and Definitions",
+    "Classes region travels to all four actual classes without fabricating a source entity",
+    "Back returns from a region to the previous overview",
+    "Every one of the 51 imported families, classes, rulesets and themes is reachable from the directory",
+    "Choosing a group flies to and selects its real source-backed node",
+    "Default one-level scope retains all 16 direct KSI connections",
+    "Two levels renders the exact source-backed second-degree neighborhood",
+    "Focus and camera fitting use the chosen connection depth",
+    "Three levels expands further and is preserved in the shareable URL",
+    "Relationship filters constrain every hop rather than only the displayed edges",
+    "Class applicability constrains traversal at every level",
+    "Reload restores depth, selected entity, class and relationship filters",
+    "Reducing depth removes the extended paths",
+    "Group navigation and connection-depth controls fit on mobile",
+    "Region destinations remain available during selection and respect active filters",
+    "No uncaught browser errors"
+  ],
+  "errors": []
+}

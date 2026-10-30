@@ -32,19 +32,20 @@ export function placeLabels(candidates:LabelCandidate[],width:number,height:numb
 export function labelPriority(id:string,kind:Kind,selected:string|undefined,related:Set<string>|null){
  return id===selected?0:related?.has(id)?1:hubKinds.has(kind)?2:3;
 }
-export type LabelLevel='sources'|'groups'|'details';
+export type LabelLevel='sources'|'regions'|'groups'|'details';
 /** Distinct zoom bands with hysteresis; fast zooms can cross multiple levels. */
 export function labelLevel(distance:number,overviewDistance:number,previous:LabelLevel):LabelLevel{
  const ratio=distance/overviewDistance;
- if(ratio<(previous==='details'?.56:.46))return 'details';
- if(ratio<(previous==='sources'?.84:.94))return 'groups';
+ if(ratio<(previous==='details'?.40:.32))return 'details';
+ if(ratio<(['groups','details'].includes(previous)?.68:.58))return 'groups';
+ if(ratio<(previous==='sources'?.84:.94))return 'regions';
  return 'sources';
 }
 export function labelKindVisible(kind:Kind,level:LabelLevel){
- return level==='sources'?kind==='source':level==='groups'?hubKinds.has(kind)&&kind!=='source':!hubKinds.has(kind);
+ return level==='sources'?kind==='source':level==='regions'?false:level==='groups'?hubKinds.has(kind)&&kind!=='source':!hubKinds.has(kind);
 }
 export function labelBudget(level:LabelLevel,mobile:boolean,selected:boolean){
- return selected?(mobile?12:24):level==='sources'?2:level==='groups'?(mobile?5:10):(mobile?8:18);
+ return selected?(mobile?12:24):level==='sources'?2:level==='regions'?5:level==='groups'?(mobile?5:10):(mobile?8:18);
 }
 export function canonicalView(points:Position[],aspect:number){
  const bounds=fittedBounds(points,aspect);if(!bounds)return null;

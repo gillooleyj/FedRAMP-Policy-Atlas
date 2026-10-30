@@ -19,7 +19,8 @@
     "build:pages": "npm run build -- --base=/FedRAMP-Policy-Atlas/",
     "deploy:pages": "node scripts/deploy-pages.mjs",
     "test:navigation:e2e": "node tests/navigation-browser.mjs",
-    "test:map-polish:e2e": "node tests/map-polish-browser.mjs"
+    "test:map-polish:e2e": "node tests/map-polish-browser.mjs",
+    "test:exploration:e2e": "node tests/exploration-browser.mjs"
   },
   "dependencies": {
     "react": "^19.2.0",

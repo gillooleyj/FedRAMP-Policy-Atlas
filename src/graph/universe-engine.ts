@@ -1,9 +1,10 @@
 import * as THREE from 'three';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import type {Entity,Edge} from '../data/types';
-import {entityColor,neighbors,type Position} from './model';
+import {entityColor,type Position} from './model';
 import {fittedBounds,hubKinds,labelPriority,placeLabels,type LabelCandidate,relationshipNames,labelLevel,labelKindVisible,labelBudget,type LabelLevel,canonicalView} from './navigation';
-interface CameraFrame {position:THREE.Vector3;target:THREE.Vector3}
+import {regions,regionPoints,centroid} from './exploration';
+interface CameraFrame {position:THREE.Vector3;target:THREE.Vector3;region?:string;regionDistance?:number}
 interface Label {node:Entity;element:HTMLButtonElement;width:number;height:number}
 export class UniverseEngine {
  private renderer:THREE.WebGLRenderer;
@@ -15,6 +16,11 @@ export class UniverseEngine {
  private ring:THREE.Mesh;
  private labelLayer=document.createElement('div');
  private labelObjects=new Map<string,Label>();
+ private regionLabels=new Map<string,{element:HTMLButtonElement;width:number;height:number}>();
+ private region:string|undefined;
+ private regionDistance=650;
+ private distances=new Map<string,number>();
+ private connectionDepth=1;
  private edgeLayer=document.createElement('div');
  private edgeLabels:{edge:Edge;element:HTMLButtonElement}[]=[];
  private returnLabel=document.createElement('button');
@@ -69,6 +75,7 @@ export class UniverseEngine {
    measure.font=n.kind==='source'?'600 13px system-ui':'500 11px system-ui';
    const width=Math.max(48,Math.min(190,Math.ceil(measure.measureText(text).width+12)));element.style.width=width+'px';this.labelObjects.set(n.id,{node:n,element,width,height:26});this.labelLayer.appendChild(element);
   }
+  for(const region of regions){const element=document.createElement('button');element.className='map-label region-label';element.dataset.regionId=region.id;element.textContent=region.title;element.style.color=region.color;element.title=`Explore ${region.title.toLowerCase()} — navigation region`;element.setAttribute('aria-label',`Explore ${region.title}`);element.style.display='none';element.onclick=()=>this.openRegion(region.id);const width=Math.ceil(region.title.length*8+16);element.style.width=width+'px';this.regionLabels.set('region:'+region.id,{element,width,height:26});this.labelLayer.appendChild(element);}
   this.returnLabel.className='selected-return';this.returnLabel.style.display='none';this.returnLabel.onclick=()=>this.fitConnections();host.appendChild(this.returnLabel);
   const start=(e:PointerEvent)=>{this.down=[e.clientX,e.clientY];this.dragging=true;canvas.dataset.keyboardFocus='false';};
   const end=(e:PointerEvent)=>{this.dragging=false;if(e.button!==0||Math.hypot(e.clientX-this.down[0],e.clientY-this.down[1])>5)return;const node=this.pick(e);if(node)this.onSelect(node.id);};
@@ -90,18 +97,19 @@ export class UniverseEngine {
  }
  setMode(mode:'pan'|'orbit'){this.mode=mode;this.controls.mouseButtons={LEFT:mode==='pan'?THREE.MOUSE.PAN:THREE.MOUSE.ROTATE,MIDDLE:THREE.MOUSE.DOLLY,RIGHT:mode==='pan'?THREE.MOUSE.ROTATE:THREE.MOUSE.PAN};this.controls.touches={ONE:mode==='pan'?THREE.TOUCH.PAN:THREE.TOUCH.ROTATE,TWO:THREE.TOUCH.DOLLY_PAN};this.renderer.domElement.style.cursor=mode==='pan'?'grab':'move';this.renderer.domElement.setAttribute('aria-label',`Interactive policy map. Drag to ${mode}; right-drag to ${mode==='pan'?'orbit':'pan'}; scroll toward the pointer to zoom. Arrow keys pan; plus/minus zoom; F fits connections; Home fits all; Escape restores the previous view.`);}
  setOptions(labels:boolean,reduced:boolean){this.labelLayoutDirty=true;this.labels=labels;this.reduced=reduced;this.controls.enableDamping=!reduced;if(reduced&&this.animation){this.apply(this.animation.to);this.animation=null;}this.lastLabelDraw=0;}
- setData(nodes:Entity[],edges:Edge[],selected:string|undefined,activeEdge:string){
-  this.nodes=nodes;this.edges=edges;this.selected=selected;this.activeEdge=activeEdge;this.related=selected?neighbors(selected,edges):null;
+ setData(nodes:Entity[],edges:Edge[],selected:string|undefined,activeEdge:string,distances:Map<string,number>,connectionDepth:number){
+  if(selected&&selected!==this.selected)this.region=undefined;this.distances=distances;this.connectionDepth=connectionDepth;
+  this.nodes=nodes;this.edges=edges;this.selected=selected;this.activeEdge=activeEdge;this.related=selected?new Set(distances.keys()):null;
   const coords:number[]=[],colors:number[]=[],sizes:number[]=[];
-  for(const n of nodes){coords.push(...this.positions.get(n.id)!);const color=new THREE.Color(entityColor(n));if(this.related&&!this.related.has(n.id))color.multiplyScalar(.18);colors.push(color.r,color.g,color.b);sizes.push(n.id===selected?12:hubKinds.has(n.kind)?10:n.kind==='enhancement'?3.5:5.5);}
+  for(const n of nodes){coords.push(...this.positions.get(n.id)!);const color=new THREE.Color(entityColor(n));if(this.related)color.multiplyScalar(this.distances.has(n.id)?[1,1,.65,.4][this.distances.get(n.id)!]:.12);colors.push(color.r,color.g,color.b);sizes.push(n.id===selected?12:hubKinds.has(n.kind)?10:n.kind==='enhancement'?3.5:5.5);}
   const geometry=new THREE.BufferGeometry();geometry.setAttribute('position',new THREE.Float32BufferAttribute(coords,3));geometry.setAttribute('color',new THREE.Float32BufferAttribute(colors,3));geometry.setAttribute('size',new THREE.Float32BufferAttribute(sizes,1));this.points.geometry.dispose();this.points.geometry=geometry;
   const linePositions:number[]=[],lineColors:number[]=[];
   const line=(a:THREE.Vector3,b:THREE.Vector3,c:THREE.Color)=>{linePositions.push(a.x,a.y,a.z,b.x,b.y,b.z);lineColors.push(c.r,c.g,c.b,c.r,c.g,c.b);};
-  for(const e of edges){const a=new THREE.Vector3(...this.positions.get(e.from)!),b=new THREE.Vector3(...this.positions.get(e.to)!);const relevant=selected&&(e.from===selected||e.to===selected);const c=new THREE.Color(e.type==='PUBLISHED_CONTROL_MAPPING'?'#da91c6':e.type==='DEFINED_BY'?'#68cdd6':'#83a8e5').multiplyScalar(e.id===activeEdge?1.5:relevant?.85:selected?.04:.07);line(a,b,c);
+  for(const e of edges){const a=new THREE.Vector3(...this.positions.get(e.from)!),b=new THREE.Vector3(...this.positions.get(e.to)!);const edgeLevel=Math.min(this.distances.get(e.from)??Infinity,this.distances.get(e.to)??Infinity)+1;const relevant=!!selected&&edgeLevel<=this.connectionDepth;const c=new THREE.Color(e.type==='PUBLISHED_CONTROL_MAPPING'?'#da91c6':e.type==='DEFINED_BY'?'#68cdd6':'#83a8e5').multiplyScalar(e.id===activeEdge?1.5:relevant?.9/edgeLevel:selected?.04:.07);line(a,b,c);
    if(relevant){const d=b.clone().sub(a),length=d.length();d.normalize();const perpendicular=new THREE.Vector3().crossVectors(d,new THREE.Vector3(0,0,1));if(perpendicular.length()<.01)perpendicular.crossVectors(d,new THREE.Vector3(0,1,0));perpendicular.normalize();const tip=a.clone().lerp(b,.72),back=tip.clone().addScaledVector(d,-Math.min(4,length*.12));line(tip,back.clone().addScaledVector(perpendicular,1.8),c);line(tip,back.clone().addScaledVector(perpendicular,-1.8),c);}
   }
   const lines=new THREE.BufferGeometry();lines.setAttribute('position',new THREE.Float32BufferAttribute(linePositions,3));lines.setAttribute('color',new THREE.Float32BufferAttribute(lineColors,3));this.lines.geometry.dispose();this.lines.geometry=lines;
-  const visibleNodeIds=new Set(nodes.map(n=>n.id));for(const id of this.visibleLabelIds)if(!visibleNodeIds.has(id)){this.labelObjects.get(id)!.element.style.display='none';this.visibleLabelIds.delete(id);this.labelAnchors.delete(id);}this.labelLayoutDirty=true;
+  const visibleNodeIds=new Set(nodes.map(n=>n.id));for(const id of this.visibleLabelIds)if(!visibleNodeIds.has(id)){this.labelElement(id).style.display='none';this.visibleLabelIds.delete(id);this.labelAnchors.delete(id);}this.labelLayoutDirty=true;
   this.edgeLayer.replaceChildren();this.edgeLabels=[];
   for(const e of edges.filter(e=>selected&&(e.from===selected||e.to===selected)).sort((a,b)=>(a.id===activeEdge?-1:b.id===activeEdge?1:a.type===b.type?a.id.localeCompare(b.id):a.type.localeCompare(b.type))).slice(0,6)){
    const button=document.createElement('button');button.textContent='→ '+(relationshipNames[e.type]??e.type).replace('Published mappings','Published mapping');button.title=`${e.from} → ${e.to} · ${e.type} · View source evidence`;button.setAttribute('aria-label',`Inspect relationship ${e.from} to ${e.to}: ${e.type}`);button.onclick=()=>this.onEdge(e);button.style.display='none';button.dataset.edgeId=e.id;this.edgeLayer.appendChild(button);this.edgeLabels.push({edge:e,element:button});
@@ -109,14 +117,24 @@ export class UniverseEngine {
   this.lastLabelDraw=0;if(!this.initialized&&nodes.length){this.resetView(false);this.initialized=true;}if(this.fitPending){this.fitPending=false;this.fitConnections();}
  }
  private pick(e:PointerEvent){const rect=this.renderer.domElement.getBoundingClientRect();this.pointer.set((e.clientX-rect.left)/rect.width*2-1,-(e.clientY-rect.top)/rect.height*2+1);this.raycaster.params.Points={threshold:Math.max(.6,this.camera.position.distanceTo(this.controls.target)*.004)};this.raycaster.setFromCamera(this.pointer,this.camera);const hits=this.raycaster.intersectObject(this.points);const index=hits[0]?.index;return index===undefined?undefined:this.nodes[index];}
- private frame():CameraFrame{return {position:this.camera.position.clone(),target:this.controls.target.clone()};}
- private remember(){const frame=this.frame(),last=this.history.at(-1);if(!last||last.position.distanceTo(frame.position)>.5||last.target.distanceTo(frame.target)>.5){this.history.push(frame);if(this.history.length>30)this.history.shift();this.onHistory(true);}}
+ private labelElement(id:string){return this.labelObjects.get(id)?.element??this.regionLabels.get(id)!.element;}
+ private frame():CameraFrame{return {position:this.camera.position.clone(),target:this.controls.target.clone(),region:this.region,regionDistance:this.regionDistance};}
+ private remember(){const frame=this.frame(),last=this.history.at(-1);if(!last||last.region!==frame.region||last.position.distanceTo(frame.position)>.5||last.target.distanceTo(frame.target)>.5){this.history.push(frame);if(this.history.length>30)this.history.shift();this.onHistory(true);}}
  private apply(frame:CameraFrame){this.camera.position.copy(frame.position);this.controls.target.copy(frame.target);this.controls.update();}
- private move(frame:CameraFrame,remember=true){this.resetLayoutOnAnimationEnd=false;if(this.camera.position.distanceTo(frame.position)<.05&&this.controls.target.distanceTo(frame.target)<.05){this.animation=null;return;}if(remember)this.remember();this.animation=null;const damping=this.controls.enableDamping;this.controls.enableDamping=false;this.controls.update();this.controls.enableDamping=damping;if(this.reduced)this.apply(frame);else this.animation={from:this.frame(),to:frame,start:performance.now()};}
+ private move(frame:CameraFrame,remember=true){
+  this.resetLayoutOnAnimationEnd=false;
+  const samePosition=this.camera.position.distanceTo(frame.position)<.05&&this.controls.target.distanceTo(frame.target)<.05;
+  if(remember&&(!samePosition||this.region!==frame.region))this.remember();
+  this.region=frame.region;this.regionDistance=frame.regionDistance??650;this.labelLayoutDirty=true;this.animation=null;
+  if(samePosition)return;
+  const damping=this.controls.enableDamping;this.controls.enableDamping=false;this.controls.update();this.controls.enableDamping=damping;
+  if(this.reduced)this.apply(frame);else this.animation={from:this.frame(),to:frame,start:performance.now()};
+ }
  private fit(remember=true,ids?:Set<string>){const points=this.nodes.filter(n=>!ids||ids.has(n.id)).map(n=>this.positions.get(n.id)!);const bounds=fittedBounds(points,this.camera.aspect);if(!bounds)return;const direction=this.camera.position.clone().sub(this.controls.target).normalize();const target=new THREE.Vector3(...bounds.center);this.move({target,position:target.clone().addScaledVector(direction,bounds.distance)},remember);}
+ openRegion(id:string){const points=regionPoints(id,this.nodes,this.positions),bounds=fittedBounds(points,this.camera.aspect);if(!bounds)return;const target=new THREE.Vector3(...bounds.center),direction=this.camera.position.clone().sub(this.controls.target).normalize();this.level='groups';this.labelAnchors.clear();this.move({target,position:target.clone().addScaledVector(direction,bounds.distance),region:id,regionDistance:bounds.distance});this.labelLayoutDirty=true;}
  fitAll(){this.fit();}
  resetView(remember=true){const home=canonicalView([...this.positions.values()],this.camera.aspect);if(!home)return;this.camera.up.set(0,1,0);this.level='sources';this.labelAnchors.clear();this.lastLabelFrame=null;this.labelLayoutDirty=true;const damping=this.controls.enableDamping;this.controls.enableDamping=false;this.controls.update();this.controls.enableDamping=damping;this.move({target:new THREE.Vector3(...home.target),position:new THREE.Vector3(...home.position)},remember);this.resetLayoutOnAnimationEnd=!!this.animation;}
- fitConnections(){if(!this.nodes.length){this.fitPending=true;return;}this.fit(true,this.selected?neighbors(this.selected,this.edges):undefined);}
+ fitConnections(){if(!this.nodes.length){this.fitPending=true;return;}this.fit(true,this.selected?new Set(this.distances.keys()):undefined);}
  back(){this.animation=null;const frame=this.history.pop();if(frame)this.move(frame,false);this.onHistory(this.history.length>0);}
  zoom(factor:number){this.remember();this.animation=null;const v=this.camera.position.clone().sub(this.controls.target);v.setLength(THREE.MathUtils.clamp(v.length()*factor,12,5000));this.camera.position.copy(this.controls.target).add(v);this.controls.update();}
  private drawLabels(time:number){
@@ -124,21 +142,24 @@ export class UniverseEngine {
   const w=this.host.clientWidth,h=this.host.clientHeight,frame=this.frame(),dimensions=`${w}:${h}`;
   if(!this.labelLayoutDirty&&dimensions===this.labelDimensions&&this.lastLabelFrame&&frame.position.distanceTo(this.lastLabelFrame.position)<.005&&frame.target.distanceTo(this.lastLabelFrame.target)<.005)return;
   this.camera.updateMatrixWorld();this.lastLabelFrame=frame;this.labelDimensions=dimensions;this.labelLayoutDirty=false;
-  const nextLevel=labelLevel(this.camera.position.distanceTo(this.controls.target),this.overviewDistance,this.level);
+  const distance=this.camera.position.distanceTo(this.controls.target);
+  if(this.region&&!this.animation&&distance>this.regionDistance*1.6)this.region=undefined;
+  const nextLevel=this.region?(this.region==='classes'?'groups':this.region==='definitions'||distance<this.regionDistance*(this.level==='details'?.78:.65)?'details':'groups'):labelLevel(distance,this.overviewDistance,this.level);
   if(nextLevel!==this.level){this.labelAnchors.clear();}this.level=nextLevel;
   this.labelLayer.dataset.level=this.level;
-  this.levelHint.textContent=this.selected?'Selection · Connected entities':this.level==='sources'?'Sources · Zoom in to explore groups':this.level==='groups'?'Groups · Zoom in to explore rules, KSIs and controls':'Details · Select an entity to explore its connections';
+  this.levelHint.textContent=this.selected?`Selection · ${this.connectionDepth} connection level${this.connectionDepth===1?'':'s'} · Farther levels are dimmer`:this.level==='sources'?'Sources · Zoom in to explore regions':this.level==='regions'?'Regions · Select a region to travel into it':`${this.region?regions.find(r=>r.id===this.region)!.title:this.level==='groups'?'Groups':'Details'} · Labels nearest the center · Find every group in Explore groups`;
   this.levelHint.hidden=!this.labels;
   const view=new THREE.Vector3(),candidates:LabelCandidate[]=[];
   for(const n of this.nodes){const p=this.positions.get(n.id)!,label=this.labelObjects.get(n.id)!;view.set(...p).applyMatrix4(this.camera.matrixWorldInverse);const depth=-view.z;if(depth<=0)continue;const projected=new THREE.Vector3(...p).project(this.camera);if(projected.z>=1||Math.abs(projected.x)>1||Math.abs(projected.y)>1)continue;
-   const scale=(n.kind==='enhancement'?3.5:5.5)*650/depth,priority=labelPriority(n.id,n.kind,this.selected,this.related);
+   const scale=-Math.hypot(projected.x,projected.y),priority=labelPriority(n.id,n.kind,this.selected,this.related)+(this.related?.has(n.id)&&n.id!==this.selected?(this.distances.get(n.id)??1)*.1:0);
    // Selection reveals direct neighbors; otherwise each zoom level has its own label set.
-   const eligible=n.id===this.selected||(this.labels&&(this.related?this.related.has(n.id):labelKindVisible(n.kind,this.level)));
+   const eligible=n.id===this.selected||(this.labels&&(this.related?this.related.has(n.id):labelKindVisible(n.kind,this.level)&&(!this.region||regions.find(r=>r.id===this.region)!.kinds.includes(n.kind))));
    candidates.push({id:n.id,x:(projected.x*.5+.5)*w,y:(-projected.y*.5+.5)*h,width:label.width,height:label.height,priority,scale,eligible});
   }
+  if(this.labels&&!this.selected&&this.level==='regions')for(const region of regions){const point=centroid(regionPoints(region.id,this.nodes,this.positions));if(!point)continue;const p=new THREE.Vector3(...point).project(this.camera);if(p.z>=1||Math.abs(p.x)>1||Math.abs(p.y)>1)continue;const label=this.regionLabels.get('region:'+region.id)!;candidates.push({id:'region:'+region.id,x:(p.x*.5+.5)*w,y:(-p.y*.5+.5)*h,width:label.width,height:label.height,priority:0,scale:0,eligible:true});}
   const placed=placeLabels(candidates,w,h,labelBudget(this.level,w<500,!!this.selected),this.labelAnchors);const visible=new Set(placed.map(p=>p.id));this.labelAnchors=new Map(placed.map(p=>[p.id,p.anchor]));
-  for(const id of this.visibleLabelIds)if(!visible.has(id))this.labelObjects.get(id)!.element.style.display='none';
-  for(const p of placed){const item=this.labelObjects.get(p.id)!.element;item.classList.toggle('selected',p.id===this.selected);item.classList.toggle('neighbor',!!this.related?.has(p.id));item.style.display='block';item.style.transform=`translate(${Math.round(p.left)}px,${Math.round(p.top)}px)`;}
+  for(const id of this.visibleLabelIds)if(!visible.has(id))this.labelElement(id).style.display='none';
+  for(const p of placed){const item=this.labelElement(p.id);item.dataset.distance=String(this.distances.get(p.id)??'');item.classList.toggle('selected',p.id===this.selected);item.classList.toggle('neighbor',!!this.related?.has(p.id));item.style.display='block';item.style.transform=`translate(${Math.round(p.left)}px,${Math.round(p.top)}px)`;}
   this.visibleLabelIds=visible;
   const selectedPosition=this.selected&&this.nodes.some(n=>n.id===this.selected)?this.positions.get(this.selected):null;
   this.returnLabel.style.display=selectedPosition&&!visible.has(this.selected!)?'block':'none';if(selectedPosition){this.returnLabel.textContent=`↗ Return to ${this.labelObjects.get(this.selected!)!.node.sourceIdentifier??this.selected}`;}

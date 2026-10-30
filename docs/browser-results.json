@@ -1,5 +1,5 @@
 {
-  "executedAt": "2026-10-30T10:13:14.000Z",
+  "executedAt": "2026-10-30T10:42:38.588Z",
   "checks": [
     "Application loads the actual graph and renders WebGL",
     "All-links toggle exposes every filtered edge",
