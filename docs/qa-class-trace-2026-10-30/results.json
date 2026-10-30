@@ -1,0 +1,26 @@
+{
+  "testedAt": "2026-10-30T17:55:04.497Z",
+  "browser": "154.0.8037.57",
+  "checks": [
+    "Class trace opens from 20x/Class B with mapped controls previously hidden and includes a complete first path",
+    "Single-KSI path includes all twelve exact controls/enhancements and its original class link",
+    "Mapping evidence opens the exact pinned KSI/control source without losing the class path",
+    "Inspecting a NIST control retains the class and complete path",
+    "Back/Forward restore class trace state and inspected control",
+    "Reload preserves a shareable class/KSI/control deep link",
+    "Map and table retain the exact fourteen path entities and thirteen relationships",
+    "Return restores the broader class requirements; Back restores the trace",
+    "Class A: all 7 KSIs, 94 distinct controls and 99 published mappings are reachable without truncation",
+    "Class B: all 46 KSIs, 302 distinct controls and 558 published mappings are reachable without truncation",
+    "Class C: all 46 KSIs, 302 distinct controls and 558 published mappings are reachable without truncation",
+    "Class D: all 46 KSIs, 302 distinct controls and 558 published mappings are reachable without truncation",
+    "Class D missing wording remains visible in the trace evidence",
+    "Mobile keeps the selected class card onscreen and path/evidence/return controls usable without overflow",
+    "Starting a trace on the galaxy map preserves the chosen view and frames the complete first path",
+    "Trace controls and evidence inherit the dark site and map palettes",
+    "Class trace table pagination resets when changing from all paths to a single KSI",
+    "An unsupported class/KSI deep link explains the empty path and recovers through the picker",
+    "No uncaught browser errors"
+  ],
+  "errors": []
+}

@@ -135,3 +135,11 @@ KSI class scope follows governing process rules, not the presence of class-speci
 See the [mapping and visual audit](docs/qa-map-mappings-2026-10-30/REPORT.md) for before/after screenshots, authoritative evidence, validation and remaining limitations. Run `npm run test:map-mappings:e2e` against the local Pages preview on port 4189 (or set `ATLAS_URL`).
 
 For importer corrections with unchanged upstream commits, `npm run updates:rebuild` stages a candidate from the active, schema-validated immutable snapshots and writes a semantic diff. Review that report before using the existing `updates:promote <candidate> --expect-active <version>` command. Rebuilding does not activate the candidate or advance upstream-check timestamps. This repair retains graph `5cda3bb3c29d199d` and activates `8bebe1f392e5feb0`.
+
+### Trace a class through to NIST
+
+Select a certification class and choose **Trace KSIs to NIST controls**. The action keeps your current map, flow chart or table view and opens a complete first KSI path. Choose another KSI or **All KSIs** to include every published target, including enhancements. This dedicated scope includes the mapped NIST endpoints even when you started in a class-filtered or 20x view; general filters are unavailable until you return to the class requirements view.
+
+**Path evidence and coverage** lists the exact applicability and mapping steps, with links to the control records and each edge's pinned evidence. Class context stays visible while inspecting controls. **Return to class requirements** returns to the class's direct requirements; Back/Forward restore trace selections. URLs retain `trace=class:B` and the optional `indicator=fr:KSI-CNA-EIS` alongside the inspected `node` and view.
+
+The trace uses existing verified edges only: Class A reaches 94 distinct NIST controls/enhancements through 7 KSIs and 99 published mappings; B/C/D each reach 302 targets through 46 KSIs and 558 mappings. A published association is not a mandatory NIST baseline or compliance equivalence. Process rules without imported control mappings remain in the broader class view. See [trace validation and screenshots](docs/qa-class-trace-2026-10-30/REPORT.md). Run `npm run test:class-trace:e2e` against the Pages preview on port 4189, or set `ATLAS_URL`.

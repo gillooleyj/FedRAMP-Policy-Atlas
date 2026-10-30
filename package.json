@@ -29,7 +29,8 @@
     "test:site-style:e2e": "node tests/site-style-browser.mjs",
     "test:galaxy:e2e": "node tests/galaxy-browser.mjs",
     "test:map-mappings:e2e": "node tests/map-mappings-browser.mjs && node tests/mapping-depth-browser.mjs",
-    "updates:rebuild": "node scripts/rebuild-candidate.mjs"
+    "updates:rebuild": "node scripts/rebuild-candidate.mjs",
+    "test:class-trace:e2e": "node tests/class-trace-browser.mjs"
   },
   "dependencies": {
     "@dagrejs/dagre": "^3.1.3",
