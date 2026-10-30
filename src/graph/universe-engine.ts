@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import type {Entity,Edge} from '../data/types';
 import {entityColor,neighbors,type Position} from './model';
-import {fittedBounds,hubKinds,labelPriority,placeLabels,type LabelCandidate,relationshipNames,detailLabelsEnabled,canonicalView} from './navigation';
+import {fittedBounds,hubKinds,labelPriority,placeLabels,type LabelCandidate,relationshipNames,labelLevel,labelKindVisible,labelBudget,type LabelLevel,canonicalView} from './navigation';
 interface CameraFrame {position:THREE.Vector3;target:THREE.Vector3}
 interface Label {node:Entity;element:HTMLButtonElement;width:number;height:number}
 export class UniverseEngine {
@@ -45,8 +45,8 @@ export class UniverseEngine {
  private lastLabelFrame:CameraFrame|null=null;
  private labelDimensions='';
  private labelAnchors=new Map<string,number>();
- private detailEligibleIds=new Set<string>();
- private detailedLabels=false;
+ private level:LabelLevel='sources';
+ private levelHint=document.createElement('div');
  private overviewDistance=650;
  private resetLayoutOnAnimationEnd=false;
  private activeEdge='';
@@ -61,12 +61,13 @@ export class UniverseEngine {
   this.points=new THREE.Points(new THREE.BufferGeometry(),new THREE.ShaderMaterial({transparent:true,depthWrite:false,vertexShader:'attribute vec3 color; attribute float size; varying vec3 vColor; void main(){vColor=color;vec4 mv=modelViewMatrix*vec4(position,1.0);gl_Position=projectionMatrix*mv;gl_PointSize=size*clamp(650.0/-mv.z,0.4,5.0);}',fragmentShader:'varying vec3 vColor; void main(){float r=length(gl_PointCoord-0.5)*2.0;if(r>1.0)discard;gl_FragColor=vec4(vColor*(1.0+exp(-r*r*30.0)),exp(-r*r*3.5));}',blending:THREE.AdditiveBlending}));this.scene.add(this.points);
   this.lines=new THREE.LineSegments(new THREE.BufferGeometry(),new THREE.LineBasicMaterial({vertexColors:true,transparent:true,opacity:.75,depthWrite:false}));this.scene.add(this.lines);
   this.ring=new THREE.Mesh(new THREE.RingGeometry(1,1.18,48),new THREE.MeshBasicMaterial({color:0xf4e9ff,transparent:true,opacity:.95,depthTest:false,side:THREE.DoubleSide}));this.ring.renderOrder=100;this.ring.visible=false;this.scene.add(this.ring);
-  this.labelLayer.className='graph-labels adaptive-labels';this.edgeLayer.className='edge-labels';host.append(this.labelLayer,this.edgeLayer);
-  const measure=document.createElement('canvas').getContext('2d')!;measure.font='11px system-ui';
+  this.labelLayer.className='graph-labels adaptive-labels';this.edgeLayer.className='edge-labels';this.levelHint.className='map-level-hint';host.append(this.labelLayer,this.edgeLayer,this.levelHint);
+  const measure=document.createElement('canvas').getContext('2d')!;
   for(const n of allNodes){const element=document.createElement('button');element.className='map-label';element.dataset.nodeId=n.id;element.title=`${n.sourceIdentifier??n.id} · ${n.title}`;
-   const id=document.createElement('strong');id.textContent=n.kind==='source'?(n.id==='nist'?'NIST SP 800-53':'FedRAMP 2026'):n.sourceIdentifier??(hubKinds.has(n.kind)?n.id.split(':').at(-1)!.toUpperCase():n.id);
-   const title=document.createElement('span');title.textContent=n.title;element.append(id,title);element.style.color=entityColor(n);element.onclick=()=>this.onSelect(n.id);element.style.display='none';element.dataset.kind=n.kind;
-   const width=Math.max(88,Math.min(168,Math.ceil(Math.max(measure.measureText(id.textContent).width,measure.measureText(n.title).width)+18)));element.style.width=width+'px';this.labelObjects.set(n.id,{node:n,element,width,height:39});this.labelLayer.appendChild(element);
+   const text=n.kind==='source'?(n.id==='nist'?'NIST 800-53':'FedRAMP'):hubKinds.has(n.kind)?n.title:n.sourceIdentifier??n.title;
+   const title=document.createElement('strong');title.textContent=text;element.append(title);element.setAttribute('aria-label',`${text} · ${n.title}`);element.style.color=entityColor(n);element.onclick=()=>this.onSelect(n.id);element.style.display='none';element.dataset.kind=n.kind;
+   measure.font=n.kind==='source'?'600 13px system-ui':'500 11px system-ui';
+   const width=Math.max(48,Math.min(190,Math.ceil(measure.measureText(text).width+12)));element.style.width=width+'px';this.labelObjects.set(n.id,{node:n,element,width,height:26});this.labelLayer.appendChild(element);
   }
   this.returnLabel.className='selected-return';this.returnLabel.style.display='none';this.returnLabel.onclick=()=>this.fitConnections();host.appendChild(this.returnLabel);
   const start=(e:PointerEvent)=>{this.down=[e.clientX,e.clientY];this.dragging=true;canvas.dataset.keyboardFocus='false';};
@@ -114,7 +115,7 @@ export class UniverseEngine {
  private move(frame:CameraFrame,remember=true){this.resetLayoutOnAnimationEnd=false;if(this.camera.position.distanceTo(frame.position)<.05&&this.controls.target.distanceTo(frame.target)<.05){this.animation=null;return;}if(remember)this.remember();this.animation=null;const damping=this.controls.enableDamping;this.controls.enableDamping=false;this.controls.update();this.controls.enableDamping=damping;if(this.reduced)this.apply(frame);else this.animation={from:this.frame(),to:frame,start:performance.now()};}
  private fit(remember=true,ids?:Set<string>){const points=this.nodes.filter(n=>!ids||ids.has(n.id)).map(n=>this.positions.get(n.id)!);const bounds=fittedBounds(points,this.camera.aspect);if(!bounds)return;const direction=this.camera.position.clone().sub(this.controls.target).normalize();const target=new THREE.Vector3(...bounds.center);this.move({target,position:target.clone().addScaledVector(direction,bounds.distance)},remember);}
  fitAll(){this.fit();}
- resetView(remember=true){const home=canonicalView([...this.positions.values()],this.camera.aspect);if(!home)return;this.camera.up.set(0,1,0);this.detailedLabels=false;this.detailEligibleIds.clear();this.labelAnchors.clear();this.lastLabelFrame=null;this.labelLayoutDirty=true;const damping=this.controls.enableDamping;this.controls.enableDamping=false;this.controls.update();this.controls.enableDamping=damping;this.move({target:new THREE.Vector3(...home.target),position:new THREE.Vector3(...home.position)},remember);this.resetLayoutOnAnimationEnd=!!this.animation;}
+ resetView(remember=true){const home=canonicalView([...this.positions.values()],this.camera.aspect);if(!home)return;this.camera.up.set(0,1,0);this.level='sources';this.labelAnchors.clear();this.lastLabelFrame=null;this.labelLayoutDirty=true;const damping=this.controls.enableDamping;this.controls.enableDamping=false;this.controls.update();this.controls.enableDamping=damping;this.move({target:new THREE.Vector3(...home.target),position:new THREE.Vector3(...home.position)},remember);this.resetLayoutOnAnimationEnd=!!this.animation;}
  fitConnections(){if(!this.nodes.length){this.fitPending=true;return;}this.fit(true,this.selected?neighbors(this.selected,this.edges):undefined);}
  back(){this.animation=null;const frame=this.history.pop();if(frame)this.move(frame,false);this.onHistory(this.history.length>0);}
  zoom(factor:number){this.remember();this.animation=null;const v=this.camera.position.clone().sub(this.controls.target);v.setLength(THREE.MathUtils.clamp(v.length()*factor,12,5000));this.camera.position.copy(this.controls.target).add(v);this.controls.update();}
@@ -123,18 +124,19 @@ export class UniverseEngine {
   const w=this.host.clientWidth,h=this.host.clientHeight,frame=this.frame(),dimensions=`${w}:${h}`;
   if(!this.labelLayoutDirty&&dimensions===this.labelDimensions&&this.lastLabelFrame&&frame.position.distanceTo(this.lastLabelFrame.position)<.005&&frame.target.distanceTo(this.lastLabelFrame.target)<.005)return;
   this.camera.updateMatrixWorld();this.lastLabelFrame=frame;this.labelDimensions=dimensions;this.labelLayoutDirty=false;
-  this.detailedLabels=detailLabelsEnabled(this.camera.position.distanceTo(this.controls.target),this.overviewDistance,this.detailedLabels);
-  if(!this.detailedLabels)this.detailEligibleIds.clear();
+  const nextLevel=labelLevel(this.camera.position.distanceTo(this.controls.target),this.overviewDistance,this.level);
+  if(nextLevel!==this.level){this.labelAnchors.clear();}this.level=nextLevel;
+  this.labelLayer.dataset.level=this.level;
+  this.levelHint.textContent=this.selected?'Selection · Connected entities':this.level==='sources'?'Sources · Zoom in to explore groups':this.level==='groups'?'Groups · Zoom in to explore rules, KSIs and controls':'Details · Select an entity to explore its connections';
+  this.levelHint.hidden=!this.labels;
   const view=new THREE.Vector3(),candidates:LabelCandidate[]=[];
   for(const n of this.nodes){const p=this.positions.get(n.id)!,label=this.labelObjects.get(n.id)!;view.set(...p).applyMatrix4(this.camera.matrixWorldInverse);const depth=-view.z;if(depth<=0)continue;const projected=new THREE.Vector3(...p).project(this.camera);if(projected.z>=1||Math.abs(projected.x)>1||Math.abs(projected.y)>1)continue;
    const scale=(n.kind==='enhancement'?3.5:5.5)*650/depth,priority=labelPriority(n.id,n.kind,this.selected,this.related);
-   const threshold=this.detailEligibleIds.has(n.id)?4.8:6;
-   const detail=this.detailedLabels&&scale>threshold;if(detail)this.detailEligibleIds.add(n.id);else this.detailEligibleIds.delete(n.id);
-   // Explicit selection retains readable neighbors; the unselected overview stays group-only.
-   const eligible=n.id===this.selected||(this.labels&&(hubKinds.has(n.kind)||detail||!!this.related?.has(n.id)));
+   // Selection reveals direct neighbors; otherwise each zoom level has its own label set.
+   const eligible=n.id===this.selected||(this.labels&&(this.related?this.related.has(n.id):labelKindVisible(n.kind,this.level)));
    candidates.push({id:n.id,x:(projected.x*.5+.5)*w,y:(-projected.y*.5+.5)*h,width:label.width,height:label.height,priority,scale,eligible});
   }
-  const placed=placeLabels(candidates,w,h,w<500?25:65,this.labelAnchors);const visible=new Set(placed.map(p=>p.id));this.labelAnchors=new Map(placed.map(p=>[p.id,p.anchor]));
+  const placed=placeLabels(candidates,w,h,labelBudget(this.level,w<500,!!this.selected),this.labelAnchors);const visible=new Set(placed.map(p=>p.id));this.labelAnchors=new Map(placed.map(p=>[p.id,p.anchor]));
   for(const id of this.visibleLabelIds)if(!visible.has(id))this.labelObjects.get(id)!.element.style.display='none';
   for(const p of placed){const item=this.labelObjects.get(p.id)!.element;item.classList.toggle('selected',p.id===this.selected);item.classList.toggle('neighbor',!!this.related?.has(p.id));item.style.display='block';item.style.transform=`translate(${Math.round(p.left)}px,${Math.round(p.top)}px)`;}
   this.visibleLabelIds=visible;
@@ -150,5 +152,5 @@ export class UniverseEngine {
   if(this.selected&&this.nodes.some(n=>n.id===this.selected)){const p=this.positions.get(this.selected)!;this.ring.visible=true;this.ring.position.set(...p);this.ring.quaternion.copy(this.camera.quaternion);const size=this.camera.position.distanceTo(this.ring.position)*Math.tan(this.camera.fov*Math.PI/360)/Math.max(1,this.host.clientHeight)*18;this.ring.scale.setScalar(size);}else this.ring.visible=false;
   this.drawLabels(now);this.renderer.render(this.scene,this.camera);
  };
- dispose(){cancelAnimationFrame(this.raf);this.resizeObserver.disconnect();this.callbacks();this.controls.dispose();this.points.geometry.dispose();(this.points.material as THREE.Material).dispose();this.lines.geometry.dispose();(this.lines.material as THREE.Material).dispose();this.ring.geometry.dispose();(this.ring.material as THREE.Material).dispose();this.renderer.dispose();this.renderer.domElement.remove();this.labelLayer.remove();this.edgeLayer.remove();this.returnLabel.remove();}
+ dispose(){cancelAnimationFrame(this.raf);this.resizeObserver.disconnect();this.callbacks();this.controls.dispose();this.points.geometry.dispose();(this.points.material as THREE.Material).dispose();this.lines.geometry.dispose();(this.lines.material as THREE.Material).dispose();this.ring.geometry.dispose();(this.ring.material as THREE.Material).dispose();this.renderer.dispose();this.renderer.domElement.remove();this.labelLayer.remove();this.edgeLayer.remove();this.returnLabel.remove();this.levelHint.remove();}
 }

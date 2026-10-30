@@ -23,3 +23,13 @@ The browser checks use local Chromium software WebGL and a simulated mobile view
 ![Group-level overview with distinct publisher colors](screenshots/map-polish-overview.png)
 
 ![Mobile group-level overview and separate reset controls](screenshots/map-polish-mobile.png)
+
+## Source-first label hierarchy — 2026-10-30
+
+The unselected starting view now labels only FedRAMP and NIST 800-53. Zooming to less than 84% of the starting camera distance switches to real family, class, ruleset and KSI-theme labels. At less than 46%, individual identifiers replace the group labels. Zooming out uses separate 56% and 94% thresholds to avoid toggling near a boundary. These are presentation levels, not new graph entities or inferred relationships.
+
+Labels are single-line text without card backgrounds or borders. Sources use 13px text; groups and details use 11px text with a subtle dark shadow for contrast. Full titles remain available through tooltips, accessible names and the inspector. The current level and a short zoom hint appear above the map. The desktop caps are two sources, ten groups and eighteen details; narrow maps use five groups and eight details. Selection keeps its direct neighbors available within a separate limit (24 desktop, 12 narrow), with all relationships still available in the inspector.
+
+The layout remains collision-managed and stable under hover. Reset restores the source level for an unselected map. The graph, source revisions and provenance are unchanged.
+
+Screenshots: `screenshots/map-polish-overview.png`, `screenshots/map-polish-groups.png`, `screenshots/map-polish-details.png`, `screenshots/map-polish-mobile.png`. Browser validation uses the production build under the GitHub Pages project path. These checks do not substitute for physical-device or user usability testing.

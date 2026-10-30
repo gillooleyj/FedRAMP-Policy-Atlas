@@ -14,7 +14,7 @@ try{
  await page.screenshot({path:'docs/screenshots/everything-desktop.png',fullPage:true});
  await page.getByRole('checkbox',{name:'All links',exact:true}).check();assert.match(await page.locator('.graph-footer').innerText(),/3,696 rendered edges/);await page.getByRole('checkbox',{name:'All links',exact:true}).uncheck();check('All-links toggle exposes every filtered edge');
  await page.getByRole('combobox',{name:'Relationship type'}).selectOption('PUBLISHED_CONTROL_MAPPING');assert.match(await page.locator('.graph-footer').innerText(),/558 rendered edges/);await page.getByRole('combobox',{name:'Relationship type'}).selectOption('');check('Relationship filter preserves all 558 exact published mappings');
- const matrix=()=>page.locator('.graph-labels button').evaluateAll(es=>es.slice(0,10).map(e=>e.style.transform).join('|'));
+ const matrix=()=>page.locator('.graph-labels button:visible').evaluateAll(es=>es.map(e=>e.dataset.nodeId+':'+e.style.transform).join('|'));
  const before=await matrix();await page.getByRole('button',{name:'Zoom in',exact:true}).click();await page.waitForTimeout(300);assert.notEqual(await matrix(),before);check('Zoom changes the camera projection');
  const canvas=page.locator('canvas'),box=await canvas.boundingBox();const orbitBefore=await matrix();await page.mouse.move(box.x+box.width*.6,box.y+box.height*.5);await page.mouse.down();await page.mouse.move(box.x+box.width*.6+90,box.y+box.height*.5+40,{steps:10});await page.mouse.up();await page.waitForTimeout(300);assert.notEqual(await matrix(),orbitBefore);check('Pointer drag pans the graph');
  await page.getByRole('button',{name:'Fit all entities',exact:true}).click();

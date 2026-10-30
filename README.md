@@ -19,7 +19,7 @@ Open the address Vite prints. The bundled public-source snapshots and generated 
 npm run ingest       # offline: verify hashes, validate both schemas, regenerate graph/report
 npm run lint
 npm run typecheck
-npm test             # 40 source fidelity, updater, navigation, and model tests
+npm test             # 42 source fidelity, updater, navigation, and model tests
 npm run build
 npm run preview      # serve the production build
 ```
@@ -39,7 +39,7 @@ The browser suite captures desktop and mobile screenshots in `docs/screenshots/`
 
 - Drag to pan by default. Choose **Orbit** for rotation, or right-drag to rotate in Pan mode. Scroll toward the pointer or use +/- to zoom. Click points/labels to inspect without moving the camera; search fits the selected neighborhood. Use **Fit connections**, **Back**, and **Fit all** to frame the visible field. **Reset view** restores the starting orientation, center, zoom, and Pan mode.
 - Search identifiers (for example `KSI-CNA-EIS` or `ac-2.1`), titles, rule text, or definitions. Enter opens the first result.
-- Toggle layers, choose a class, or filter relationship types without resetting the camera or changing node coordinates. Overview edges are sparse. Selection shows its direct connections; enable **All links** for all filtered edges. The starting overview shows family/group labels. Zoom reveals individual labels after a closer-scale threshold; selection also reveals its neighbors. Hover highlights labels without repacking them.
+- Toggle layers, choose a class, or filter relationship types without resetting the camera or changing node coordinates. Overview edges are sparse. Selection shows its direct connections; enable **All links** for all filtered edges. The starting overview labels only FedRAMP and NIST 800-53. Slight zoom replaces these with family, class, ruleset and KSI-theme labels; closer zoom replaces groups with individual identifiers. Compact, box-free labels are limited to 10 groups or 18 details on desktop (5 or 8 on mobile). Separate zoom-in/out thresholds prevent chatter. Selection reveals its direct neighbors; full titles remain in tooltips and the inspector. Hover underlines labels without repacking them.
 - Select an entity to read its source wording, class variants, published mappings, source update log, inherited applicability/effective metadata, full raw record, and exact source revision.
 - Use **Focus neighborhood** to isolate and frame adjacent entities. Relationship chips isolate published mappings, definitions, containment, or applicability. Selected edges show direction arrows; clicking a canvas relationship label opens its exact evidence in the inspector. Every listed relationship also has **View edge evidence**.
 - **FedRAMP 20x** filters the data to KSI themes/indicators, classes, shared and 20x process rules, definitions, and source documents. KSI control mappings remain inspectable in the drawer; choose Everything to render the NIST endpoints.
