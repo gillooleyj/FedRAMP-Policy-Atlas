@@ -1,0 +1,62 @@
+{
+  "testedAt": "2026-10-30T13:37:11.549Z",
+  "browser": "154.0.8037.57",
+  "records": [
+    {
+      "step": "Final production asset",
+      "asset": "/FedRAMP-Policy-Atlas/assets/index-ig61FBXY.js"
+    },
+    {
+      "step": "Default graph uses peer source roots and only original verified entities/edges"
+    },
+    {
+      "step": "Mixed default→KSI→NIST→FedRAMP→ClassD→Fit stays compact and readable",
+      "cards": 31,
+      "width": 1096,
+      "height": 1944,
+      "packingRatio": 0.3650235799465321,
+      "zoom": 0.7
+    },
+    {
+      "step": "Current ClassD layout is identical fresh or after a mixed browsing session"
+    },
+    {
+      "step": "Explicit Whole chart can be followed by readable Fit without closing inspector",
+      "wholeZoom": 0.249486
+    },
+    {
+      "step": "NIST-off→FedRAMP source→mapping toggle stays enabled, restores NIST layer and retains source groups"
+    },
+    {
+      "step": "Continuing source journey into a KSI displays all12 exact published mappings"
+    },
+    {
+      "step": "Mapping off/on keeps peer root context and keyboard evidence preserves exact citation"
+    },
+    {
+      "step": "Class A supports1/2/3levels and repeated mapping off/on with exact source-backed edges"
+    },
+    {
+      "step": "Class B supports1/2/3levels and repeated mapping off/on with exact source-backed edges"
+    },
+    {
+      "step": "Class C supports1/2/3levels and repeated mapping off/on with exact source-backed edges"
+    },
+    {
+      "step": "Class D supports1/2/3levels and repeated mapping off/on with exact source-backed edges"
+    },
+    {
+      "step": "Overview→Back restores classD and depth3 after the full mixed session"
+    },
+    {
+      "step": "NIST branch remains a peer collection; hiding NIST from a NIST selection returns to FedRAMP overview"
+    },
+    {
+      "step": "The complete session remains usable after mobile resize with selected card inside the canvas"
+    },
+    {
+      "step": "No uncaught browser errors during the multi-step sessions"
+    }
+  ],
+  "errors": []
+}

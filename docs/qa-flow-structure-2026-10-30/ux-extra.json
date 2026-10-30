@@ -1,0 +1,40 @@
+{
+  "time": "2026-10-30T13:34:23.426Z",
+  "browser": "154.0.8037.57",
+  "asset": "/FedRAMP-Policy-Atlas/assets/index-B5TnDIIH.js",
+  "checks": [
+    {
+      "name": "Whole chart overview is explicit and readable Fit restores selection",
+      "result": "pass",
+      "detail": {
+        "wholeZoom": 0.249486,
+        "fitZoom": 0.7
+      }
+    },
+    {
+      "name": "Exact Class B search selects the Class B entity",
+      "result": "pass"
+    },
+    {
+      "name": "Keyboard can include NIST and inspect published edge evidence",
+      "result": "pass",
+      "detail": {
+        "edge": "Inspect relationship fr:KSI-CNA-EIS to nist:ca-2.1: PUBLISHED_CONTROL_MAPPING",
+        "evidence": "verified · 2026.10.13.01\n/KSI/CNA/indicators/KSI-CNA-EIS/controls/0\n\nExact published OSCAL control identifier\n\na89d78477ddea98dc57eca24f5007794c2b4eeb6\n{\n  \"scope\": \"Common indicator mapping; no class scope inferred\"\n}\nPinned source"
+      }
+    },
+    {
+      "name": "Depth three respects NIST exclusion and keyboard navigation remains usable",
+      "result": "pass"
+    },
+    {
+      "name": "Tablet retains readable selected KSI and available controls",
+      "result": "pass"
+    },
+    {
+      "name": "No uncaught errors",
+      "result": "pass"
+    }
+  ],
+  "errors": []
+}

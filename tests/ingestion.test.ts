@@ -22,7 +22,7 @@ describe('authoritative source and graph contracts',()=>{
 });
 describe('explorer model',()=>{
  it('exposes nested OSCAL statement items without dropping parameter placeholders',()=>{const n=graph.nodes.find(n=>n.id==='nist:ac-2')!;const text=oscalStatement(n.raw.parts);expect(text).toContain('Define and document');expect(text).toContain('Authorized users');expect(text).toContain('{{ insert: param, ac-02_odp.01 }}');});
- it('searches real identifiers and words',()=>{expect(searchNodes(graph.nodes,'ksi-cna-eis').map(n=>n.id)).toContain('fr:KSI-CNA-EIS');expect(searchNodes(graph.nodes,'enforcing intended state')).toHaveLength(1);});
+ it('searches real identifiers and words',()=>{expect(searchNodes(graph.nodes,'ksi-cna-eis').map(n=>n.id)).toContain('fr:KSI-CNA-EIS');expect(searchNodes(graph.nodes,'enforcing intended state')).toHaveLength(1);expect(searchNodes(graph.nodes,'Class B')[0].id).toBe('class:B');});
  it('filters edges to visible endpoints and class-specific scope',()=>{const nodes=graph.nodes.filter(n=>matchesClass(n,'B'));const edges=visibleEdges(graph.edges,nodes,'APPLIES_TO','B');expect(edges.length).toBeGreaterThan(0);expect(edges.every(e=>e.to==='class:B')).toBe(true);});
  it('places actual nodes deterministically in finite 3D positions',()=>{const a=layout(graph.nodes);expect(a.size).toBe(graph.nodes.length);expect(a).toEqual(layout(graph.nodes));expect([...a.values()].every(p=>p.length===3&&p.every(Number.isFinite))).toBe(true);});
 });

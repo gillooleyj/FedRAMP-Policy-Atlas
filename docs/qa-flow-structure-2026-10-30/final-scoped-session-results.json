@@ -1,0 +1,28 @@
+{
+  "asset": "/FedRAMP-Policy-Atlas/assets/index-ig61FBXY.js",
+  "browser": "154.0.8037.57",
+  "records": [
+    {
+      "step": "20x + ClassB + NIST-layer-off → mapping-on reveals all12 KSI mappings while retaining source applicability scope"
+    },
+    {
+      "step": "At twolevels, repeated mapping toggle constrains the traversal and restores mapped context"
+    },
+    {
+      "step": "Back restores mapping-off state with ClassB and20x scope intact"
+    },
+    {
+      "step": "Native browser Forward restores mapping-on scope"
+    },
+    {
+      "step": "Expanded mapped chart does not manufacture missing ClassD statement or remove ClassB Optional wording"
+    },
+    {
+      "step": "Relationship filtering retains only verified mapping connectors in combined20x/class scope"
+    },
+    {
+      "step": "No uncaught errors in combined-scope session"
+    }
+  ],
+  "errors": []
+}

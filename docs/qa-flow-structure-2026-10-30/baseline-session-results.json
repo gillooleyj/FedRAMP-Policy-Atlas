@@ -1,0 +1,102 @@
+{
+  "browser": "154.0.8037.57",
+  "records": [
+    {
+      "step": "default",
+      "cards": 60,
+      "bounds": {
+        "width": 3752,
+        "height": 696
+      },
+      "packingRatio": 0.5764282038085435,
+      "zoom": 0.728448,
+      "mappingToggleDisabled": false,
+      "selected": []
+    },
+    {
+      "step": "after KSI-CNA-EIS",
+      "cards": 17,
+      "bounds": {
+        "width": 4046,
+        "height": 696
+      },
+      "packingRatio": 0.15145368492224476,
+      "zoom": 0.728448,
+      "mappingToggleDisabled": true,
+      "selected": [
+        "KSI-CNA-EIS"
+      ]
+    },
+    {
+      "step": "after ac-2",
+      "cards": 19,
+      "bounds": {
+        "width": 1400,
+        "height": 696
+      },
+      "packingRatio": 0.48919540229885056,
+      "zoom": 0.728448,
+      "mappingToggleDisabled": true,
+      "selected": [
+        "ac-2"
+      ]
+    },
+    {
+      "step": "after FedRAMP Consolidated Rules",
+      "cards": 60,
+      "bounds": {
+        "width": 9044,
+        "height": 696
+      },
+      "packingRatio": 0.2391373972456496,
+      "zoom": 0.728448,
+      "mappingToggleDisabled": true,
+      "selected": [
+        "fedramp"
+      ]
+    },
+    {
+      "step": "after class:D",
+      "cards": 60,
+      "bounds": {
+        "width": 12572,
+        "height": 696
+      },
+      "packingRatio": 0.17202979801858537,
+      "zoom": 0.728448,
+      "mappingToggleDisabled": true,
+      "selected": [
+        "D"
+      ]
+    },
+    {
+      "step": "Class D after mixed session and Fit",
+      "cards": 60,
+      "bounds": {
+        "width": 12572,
+        "height": 696
+      },
+      "packingRatio": 0.17202979801858537,
+      "zoom": 0.08,
+      "mappingToggleDisabled": true,
+      "selected": [
+        "D"
+      ]
+    },
+    {
+      "step": "NIST off then selected FedRAMP source",
+      "cards": 60,
+      "bounds": {
+        "width": 10514,
+        "height": 696
+      },
+      "packingRatio": 0.20570274117268927,
+      "zoom": 0.7,
+      "mappingToggleDisabled": true,
+      "selected": [
+        "fedramp"
+      ]
+    }
+  ],
+  "errors": []
+}

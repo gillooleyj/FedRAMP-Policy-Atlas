@@ -1,0 +1,2361 @@
+{
+  "browser": "154.0.8037.57",
+  "asset": "/FedRAMP-Policy-Atlas/assets/index-dK7PwtXj.js",
+  "states": [
+    {
+      "name": "01-full-fedramp",
+      "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/?mode=flow",
+      "count": 60,
+      "width": 3752,
+      "height": 696,
+      "maxColumnGap": 70,
+      "viewport": "transform: translate(355.353px, 9.60345px) scale(0.728448);",
+      "toggle": {
+        "checked": false,
+        "disabled": false
+      },
+      "nodes": [
+        {
+          "id": "fedramp",
+          "x": 28,
+          "y": 612,
+          "text": "SOURCE DOCUMENTFedRAMP 2026fedramp"
+        },
+        {
+          "id": "class:A",
+          "x": 28,
+          "y": 28,
+          "text": "CLASSClass AA"
+        },
+        {
+          "id": "class:B",
+          "x": 28,
+          "y": 174,
+          "text": "CLASSClass BB"
+        },
+        {
+          "id": "class:C",
+          "x": 28,
+          "y": 320,
+          "text": "CLASSClass CC"
+        },
+        {
+          "id": "class:D",
+          "x": 28,
+          "y": 466,
+          "text": "CLASSClass DD"
+        },
+        {
+          "id": "ruleset:AFC",
+          "x": 910,
+          "y": 466,
+          "text": "RULESETAddressing FedRAMP Communicationruleset:AFC"
+        },
+        {
+          "id": "ruleset:AGU",
+          "x": 1204,
+          "y": 320,
+          "text": "RULESETAgency Use of FedRAMP Certified Cloud Servicesruleset:AGU"
+        },
+        {
+          "id": "ruleset:CCM",
+          "x": 1498,
+          "y": 612,
+          "text": "RULESETCollaborative Continuous Monitoringruleset:CCM"
+        },
+        {
+          "id": "ruleset:CDS",
+          "x": 1204,
+          "y": 28,
+          "text": "RULESETCertification Data Sharingruleset:CDS"
+        },
+        {
+          "id": "ruleset:CMU",
+          "x": 1792,
+          "y": 393,
+          "text": "RULESETCryptographic Module Useruleset:CMU"
+        },
+        {
+          "id": "ruleset:CPO",
+          "x": 616,
+          "y": 612,
+          "text": "RULESETCertification Package Overviewruleset:CPO"
+        },
+        {
+          "id": "ruleset:FRC",
+          "x": 616,
+          "y": 466,
+          "text": "RULESETFedRAMP Certificationruleset:FRC"
+        },
+        {
+          "id": "ruleset:IEC",
+          "x": 1204,
+          "y": 174,
+          "text": "RULESETIncident Evaluation and Communicationruleset:IEC"
+        },
+        {
+          "id": "ruleset:IVV",
+          "x": 322,
+          "y": 174,
+          "text": "RULESETIndependent Verification and Validationruleset:IVV"
+        },
+        {
+          "id": "ruleset:MAS",
+          "x": 1498,
+          "y": 466,
+          "text": "RULESETMinimum Assessment Scoperuleset:MAS"
+        },
+        {
+          "id": "ruleset:MKT",
+          "x": 1498,
+          "y": 174,
+          "text": "RULESETMarketplace Listingruleset:MKT"
+        },
+        {
+          "id": "ruleset:REC",
+          "x": 616,
+          "y": 320,
+          "text": "RULESETFedRAMP Recognition of Independent Assessment Servicesruleset:REC"
+        },
+        {
+          "id": "ruleset:SCG",
+          "x": 910,
+          "y": 174,
+          "text": "RULESETSecure Configuration Guideruleset:SCG"
+        },
+        {
+          "id": "ruleset:SCN",
+          "x": 322,
+          "y": 28,
+          "text": "RULESETSignificant Change Notificationruleset:SCN"
+        },
+        {
+          "id": "ruleset:SDR",
+          "x": 1498,
+          "y": 320,
+          "text": "RULESETSecurity Decision Recordruleset:SDR"
+        },
+        {
+          "id": "ruleset:VDR",
+          "x": 322,
+          "y": 612,
+          "text": "RULESETVulnerability Detection and Responseruleset:VDR"
+        },
+        {
+          "id": "ruleset:VER",
+          "x": 1792,
+          "y": 247,
+          "text": "RULESETVulnerability Evaluation and Reportingruleset:VER"
+        },
+        {
+          "id": "theme:CED",
+          "x": 1204,
+          "y": 612,
+          "text": "THEMECybersecurity Educationtheme:CED"
+        },
+        {
+          "id": "theme:CMT",
+          "x": 910,
+          "y": 612,
+          "text": "THEMEChange Managementtheme:CMT"
+        },
+        {
+          "id": "theme:CNA",
+          "x": 616,
+          "y": 174,
+          "text": "THEMECloud Native Architecturetheme:CNA"
+        },
+        {
+          "id": "theme:IAM",
+          "x": 1498,
+          "y": 28,
+          "text": "THEMEIdentity and Access Managementtheme:IAM"
+        },
+        {
+          "id": "theme:INR",
+          "x": 322,
+          "y": 320,
+          "text": "THEMEIncident Responsetheme:INR"
+        },
+        {
+          "id": "theme:MLA",
+          "x": 616,
+          "y": 28,
+          "text": "THEMEMonitoring, Logging, and Auditingtheme:MLA"
+        },
+        {
+          "id": "theme:PIY",
+          "x": 322,
+          "y": 466,
+          "text": "THEMEPolicy and Inventorytheme:PIY"
+        },
+        {
+          "id": "theme:RPL",
+          "x": 910,
+          "y": 28,
+          "text": "THEMERecovery Planningtheme:RPL"
+        },
+        {
+          "id": "theme:SCR",
+          "x": 1204,
+          "y": 466,
+          "text": "THEMESupply Chain Risktheme:SCR"
+        },
+        {
+          "id": "theme:SVC",
+          "x": 910,
+          "y": 320,
+          "text": "THEMEService Configurationtheme:SVC"
+        },
+        {
+          "id": "subset:AFC:all:CSO",
+          "x": 2674,
+          "y": 612,
+          "text": "SUBSETGeneral Provider Responsibilitiessubset:AFC:all:CSO"
+        },
+        {
+          "id": "subset:AFC:all:FRP",
+          "x": 2674,
+          "y": 466,
+          "text": "SUBSETFedRAMP Responsibilitiessubset:AFC:all:FRP"
+        },
+        {
+          "id": "subset:AGU:all:AGC",
+          "x": 3262,
+          "y": 320,
+          "text": "SUBSETGeneral Agency Responsibilitiessubset:AGU:all:AGC"
+        },
+        {
+          "id": "subset:AGU:all:SPN",
+          "x": 3262,
+          "y": 466,
+          "text": "SUBSETAgency Sponsored Certificationssubset:AGU:all:SPN"
+        },
+        {
+          "id": "subset:AGU:all:USE",
+          "x": 3262,
+          "y": 174,
+          "text": "SUBSETUse of FedRAMP Certificationssubset:AGU:all:USE"
+        },
+        {
+          "id": "subset:CCM:all:AGM",
+          "x": 3556,
+          "y": 320,
+          "text": "SUBSETAgency Guidancesubset:CCM:all:AGM"
+        },
+        {
+          "id": "subset:CCM:all:OCR",
+          "x": 3556,
+          "y": 174,
+          "text": "SUBSETOngoing Certification Reportssubset:CCM:all:OCR"
+        },
+        {
+          "id": "subset:CCM:all:QTR",
+          "x": 3262,
+          "y": 612,
+          "text": "SUBSETQuarterly Reviewssubset:CCM:all:QTR"
+        },
+        {
+          "id": "subset:CDS:all:CSO",
+          "x": 2968,
+          "y": 28,
+          "text": "SUBSETGeneral Provider Responsibilitiessubset:CDS:all:CSO"
+        },
+        {
+          "id": "subset:CDS:all:TRC",
+          "x": 2968,
+          "y": 466,
+          "text": "SUBSETFedRAMP-Compatible Trust Centerssubset:CDS:all:TRC"
+        },
+        {
+          "id": "subset:CDS:all:UTC",
+          "x": 2968,
+          "y": 320,
+          "text": "SUBSETUsing a Trust Centersubset:CDS:all:UTC"
+        },
+        {
+          "id": "subset:CDS:rev5:CSF",
+          "x": 2968,
+          "y": 174,
+          "text": "SUBSETRev5-Specific Provider Responsibilitiessubset:CDS:rev5:CSF"
+        },
+        {
+          "id": "subset:CMU:all:CSO",
+          "x": 3556,
+          "y": 466,
+          "text": "SUBSETCloud Service Provider Responsibilitiessubset:CMU:all:CSO"
+        },
+        {
+          "id": "subset:CPO:20x:CSX",
+          "x": 2674,
+          "y": 320,
+          "text": "SUBSET20x-Specific Provider Responsibilitiessubset:CPO:20x:CSX"
+        },
+        {
+          "id": "subset:CPO:all:CSO",
+          "x": 2674,
+          "y": 174,
+          "text": "SUBSETGeneral Provider Responsibilitiessubset:CPO:all:CSO"
+        },
+        {
+          "id": "subset:CPO:rev5:CSF",
+          "x": 2674,
+          "y": 28,
+          "text": "SUBSETRev5-Specific Provider Responsibilitiessubset:CPO:rev5:CSF"
+        },
+        {
+          "id": "subset:FRC:20x:CSX",
+          "x": 2380,
+          "y": 466,
+          "text": "SUBSET20x-Specific Provider Responsibilitiessubset:FRC:20x:CSX"
+        },
+        {
+          "id": "subset:FRC:all:APP",
+          "x": 2086,
+          "y": 466,
+          "text": "SUBSETApplying for FedRAMP Certificationsubset:FRC:all:APP"
+        },
+        {
+          "id": "subset:FRC:all:APS",
+          "x": 2380,
+          "y": 28,
+          "text": "SUBSETApplying for FedRAMP Certification with an Agency Sponsorsubset:FRC:all:APS"
+        },
+        {
+          "id": "subset:FRC:all:CCL",
+          "x": 2380,
+          "y": 320,
+          "text": "SUBSETChanging Certification Classsubset:FRC:all:CCL"
+        },
+        {
+          "id": "subset:FRC:all:CLA",
+          "x": 2380,
+          "y": 612,
+          "text": "SUBSETFedRAMP Class A Certification Rulessubset:FRC:all:CLA"
+        },
+        {
+          "id": "subset:FRC:all:CSO",
+          "x": 2086,
+          "y": 612,
+          "text": "SUBSETGeneral Provider Responsibilitiessubset:FRC:all:CSO"
+        },
+        {
+          "id": "subset:FRC:rev5:CSF",
+          "x": 2380,
+          "y": 174,
+          "text": "SUBSETRev5-Specific Provider Responsibilitiessubset:FRC:rev5:CSF"
+        },
+        {
+          "id": "subset:IEC:all:CSO",
+          "x": 2968,
+          "y": 612,
+          "text": "SUBSETGeneral Provider Responsibilitiessubset:IEC:all:CSO"
+        },
+        {
+          "id": "subset:IEC:all:FRP",
+          "x": 3262,
+          "y": 28,
+          "text": "SUBSETFedRAMP Responsibilitiessubset:IEC:all:FRP"
+        },
+        {
+          "id": "subset:IVV:20x:CSX",
+          "x": 2086,
+          "y": 28,
+          "text": "SUBSET20x-Specific Provider Responsibilitiessubset:IVV:20x:CSX"
+        },
+        {
+          "id": "subset:IVV:all:CSO",
+          "x": 2086,
+          "y": 320,
+          "text": "SUBSETGeneral Provider Responsibilitiessubset:IVV:all:CSO"
+        },
+        {
+          "id": "subset:IVV:all:IAS",
+          "x": 2086,
+          "y": 174,
+          "text": "SUBSETGeneral Independent Assessor Responsibilitiessubset:IVV:all:IAS"
+        }
+      ],
+      "footer": "60 of 459 branch entities \u00b7 55 verified relationships\nShow 60 more\nShow all 459"
+    },
+    {
+      "name": "02-class-d-selected",
+      "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/?node=class%3AD&mode=flow",
+      "count": 60,
+      "width": 6986,
+      "height": 696,
+      "maxColumnGap": 1540,
+      "viewport": "transform: translate(400.017px, -96.75px) scale(0.728448);",
+      "toggle": {
+        "checked": false,
+        "disabled": true
+      },
+      "nodes": [
+        {
+          "id": "class:D",
+          "x": 28,
+          "y": 466,
+          "text": "CLASSClass DD"
+        },
+        {
+          "id": "fr:AFC-CSO-ACK",
+          "x": 1792,
+          "y": 28,
+          "text": "RULE \u00b7 LEVEL 1Acknowledge ReceiptAFC-CSO-ACK"
+        },
+        {
+          "id": "fr:AFC-CSO-CRA",
+          "x": 1792,
+          "y": 612,
+          "text": "RULE \u00b7 LEVEL 1Complete Required ActionsAFC-CSO-CRA"
+        },
+        {
+          "id": "fr:AFC-CSO-EMR",
+          "x": 3556,
+          "y": 28,
+          "text": "RULE \u00b7 LEVEL 1Emergency Message RoutingAFC-CSO-EMR"
+        },
+        {
+          "id": "fr:AFC-CSO-IMA",
+          "x": 3556,
+          "y": 612,
+          "text": "RULE \u00b7 LEVEL 1Important Message ActionsAFC-CSO-IMA"
+        },
+        {
+          "id": "fr:AFC-CSO-INB",
+          "x": 3850,
+          "y": 28,
+          "text": "RULE \u00b7 LEVEL 1Maintain a FedRAMP Security InboxAFC-CSO-INB"
+        },
+        {
+          "id": "fr:AFC-CSO-NOC",
+          "x": 3850,
+          "y": 174,
+          "text": "RULE \u00b7 LEVEL 1Notification of ChangesAFC-CSO-NOC"
+        },
+        {
+          "id": "fr:AFC-CSO-RCV",
+          "x": 3850,
+          "y": 320,
+          "text": "RULE \u00b7 LEVEL 1Receive Email Without DisruptionAFC-CSO-RCV"
+        },
+        {
+          "id": "fr:AFC-CSO-TFG",
+          "x": 3850,
+          "y": 466,
+          "text": "RULE \u00b7 LEVEL 1Trust @fedramp.gov and @gsa.govAFC-CSO-TFG"
+        },
+        {
+          "id": "fr:AFC-FRP-CDS",
+          "x": 3850,
+          "y": 612,
+          "text": "RULE \u00b7 LEVEL 1Criticality DesignatorsAFC-FRP-CDS"
+        },
+        {
+          "id": "fr:AFC-FRP-COR",
+          "x": 4144,
+          "y": 28,
+          "text": "RULE \u00b7 LEVEL 1Explain Corrective ActionsAFC-FRP-COR"
+        },
+        {
+          "id": "fr:AFC-FRP-ERT",
+          "x": 4144,
+          "y": 174,
+          "text": "RULE \u00b7 LEVEL 1Elevated Reaction TimeframesAFC-FRP-ERT"
+        },
+        {
+          "id": "fr:AFC-FRP-PNT",
+          "x": 4144,
+          "y": 320,
+          "text": "RULE \u00b7 LEVEL 1Public Notice of Emergency TestsAFC-FRP-PNT"
+        },
+        {
+          "id": "fr:AFC-FRP-RPM",
+          "x": 4144,
+          "y": 466,
+          "text": "RULE \u00b7 LEVEL 1Reaction MetricsAFC-FRP-RPM"
+        },
+        {
+          "id": "fr:AFC-FRP-RQA",
+          "x": 4144,
+          "y": 612,
+          "text": "RULE \u00b7 LEVEL 1Required ActionsAFC-FRP-RQA"
+        },
+        {
+          "id": "fr:AFC-FRP-UFS",
+          "x": 4438,
+          "y": 28,
+          "text": "RULE \u00b7 LEVEL 1Use FedRAMP_Security Email in EmergenciesAFC-FRP-UFS"
+        },
+        {
+          "id": "fr:AFC-FRP-VRE",
+          "x": 4438,
+          "y": 174,
+          "text": "RULE \u00b7 LEVEL 1Verified EmailsAFC-FRP-VRE"
+        },
+        {
+          "id": "fr:AGU-AGC-AIP",
+          "x": 4438,
+          "y": 320,
+          "text": "RULE \u00b7 LEVEL 1Agency Internal PoliciesAGU-AGC-AIP"
+        },
+        {
+          "id": "fr:AGU-AGC-GRC",
+          "x": 4438,
+          "y": 466,
+          "text": "RULE \u00b7 LEVEL 1Governance, Risk, and Compliance ToolsAGU-AGC-GRC"
+        },
+        {
+          "id": "fr:AGU-AGC-LIA",
+          "x": 4438,
+          "y": 612,
+          "text": "RULE \u00b7 LEVEL 1Agency Liaison ProgramAGU-AGC-LIA"
+        },
+        {
+          "id": "fr:AGU-AGC-NAA",
+          "x": 4732,
+          "y": 28,
+          "text": "RULE \u00b7 LEVEL 1Notify FedRAMP After AuthorizationAGU-AGC-NAA"
+        },
+        {
+          "id": "fr:AGU-AGC-NAI",
+          "x": 4732,
+          "y": 174,
+          "text": "RULE \u00b7 LEVEL 1Notify Additional Information RequestsAGU-AGC-NAI"
+        },
+        {
+          "id": "fr:AGU-AGC-NAR",
+          "x": 4732,
+          "y": 320,
+          "text": "RULE \u00b7 LEVEL 1No Additional Security RequirementsAGU-AGC-NAR"
+        },
+        {
+          "id": "fr:AGU-AGC-SIN",
+          "x": 4732,
+          "y": 466,
+          "text": "RULE \u00b7 LEVEL 1Shared FedRAMP InboxAGU-AGC-SIN"
+        },
+        {
+          "id": "fr:AGU-AGC-TPP",
+          "x": 4732,
+          "y": 612,
+          "text": "RULE \u00b7 LEVEL 1No Certification Type or Path PreferencesAGU-AGC-TPP"
+        },
+        {
+          "id": "fr:AGU-AGC-WKG",
+          "x": 5026,
+          "y": 28,
+          "text": "RULE \u00b7 LEVEL 1FedRAMP Working GroupsAGU-AGC-WKG"
+        },
+        {
+          "id": "fr:AGU-SPN-MRC",
+          "x": 5026,
+          "y": 174,
+          "text": "RULE \u00b7 LEVEL 1Most Recent Consolidated RulesAGU-SPN-MRC"
+        },
+        {
+          "id": "fr:AGU-USE-ABU",
+          "x": 5026,
+          "y": 320,
+          "text": "RULE \u00b7 LEVEL 1Authorization Before UseAGU-USE-ABU"
+        },
+        {
+          "id": "fr:AGU-USE-AFR",
+          "x": 5026,
+          "y": 466,
+          "text": "RULE \u00b7 LEVEL 1Accept FedRAMP RulesAGU-USE-AFR"
+        },
+        {
+          "id": "fr:AGU-USE-CLA",
+          "x": 5026,
+          "y": 612,
+          "text": "RULE \u00b7 LEVEL 1Using FedRAMP Class A CertificationsAGU-USE-CLA"
+        },
+        {
+          "id": "fr:AGU-USE-DSO",
+          "x": 5320,
+          "y": 28,
+          "text": "RULE \u00b7 LEVEL 1Designate Senior OfficialAGU-USE-DSO"
+        },
+        {
+          "id": "fr:AGU-USE-NFC",
+          "x": 5320,
+          "y": 174,
+          "text": "RULE \u00b7 LEVEL 1Notify FedRAMP of Monitoring ConcernsAGU-USE-NFC"
+        },
+        {
+          "id": "fr:AGU-USE-NPC",
+          "x": 5320,
+          "y": 320,
+          "text": "RULE \u00b7 LEVEL 1Notify Provider of ConcernsAGU-USE-NPC"
+        },
+        {
+          "id": "fr:AGU-USE-RCF",
+          "x": 5320,
+          "y": 466,
+          "text": "RULE \u00b7 LEVEL 1Resolve Certification Package ConflictsAGU-USE-RCF"
+        },
+        {
+          "id": "fr:AGU-USE-RIR",
+          "x": 5320,
+          "y": 612,
+          "text": "RULE \u00b7 LEVEL 1Review All Information ResourcesAGU-USE-RIR"
+        },
+        {
+          "id": "fr:AGU-USE-ROR",
+          "x": 5614,
+          "y": 28,
+          "text": "RULE \u00b7 LEVEL 1Review Ongoing Certification ReportsAGU-USE-ROR"
+        },
+        {
+          "id": "fr:AGU-USE-RSG",
+          "x": 5614,
+          "y": 174,
+          "text": "RULE \u00b7 LEVEL 1Review Secure Configuration GuidesAGU-USE-RSG"
+        },
+        {
+          "id": "fr:CCM-AGM-CSC",
+          "x": 5614,
+          "y": 320,
+          "text": "RULE \u00b7 LEVEL 1Consider Security CategoryCCM-AGM-CSC"
+        },
+        {
+          "id": "fr:CCM-AGM-ROR",
+          "x": 5614,
+          "y": 466,
+          "text": "RULE \u00b7 LEVEL 1Review Ongoing ReportsCCM-AGM-ROR"
+        },
+        {
+          "id": "fr:CCM-OCR-AFS",
+          "x": 5614,
+          "y": 612,
+          "text": "RULE \u00b7 LEVEL 1Anonymized Feedback SummaryCCM-OCR-AFS"
+        },
+        {
+          "id": "fr:CCM-OCR-AVL",
+          "x": 5908,
+          "y": 28,
+          "text": "RULE \u00b7 LEVEL 1Report AvailabilityCCM-OCR-AVL"
+        },
+        {
+          "id": "fr:CCM-OCR-FBM",
+          "x": 5908,
+          "y": 174,
+          "text": "RULE \u00b7 LEVEL 1Feedback MechanismCCM-OCR-FBM"
+        },
+        {
+          "id": "fr:CCM-OCR-LSI",
+          "x": 5908,
+          "y": 320,
+          "text": "RULE \u00b7 LEVEL 1Limit Sensitive InformationCCM-OCR-LSI"
+        },
+        {
+          "id": "fr:CCM-OCR-NRD",
+          "x": 5908,
+          "y": 466,
+          "text": "RULE \u00b7 LEVEL 1Next Report DateCCM-OCR-NRD"
+        },
+        {
+          "id": "fr:CCM-OCR-RPS",
+          "x": 5908,
+          "y": 612,
+          "text": "RULE \u00b7 LEVEL 1Responsible Public Certification Report SharingCCM-OCR-RPS"
+        },
+        {
+          "id": "fr:CCM-OCR-SOR",
+          "x": 6202,
+          "y": 28,
+          "text": "RULE \u00b7 LEVEL 1Spread Out ReportsCCM-OCR-SOR"
+        },
+        {
+          "id": "fr:CCM-QTR-ACT",
+          "x": 6202,
+          "y": 174,
+          "text": "RULE \u00b7 LEVEL 1Additional ContentCCM-QTR-ACT"
+        },
+        {
+          "id": "fr:CCM-QTR-MTG",
+          "x": 6202,
+          "y": 320,
+          "text": "RULE \u00b7 LEVEL 1Quarterly Review MeetingCCM-QTR-MTG"
+        },
+        {
+          "id": "fr:CCM-QTR-NID",
+          "x": 6202,
+          "y": 466,
+          "text": "RULE \u00b7 LEVEL 1No Irresponsible DisclosureCCM-QTR-NID"
+        },
+        {
+          "id": "fr:CCM-QTR-NRD",
+          "x": 6202,
+          "y": 612,
+          "text": "RULE \u00b7 LEVEL 1Next Review DateCCM-QTR-NRD"
+        },
+        {
+          "id": "fr:CCM-QTR-REG",
+          "x": 6496,
+          "y": 28,
+          "text": "RULE \u00b7 LEVEL 1Meeting Registration InfoCCM-QTR-REG"
+        },
+        {
+          "id": "fr:CCM-QTR-RTP",
+          "x": 6496,
+          "y": 174,
+          "text": "RULE \u00b7 LEVEL 1Restrict Third PartiesCCM-QTR-RTP"
+        },
+        {
+          "id": "fr:CCM-QTR-RTR",
+          "x": 6496,
+          "y": 320,
+          "text": "RULE \u00b7 LEVEL 1Record/Transcribe ReviewsCCM-QTR-RTR"
+        },
+        {
+          "id": "fr:CCM-QTR-SAR",
+          "x": 6496,
+          "y": 466,
+          "text": "RULE \u00b7 LEVEL 1Schedule Around ReportsCCM-QTR-SAR"
+        },
+        {
+          "id": "fr:CCM-QTR-SCR",
+          "x": 6496,
+          "y": 612,
+          "text": "RULE \u00b7 LEVEL 1Share Content ResponsiblyCCM-QTR-SCR"
+        },
+        {
+          "id": "fr:CCM-QTR-SRR",
+          "x": 6790,
+          "y": 28,
+          "text": "RULE \u00b7 LEVEL 1Share Recordings ResponsiblyCCM-QTR-SRR"
+        },
+        {
+          "id": "fr:CDS-CSF-TCM",
+          "x": 6790,
+          "y": 174,
+          "text": "RULE \u00b7 LEVEL 1Trust Center MigrationCDS-CSF-TCM"
+        },
+        {
+          "id": "fr:CDS-CSO-AVR",
+          "x": 6790,
+          "y": 320,
+          "text": "RULE \u00b7 LEVEL 1Availability ReportingCDS-CSO-AVR"
+        },
+        {
+          "id": "fr:CDS-CSO-CBF",
+          "x": 6790,
+          "y": 466,
+          "text": "RULE \u00b7 LEVEL 1Consistency Between FormatsCDS-CSO-CBF"
+        },
+        {
+          "id": "fr:CDS-CSO-FID",
+          "x": 6790,
+          "y": 612,
+          "text": "RULE \u00b7 LEVEL 1Always Include FedRAMP IDCDS-CSO-FID"
+        }
+      ],
+      "footer": "60 of 216 neighborhood entities \u00b7 59 verified relationships\nShow 60 more\nShow all 216"
+    },
+    {
+      "name": "03-class-d-fit",
+      "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/?node=class%3AD&mode=flow",
+      "count": 60,
+      "width": 6986,
+      "height": 696,
+      "maxColumnGap": 1540,
+      "viewport": "transform: translate(72.5852px, 237.644px) scale(0.121958);",
+      "toggle": {
+        "checked": false,
+        "disabled": true
+      },
+      "nodes": [
+        {
+          "id": "class:D",
+          "x": 28,
+          "y": 466,
+          "text": "CLASSClass DD"
+        },
+        {
+          "id": "fr:AFC-CSO-ACK",
+          "x": 1792,
+          "y": 28,
+          "text": "RULE \u00b7 LEVEL 1Acknowledge ReceiptAFC-CSO-ACK"
+        },
+        {
+          "id": "fr:AFC-CSO-CRA",
+          "x": 1792,
+          "y": 612,
+          "text": "RULE \u00b7 LEVEL 1Complete Required ActionsAFC-CSO-CRA"
+        },
+        {
+          "id": "fr:AFC-CSO-EMR",
+          "x": 3556,
+          "y": 28,
+          "text": "RULE \u00b7 LEVEL 1Emergency Message RoutingAFC-CSO-EMR"
+        },
+        {
+          "id": "fr:AFC-CSO-IMA",
+          "x": 3556,
+          "y": 612,
+          "text": "RULE \u00b7 LEVEL 1Important Message ActionsAFC-CSO-IMA"
+        },
+        {
+          "id": "fr:AFC-CSO-INB",
+          "x": 3850,
+          "y": 28,
+          "text": "RULE \u00b7 LEVEL 1Maintain a FedRAMP Security InboxAFC-CSO-INB"
+        },
+        {
+          "id": "fr:AFC-CSO-NOC",
+          "x": 3850,
+          "y": 174,
+          "text": "RULE \u00b7 LEVEL 1Notification of ChangesAFC-CSO-NOC"
+        },
+        {
+          "id": "fr:AFC-CSO-RCV",
+          "x": 3850,
+          "y": 320,
+          "text": "RULE \u00b7 LEVEL 1Receive Email Without DisruptionAFC-CSO-RCV"
+        },
+        {
+          "id": "fr:AFC-CSO-TFG",
+          "x": 3850,
+          "y": 466,
+          "text": "RULE \u00b7 LEVEL 1Trust @fedramp.gov and @gsa.govAFC-CSO-TFG"
+        },
+        {
+          "id": "fr:AFC-FRP-CDS",
+          "x": 3850,
+          "y": 612,
+          "text": "RULE \u00b7 LEVEL 1Criticality DesignatorsAFC-FRP-CDS"
+        },
+        {
+          "id": "fr:AFC-FRP-COR",
+          "x": 4144,
+          "y": 28,
+          "text": "RULE \u00b7 LEVEL 1Explain Corrective ActionsAFC-FRP-COR"
+        },
+        {
+          "id": "fr:AFC-FRP-ERT",
+          "x": 4144,
+          "y": 174,
+          "text": "RULE \u00b7 LEVEL 1Elevated Reaction TimeframesAFC-FRP-ERT"
+        },
+        {
+          "id": "fr:AFC-FRP-PNT",
+          "x": 4144,
+          "y": 320,
+          "text": "RULE \u00b7 LEVEL 1Public Notice of Emergency TestsAFC-FRP-PNT"
+        },
+        {
+          "id": "fr:AFC-FRP-RPM",
+          "x": 4144,
+          "y": 466,
+          "text": "RULE \u00b7 LEVEL 1Reaction MetricsAFC-FRP-RPM"
+        },
+        {
+          "id": "fr:AFC-FRP-RQA",
+          "x": 4144,
+          "y": 612,
+          "text": "RULE \u00b7 LEVEL 1Required ActionsAFC-FRP-RQA"
+        },
+        {
+          "id": "fr:AFC-FRP-UFS",
+          "x": 4438,
+          "y": 28,
+          "text": "RULE \u00b7 LEVEL 1Use FedRAMP_Security Email in EmergenciesAFC-FRP-UFS"
+        },
+        {
+          "id": "fr:AFC-FRP-VRE",
+          "x": 4438,
+          "y": 174,
+          "text": "RULE \u00b7 LEVEL 1Verified EmailsAFC-FRP-VRE"
+        },
+        {
+          "id": "fr:AGU-AGC-AIP",
+          "x": 4438,
+          "y": 320,
+          "text": "RULE \u00b7 LEVEL 1Agency Internal PoliciesAGU-AGC-AIP"
+        },
+        {
+          "id": "fr:AGU-AGC-GRC",
+          "x": 4438,
+          "y": 466,
+          "text": "RULE \u00b7 LEVEL 1Governance, Risk, and Compliance ToolsAGU-AGC-GRC"
+        },
+        {
+          "id": "fr:AGU-AGC-LIA",
+          "x": 4438,
+          "y": 612,
+          "text": "RULE \u00b7 LEVEL 1Agency Liaison ProgramAGU-AGC-LIA"
+        },
+        {
+          "id": "fr:AGU-AGC-NAA",
+          "x": 4732,
+          "y": 28,
+          "text": "RULE \u00b7 LEVEL 1Notify FedRAMP After AuthorizationAGU-AGC-NAA"
+        },
+        {
+          "id": "fr:AGU-AGC-NAI",
+          "x": 4732,
+          "y": 174,
+          "text": "RULE \u00b7 LEVEL 1Notify Additional Information RequestsAGU-AGC-NAI"
+        },
+        {
+          "id": "fr:AGU-AGC-NAR",
+          "x": 4732,
+          "y": 320,
+          "text": "RULE \u00b7 LEVEL 1No Additional Security RequirementsAGU-AGC-NAR"
+        },
+        {
+          "id": "fr:AGU-AGC-SIN",
+          "x": 4732,
+          "y": 466,
+          "text": "RULE \u00b7 LEVEL 1Shared FedRAMP InboxAGU-AGC-SIN"
+        },
+        {
+          "id": "fr:AGU-AGC-TPP",
+          "x": 4732,
+          "y": 612,
+          "text": "RULE \u00b7 LEVEL 1No Certification Type or Path PreferencesAGU-AGC-TPP"
+        },
+        {
+          "id": "fr:AGU-AGC-WKG",
+          "x": 5026,
+          "y": 28,
+          "text": "RULE \u00b7 LEVEL 1FedRAMP Working GroupsAGU-AGC-WKG"
+        },
+        {
+          "id": "fr:AGU-SPN-MRC",
+          "x": 5026,
+          "y": 174,
+          "text": "RULE \u00b7 LEVEL 1Most Recent Consolidated RulesAGU-SPN-MRC"
+        },
+        {
+          "id": "fr:AGU-USE-ABU",
+          "x": 5026,
+          "y": 320,
+          "text": "RULE \u00b7 LEVEL 1Authorization Before UseAGU-USE-ABU"
+        },
+        {
+          "id": "fr:AGU-USE-AFR",
+          "x": 5026,
+          "y": 466,
+          "text": "RULE \u00b7 LEVEL 1Accept FedRAMP RulesAGU-USE-AFR"
+        },
+        {
+          "id": "fr:AGU-USE-CLA",
+          "x": 5026,
+          "y": 612,
+          "text": "RULE \u00b7 LEVEL 1Using FedRAMP Class A CertificationsAGU-USE-CLA"
+        },
+        {
+          "id": "fr:AGU-USE-DSO",
+          "x": 5320,
+          "y": 28,
+          "text": "RULE \u00b7 LEVEL 1Designate Senior OfficialAGU-USE-DSO"
+        },
+        {
+          "id": "fr:AGU-USE-NFC",
+          "x": 5320,
+          "y": 174,
+          "text": "RULE \u00b7 LEVEL 1Notify FedRAMP of Monitoring ConcernsAGU-USE-NFC"
+        },
+        {
+          "id": "fr:AGU-USE-NPC",
+          "x": 5320,
+          "y": 320,
+          "text": "RULE \u00b7 LEVEL 1Notify Provider of ConcernsAGU-USE-NPC"
+        },
+        {
+          "id": "fr:AGU-USE-RCF",
+          "x": 5320,
+          "y": 466,
+          "text": "RULE \u00b7 LEVEL 1Resolve Certification Package ConflictsAGU-USE-RCF"
+        },
+        {
+          "id": "fr:AGU-USE-RIR",
+          "x": 5320,
+          "y": 612,
+          "text": "RULE \u00b7 LEVEL 1Review All Information ResourcesAGU-USE-RIR"
+        },
+        {
+          "id": "fr:AGU-USE-ROR",
+          "x": 5614,
+          "y": 28,
+          "text": "RULE \u00b7 LEVEL 1Review Ongoing Certification ReportsAGU-USE-ROR"
+        },
+        {
+          "id": "fr:AGU-USE-RSG",
+          "x": 5614,
+          "y": 174,
+          "text": "RULE \u00b7 LEVEL 1Review Secure Configuration GuidesAGU-USE-RSG"
+        },
+        {
+          "id": "fr:CCM-AGM-CSC",
+          "x": 5614,
+          "y": 320,
+          "text": "RULE \u00b7 LEVEL 1Consider Security CategoryCCM-AGM-CSC"
+        },
+        {
+          "id": "fr:CCM-AGM-ROR",
+          "x": 5614,
+          "y": 466,
+          "text": "RULE \u00b7 LEVEL 1Review Ongoing ReportsCCM-AGM-ROR"
+        },
+        {
+          "id": "fr:CCM-OCR-AFS",
+          "x": 5614,
+          "y": 612,
+          "text": "RULE \u00b7 LEVEL 1Anonymized Feedback SummaryCCM-OCR-AFS"
+        },
+        {
+          "id": "fr:CCM-OCR-AVL",
+          "x": 5908,
+          "y": 28,
+          "text": "RULE \u00b7 LEVEL 1Report AvailabilityCCM-OCR-AVL"
+        },
+        {
+          "id": "fr:CCM-OCR-FBM",
+          "x": 5908,
+          "y": 174,
+          "text": "RULE \u00b7 LEVEL 1Feedback MechanismCCM-OCR-FBM"
+        },
+        {
+          "id": "fr:CCM-OCR-LSI",
+          "x": 5908,
+          "y": 320,
+          "text": "RULE \u00b7 LEVEL 1Limit Sensitive InformationCCM-OCR-LSI"
+        },
+        {
+          "id": "fr:CCM-OCR-NRD",
+          "x": 5908,
+          "y": 466,
+          "text": "RULE \u00b7 LEVEL 1Next Report DateCCM-OCR-NRD"
+        },
+        {
+          "id": "fr:CCM-OCR-RPS",
+          "x": 5908,
+          "y": 612,
+          "text": "RULE \u00b7 LEVEL 1Responsible Public Certification Report SharingCCM-OCR-RPS"
+        },
+        {
+          "id": "fr:CCM-OCR-SOR",
+          "x": 6202,
+          "y": 28,
+          "text": "RULE \u00b7 LEVEL 1Spread Out ReportsCCM-OCR-SOR"
+        },
+        {
+          "id": "fr:CCM-QTR-ACT",
+          "x": 6202,
+          "y": 174,
+          "text": "RULE \u00b7 LEVEL 1Additional ContentCCM-QTR-ACT"
+        },
+        {
+          "id": "fr:CCM-QTR-MTG",
+          "x": 6202,
+          "y": 320,
+          "text": "RULE \u00b7 LEVEL 1Quarterly Review MeetingCCM-QTR-MTG"
+        },
+        {
+          "id": "fr:CCM-QTR-NID",
+          "x": 6202,
+          "y": 466,
+          "text": "RULE \u00b7 LEVEL 1No Irresponsible DisclosureCCM-QTR-NID"
+        },
+        {
+          "id": "fr:CCM-QTR-NRD",
+          "x": 6202,
+          "y": 612,
+          "text": "RULE \u00b7 LEVEL 1Next Review DateCCM-QTR-NRD"
+        },
+        {
+          "id": "fr:CCM-QTR-REG",
+          "x": 6496,
+          "y": 28,
+          "text": "RULE \u00b7 LEVEL 1Meeting Registration InfoCCM-QTR-REG"
+        },
+        {
+          "id": "fr:CCM-QTR-RTP",
+          "x": 6496,
+          "y": 174,
+          "text": "RULE \u00b7 LEVEL 1Restrict Third PartiesCCM-QTR-RTP"
+        },
+        {
+          "id": "fr:CCM-QTR-RTR",
+          "x": 6496,
+          "y": 320,
+          "text": "RULE \u00b7 LEVEL 1Record/Transcribe ReviewsCCM-QTR-RTR"
+        },
+        {
+          "id": "fr:CCM-QTR-SAR",
+          "x": 6496,
+          "y": 466,
+          "text": "RULE \u00b7 LEVEL 1Schedule Around ReportsCCM-QTR-SAR"
+        },
+        {
+          "id": "fr:CCM-QTR-SCR",
+          "x": 6496,
+          "y": 612,
+          "text": "RULE \u00b7 LEVEL 1Share Content ResponsiblyCCM-QTR-SCR"
+        },
+        {
+          "id": "fr:CCM-QTR-SRR",
+          "x": 6790,
+          "y": 28,
+          "text": "RULE \u00b7 LEVEL 1Share Recordings ResponsiblyCCM-QTR-SRR"
+        },
+        {
+          "id": "fr:CDS-CSF-TCM",
+          "x": 6790,
+          "y": 174,
+          "text": "RULE \u00b7 LEVEL 1Trust Center MigrationCDS-CSF-TCM"
+        },
+        {
+          "id": "fr:CDS-CSO-AVR",
+          "x": 6790,
+          "y": 320,
+          "text": "RULE \u00b7 LEVEL 1Availability ReportingCDS-CSO-AVR"
+        },
+        {
+          "id": "fr:CDS-CSO-CBF",
+          "x": 6790,
+          "y": 466,
+          "text": "RULE \u00b7 LEVEL 1Consistency Between FormatsCDS-CSO-CBF"
+        },
+        {
+          "id": "fr:CDS-CSO-FID",
+          "x": 6790,
+          "y": 612,
+          "text": "RULE \u00b7 LEVEL 1Always Include FedRAMP IDCDS-CSO-FID"
+        }
+      ],
+      "footer": "60 of 216 neighborhood entities \u00b7 59 verified relationships\nShow 60 more\nShow all 216"
+    },
+    {
+      "name": "04-class-b-search-definition",
+      "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/?node=fr%3AFRD-CCC&mode=flow",
+      "count": 3,
+      "width": 7280,
+      "height": 696,
+      "maxColumnGap": 6832,
+      "viewport": "transform: translate(72.7231px, 243.996px) scale(0.117033);",
+      "toggle": {
+        "checked": false,
+        "disabled": true
+      },
+      "nodes": [
+        {
+          "id": "fr:FRD-CCC",
+          "x": 7084,
+          "y": 28,
+          "text": "DEFINITIONCertification Class ChangeFRD-CCC"
+        },
+        {
+          "id": "fedramp",
+          "x": 28,
+          "y": 612,
+          "text": "SOURCE DOCUMENT \u00b7 LEVEL 1FedRAMP 2026fedramp"
+        },
+        {
+          "id": "fr:SCN-CSO-EVA",
+          "x": 7084,
+          "y": 174,
+          "text": "RULE \u00b7 LEVEL 1Evaluate ChangesSCN-CSO-EVA"
+        }
+      ],
+      "footer": "3 of 3 neighborhood entities \u00b7 2 verified relationships"
+    },
+    {
+      "name": "05-rule-fit",
+      "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/?node=fr%3AAGU-AGC-AIP&mode=flow",
+      "count": 6,
+      "width": 4634,
+      "height": 550,
+      "maxColumnGap": 3010,
+      "viewport": "transform: translate(70.852px, 232.291px) scale(0.183858);",
+      "toggle": {
+        "checked": false,
+        "disabled": true
+      },
+      "nodes": [
+        {
+          "id": "fr:AGU-AGC-AIP",
+          "x": 4438,
+          "y": 320,
+          "text": "RULEAgency Internal PoliciesAGU-AGC-AIP"
+        },
+        {
+          "id": "class:A",
+          "x": 28,
+          "y": 28,
+          "text": "CLASS \u00b7 LEVEL 1Class AA"
+        },
+        {
+          "id": "class:B",
+          "x": 28,
+          "y": 174,
+          "text": "CLASS \u00b7 LEVEL 1Class BB"
+        },
+        {
+          "id": "class:C",
+          "x": 28,
+          "y": 320,
+          "text": "CLASS \u00b7 LEVEL 1Class CC"
+        },
+        {
+          "id": "class:D",
+          "x": 28,
+          "y": 466,
+          "text": "CLASS \u00b7 LEVEL 1Class DD"
+        },
+        {
+          "id": "subset:AGU:all:AGC",
+          "x": 3262,
+          "y": 320,
+          "text": "SUBSET \u00b7 LEVEL 1General Agency Responsibilitiessubset:AGU:all:AGC"
+        }
+      ],
+      "footer": "6 of 6 neighborhood entities \u00b7 5 verified relationships"
+    },
+    {
+      "name": "06-definition-fit",
+      "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/?node=fr%3AFRD-CCL&mode=flow",
+      "count": 14,
+      "width": 7574,
+      "height": 696,
+      "maxColumnGap": 3304,
+      "viewport": "transform: translate(73.8503px, 245.704px) scale(0.11249);",
+      "toggle": {
+        "checked": false,
+        "disabled": true
+      },
+      "nodes": [
+        {
+          "id": "fr:FRD-CCL",
+          "x": 7378,
+          "y": 28,
+          "text": "DEFINITIONCertification ClassFRD-CCL"
+        },
+        {
+          "id": "class:A",
+          "x": 28,
+          "y": 28,
+          "text": "CLASS \u00b7 LEVEL 1Class AA"
+        },
+        {
+          "id": "class:B",
+          "x": 28,
+          "y": 174,
+          "text": "CLASS \u00b7 LEVEL 1Class BB"
+        },
+        {
+          "id": "class:C",
+          "x": 28,
+          "y": 320,
+          "text": "CLASS \u00b7 LEVEL 1Class CC"
+        },
+        {
+          "id": "class:D",
+          "x": 28,
+          "y": 466,
+          "text": "CLASS \u00b7 LEVEL 1Class DD"
+        },
+        {
+          "id": "fedramp",
+          "x": 28,
+          "y": 612,
+          "text": "SOURCE DOCUMENT \u00b7 LEVEL 1FedRAMP 2026fedramp"
+        },
+        {
+          "id": "fr:AFC-CSO-CRA",
+          "x": 1792,
+          "y": 612,
+          "text": "RULE \u00b7 LEVEL 1Complete Required ActionsAFC-CSO-CRA"
+        },
+        {
+          "id": "fr:AFC-CSO-IMA",
+          "x": 3556,
+          "y": 612,
+          "text": "RULE \u00b7 LEVEL 1Important Message ActionsAFC-CSO-IMA"
+        },
+        {
+          "id": "fr:CPO-CSO-OVR",
+          "x": 7084,
+          "y": 320,
+          "text": "RULE \u00b7 LEVEL 1Overview of the Cloud Service OfferingCPO-CSO-OVR"
+        },
+        {
+          "id": "fr:FRC-CCL-DCC",
+          "x": 7084,
+          "y": 466,
+          "text": "RULE \u00b7 LEVEL 1Downgrading Certification ClassFRC-CCL-DCC"
+        },
+        {
+          "id": "fr:FRC-CCL-UCC",
+          "x": 7084,
+          "y": 612,
+          "text": "RULE \u00b7 LEVEL 1Upgrading Certification ClassFRC-CCL-UCC"
+        },
+        {
+          "id": "fr:IVV-CSO-FIA",
+          "x": 7378,
+          "y": 174,
+          "text": "RULE \u00b7 LEVEL 1FedRAMP Independent AssessmentsIVV-CSO-FIA"
+        },
+        {
+          "id": "fr:MKT-IIP-DLA",
+          "x": 7378,
+          "y": 320,
+          "text": "RULE \u00b7 LEVEL 1Deadline for AssessmentMKT-IIP-DLA"
+        },
+        {
+          "id": "fr:SCN-CSO-EVA",
+          "x": 7084,
+          "y": 174,
+          "text": "RULE \u00b7 LEVEL 1Evaluate ChangesSCN-CSO-EVA"
+        }
+      ],
+      "footer": "14 of 14 neighborhood entities \u00b7 13 verified relationships"
+    },
+    {
+      "name": "07-back-rule",
+      "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/?node=fr%3AAGU-AGC-AIP&mode=flow",
+      "count": 6,
+      "width": 4634,
+      "height": 550,
+      "maxColumnGap": 3010,
+      "viewport": "transform: translate(70.852px, 232.291px) scale(0.183858);",
+      "toggle": {
+        "checked": false,
+        "disabled": true
+      },
+      "nodes": [
+        {
+          "id": "fr:AGU-AGC-AIP",
+          "x": 4438,
+          "y": 320,
+          "text": "RULEAgency Internal PoliciesAGU-AGC-AIP"
+        },
+        {
+          "id": "class:A",
+          "x": 28,
+          "y": 28,
+          "text": "CLASS \u00b7 LEVEL 1Class AA"
+        },
+        {
+          "id": "class:B",
+          "x": 28,
+          "y": 174,
+          "text": "CLASS \u00b7 LEVEL 1Class BB"
+        },
+        {
+          "id": "class:C",
+          "x": 28,
+          "y": 320,
+          "text": "CLASS \u00b7 LEVEL 1Class CC"
+        },
+        {
+          "id": "class:D",
+          "x": 28,
+          "y": 466,
+          "text": "CLASS \u00b7 LEVEL 1Class DD"
+        },
+        {
+          "id": "subset:AGU:all:AGC",
+          "x": 3262,
+          "y": 320,
+          "text": "SUBSET \u00b7 LEVEL 1General Agency Responsibilitiessubset:AGU:all:AGC"
+        }
+      ],
+      "footer": "6 of 6 neighborhood entities \u00b7 5 verified relationships"
+    },
+    {
+      "name": "08-ksi-nist-off",
+      "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/?node=fr%3AKSI-CNA-EIS&mode=flow",
+      "count": 17,
+      "width": 7868,
+      "height": 696,
+      "maxColumnGap": 6538,
+      "viewport": "transform: translate(9.29537px, 247.284px) scale(0.108287);",
+      "toggle": {
+        "checked": false,
+        "disabled": true
+      },
+      "nodes": [
+        {
+          "id": "fr:KSI-CNA-EIS",
+          "x": 7672,
+          "y": 174,
+          "text": "KSIEnforcing Intended StateKSI-CNA-EIS"
+        },
+        {
+          "id": "fr:FRD-IRS",
+          "x": 7378,
+          "y": 466,
+          "text": "DEFINITION \u00b7 LEVEL 1Information ResourceFRD-IRS"
+        },
+        {
+          "id": "fr:FRD-MBI",
+          "x": 7378,
+          "y": 612,
+          "text": "DEFINITION \u00b7 LEVEL 1Machine-Based (Information Resources)FRD-MBI"
+        },
+        {
+          "id": "fr:FRD-PER",
+          "x": 7672,
+          "y": 28,
+          "text": "DEFINITION \u00b7 LEVEL 1PersistentlyFRD-PER"
+        },
+        {
+          "id": "nist:ca-2.1",
+          "x": 7672,
+          "y": 320,
+          "text": "ENHANCEMENT \u00b7 LEVEL 1Independent Assessorsca-2.1"
+        },
+        {
+          "id": "nist:cm-11",
+          "x": 7672,
+          "y": 466,
+          "text": "CONTROL \u00b7 LEVEL 1User-installed Softwarecm-11"
+        },
+        {
+          "id": "nist:cm-6.2",
+          "x": 7672,
+          "y": 612,
+          "text": "ENHANCEMENT \u00b7 LEVEL 1Respond to Unauthorized Changescm-6.2"
+        },
+        {
+          "id": "nist:cp-10.4",
+          "x": 7966,
+          "y": 28,
+          "text": "ENHANCEMENT \u00b7 LEVEL 1Restore Within Time Periodcp-10.4"
+        },
+        {
+          "id": "nist:ir-9.4",
+          "x": 7966,
+          "y": 174,
+          "text": "ENHANCEMENT \u00b7 LEVEL 1Exposure to Unauthorized Personnelir-9.4"
+        },
+        {
+          "id": "nist:sc-24",
+          "x": 7966,
+          "y": 320,
+          "text": "CONTROL \u00b7 LEVEL 1Fail in Known Statesc-24"
+        },
+        {
+          "id": "nist:sc-7.18",
+          "x": 7966,
+          "y": 466,
+          "text": "ENHANCEMENT \u00b7 LEVEL 1Fail Securesc-7.18"
+        },
+        {
+          "id": "nist:si-4.22",
+          "x": 7966,
+          "y": 612,
+          "text": "ENHANCEMENT \u00b7 LEVEL 1Unauthorized Network Servicessi-4.22"
+        },
+        {
+          "id": "nist:si-7",
+          "x": 8260,
+          "y": 28,
+          "text": "CONTROL \u00b7 LEVEL 1Software, Firmware, and Information Integritysi-7"
+        },
+        {
+          "id": "nist:si-7.1",
+          "x": 8260,
+          "y": 174,
+          "text": "ENHANCEMENT \u00b7 LEVEL 1Integrity Checkssi-7.1"
+        },
+        {
+          "id": "nist:si-7.5",
+          "x": 8260,
+          "y": 320,
+          "text": "ENHANCEMENT \u00b7 LEVEL 1Automated Response to Integrity Violationssi-7.5"
+        },
+        {
+          "id": "nist:si-7.7",
+          "x": 8260,
+          "y": 466,
+          "text": "ENHANCEMENT \u00b7 LEVEL 1Integration of Detection and Responsesi-7.7"
+        },
+        {
+          "id": "theme:CNA",
+          "x": 616,
+          "y": 174,
+          "text": "THEME \u00b7 LEVEL 1Cloud Native Architecturetheme:CNA"
+        }
+      ],
+      "footer": "17 of 17 neighborhood entities \u00b7 16 verified relationships"
+    },
+    {
+      "name": "09-ksi-nist-on-disabled",
+      "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/?node=fr%3AKSI-CNA-EIS&mode=flow&mapped=1",
+      "count": 17,
+      "width": 4340,
+      "height": 696,
+      "maxColumnGap": 1246,
+      "viewport": "transform: translate(12.7871px, 214.186px) scale(0.196313);",
+      "toggle": {
+        "checked": true,
+        "disabled": true
+      },
+      "nodes": [
+        {
+          "id": "fr:KSI-CNA-EIS",
+          "x": 322,
+          "y": 612,
+          "text": "KSIEnforcing Intended StateKSI-CNA-EIS"
+        },
+        {
+          "id": "fr:FRD-IRS",
+          "x": 322,
+          "y": 28,
+          "text": "DEFINITION \u00b7 LEVEL 1Information ResourceFRD-IRS"
+        },
+        {
+          "id": "fr:FRD-MBI",
+          "x": 322,
+          "y": 174,
+          "text": "DEFINITION \u00b7 LEVEL 1Machine-Based (Information Resources)FRD-MBI"
+        },
+        {
+          "id": "fr:FRD-PER",
+          "x": 322,
+          "y": 466,
+          "text": "DEFINITION \u00b7 LEVEL 1PersistentlyFRD-PER"
+        },
+        {
+          "id": "nist:ca-2.1",
+          "x": 2968,
+          "y": 28,
+          "text": "ENHANCEMENT \u00b7 LEVEL 1Independent Assessorsca-2.1"
+        },
+        {
+          "id": "nist:cm-11",
+          "x": 2968,
+          "y": 612,
+          "text": "CONTROL \u00b7 LEVEL 1User-installed Softwarecm-11"
+        },
+        {
+          "id": "nist:cm-6.2",
+          "x": 3850,
+          "y": 28,
+          "text": "ENHANCEMENT \u00b7 LEVEL 1Respond to Unauthorized Changescm-6.2"
+        },
+        {
+          "id": "nist:cp-10.4",
+          "x": 3850,
+          "y": 174,
+          "text": "ENHANCEMENT \u00b7 LEVEL 1Restore Within Time Periodcp-10.4"
+        },
+        {
+          "id": "nist:ir-9.4",
+          "x": 3850,
+          "y": 466,
+          "text": "ENHANCEMENT \u00b7 LEVEL 1Exposure to Unauthorized Personnelir-9.4"
+        },
+        {
+          "id": "nist:sc-24",
+          "x": 3850,
+          "y": 612,
+          "text": "CONTROL \u00b7 LEVEL 1Fail in Known Statesc-24"
+        },
+        {
+          "id": "nist:sc-7.18",
+          "x": 4144,
+          "y": 28,
+          "text": "ENHANCEMENT \u00b7 LEVEL 1Fail Securesc-7.18"
+        },
+        {
+          "id": "nist:si-4.22",
+          "x": 4144,
+          "y": 174,
+          "text": "ENHANCEMENT \u00b7 LEVEL 1Unauthorized Network Servicessi-4.22"
+        },
+        {
+          "id": "nist:si-7",
+          "x": 4144,
+          "y": 320,
+          "text": "CONTROL \u00b7 LEVEL 1Software, Firmware, and Information Integritysi-7"
+        },
+        {
+          "id": "nist:si-7.1",
+          "x": 4144,
+          "y": 466,
+          "text": "ENHANCEMENT \u00b7 LEVEL 1Integrity Checkssi-7.1"
+        },
+        {
+          "id": "nist:si-7.5",
+          "x": 4144,
+          "y": 612,
+          "text": "ENHANCEMENT \u00b7 LEVEL 1Automated Response to Integrity Violationssi-7.5"
+        },
+        {
+          "id": "nist:si-7.7",
+          "x": 4438,
+          "y": 28,
+          "text": "ENHANCEMENT \u00b7 LEVEL 1Integration of Detection and Responsesi-7.7"
+        },
+        {
+          "id": "theme:CNA",
+          "x": 1792,
+          "y": 320,
+          "text": "THEME \u00b7 LEVEL 1Cloud Native Architecturetheme:CNA"
+        }
+      ],
+      "footer": "17 of 17 neighborhood entities \u00b7 16 verified relationships"
+    },
+    {
+      "name": "10-fedramp-source-fit",
+      "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/?node=fedramp&mode=flow&mapped=1",
+      "count": 60,
+      "width": 7868,
+      "height": 696,
+      "maxColumnGap": 4186,
+      "viewport": "transform: translate(41.1317px, 242.784px) scale(0.108287);",
+      "toggle": {
+        "checked": true,
+        "disabled": true
+      },
+      "nodes": [
+        {
+          "id": "fedramp",
+          "x": 322,
+          "y": 320,
+          "text": "SOURCE DOCUMENTFedRAMP 2026fedramp"
+        },
+        {
+          "id": "fr:FRD-AAP",
+          "x": 4732,
+          "y": 466,
+          "text": "DEFINITION \u00b7 LEVEL 1All Affected PartiesFRD-AAP"
+        },
+        {
+          "id": "fr:FRD-ACV",
+          "x": 4732,
+          "y": 612,
+          "text": "DEFINITION \u00b7 LEVEL 1Accepted VulnerabilityFRD-ACV"
+        },
+        {
+          "id": "fr:FRD-ADP",
+          "x": 5026,
+          "y": 28,
+          "text": "DEFINITION \u00b7 LEVEL 1Adaptive ChangeFRD-ADP"
+        },
+        {
+          "id": "fr:FRD-ADV",
+          "x": 5026,
+          "y": 174,
+          "text": "DEFINITION \u00b7 LEVEL 1AdvisorFRD-ADV"
+        },
+        {
+          "id": "fr:FRD-AGY",
+          "x": 5026,
+          "y": 320,
+          "text": "DEFINITION \u00b7 LEVEL 1AgencyFRD-AGY"
+        },
+        {
+          "id": "fr:FRD-ANA",
+          "x": 5026,
+          "y": 466,
+          "text": "DEFINITION \u00b7 LEVEL 1All Necessary AssessorsFRD-ANA"
+        },
+        {
+          "id": "fr:FRD-ANP",
+          "x": 5026,
+          "y": 612,
+          "text": "DEFINITION \u00b7 LEVEL 1All Necessary PartiesFRD-ANP"
+        },
+        {
+          "id": "fr:FRD-ART",
+          "x": 5320,
+          "y": 28,
+          "text": "DEFINITION \u00b7 LEVEL 1ArtifactsFRD-ART"
+        },
+        {
+          "id": "fr:FRD-ASR",
+          "x": 5320,
+          "y": 174,
+          "text": "DEFINITION \u00b7 LEVEL 1AssessorFRD-ASR"
+        },
+        {
+          "id": "fr:FRD-CCC",
+          "x": 5320,
+          "y": 320,
+          "text": "DEFINITION \u00b7 LEVEL 1Certification Class ChangeFRD-CCC"
+        },
+        {
+          "id": "fr:FRD-CCL",
+          "x": 5320,
+          "y": 466,
+          "text": "DEFINITION \u00b7 LEVEL 1Certification ClassFRD-CCL"
+        },
+        {
+          "id": "fr:FRD-CPF",
+          "x": 5320,
+          "y": 612,
+          "text": "DEFINITION \u00b7 LEVEL 1Certification ProfileFRD-CPF"
+        },
+        {
+          "id": "fr:FRD-CPH",
+          "x": 5614,
+          "y": 28,
+          "text": "DEFINITION \u00b7 LEVEL 1Certification PathFRD-CPH"
+        },
+        {
+          "id": "fr:FRD-CRD",
+          "x": 5614,
+          "y": 174,
+          "text": "DEFINITION \u00b7 LEVEL 1Certification DataFRD-CRD"
+        },
+        {
+          "id": "fr:FRD-CRP",
+          "x": 5614,
+          "y": 320,
+          "text": "DEFINITION \u00b7 LEVEL 1Certification PackageFRD-CRP"
+        },
+        {
+          "id": "fr:FRD-CSO",
+          "x": 5614,
+          "y": 466,
+          "text": "DEFINITION \u00b7 LEVEL 1Cloud Service OfferingFRD-CSO"
+        },
+        {
+          "id": "fr:FRD-CTY",
+          "x": 5614,
+          "y": 612,
+          "text": "DEFINITION \u00b7 LEVEL 1Certification TypeFRD-CTY"
+        },
+        {
+          "id": "fr:FRD-DCE",
+          "x": 5908,
+          "y": 28,
+          "text": "DEFINITION \u00b7 LEVEL 1Debilitating Customer EffectFRD-DCE"
+        },
+        {
+          "id": "fr:FRD-DCF",
+          "x": 5908,
+          "y": 174,
+          "text": "DEFINITION \u00b7 LEVEL 1Disruptive Customer EffectFRD-DCF"
+        },
+        {
+          "id": "fr:FRD-DFT",
+          "x": 5908,
+          "y": 320,
+          "text": "DEFINITION \u00b7 LEVEL 1DriftFRD-DFT"
+        },
+        {
+          "id": "fr:FRD-DTM",
+          "x": 5908,
+          "y": 466,
+          "text": "DEFINITION \u00b7 LEVEL 1Deterministic TelemetryFRD-DTM"
+        },
+        {
+          "id": "fr:FRD-FCD",
+          "x": 5908,
+          "y": 612,
+          "text": "DEFINITION \u00b7 LEVEL 1Federal Customer DataFRD-FCD"
+        },
+        {
+          "id": "fr:FRD-FCR",
+          "x": 6202,
+          "y": 28,
+          "text": "DEFINITION \u00b7 LEVEL 1FedRAMP Certification ReportFRD-FCR"
+        },
+        {
+          "id": "fr:FRD-FCT",
+          "x": 6202,
+          "y": 174,
+          "text": "DEFINITION \u00b7 LEVEL 1FedRAMP CertifiedFRD-FCT"
+        },
+        {
+          "id": "fr:FRD-FIN",
+          "x": 6202,
+          "y": 320,
+          "text": "DEFINITION \u00b7 LEVEL 1FedRAMP Independent AssessmentFRD-FIN"
+        },
+        {
+          "id": "fr:FRD-FIR",
+          "x": 6202,
+          "y": 466,
+          "text": "DEFINITION \u00b7 LEVEL 1Final Incident Report (FIR)FRD-FIR"
+        },
+        {
+          "id": "fr:FRD-FMV",
+          "x": 6202,
+          "y": 612,
+          "text": "DEFINITION \u00b7 LEVEL 1Fully Mitigated VulnerabilityFRD-FMV"
+        },
+        {
+          "id": "fr:FRD-FPR",
+          "x": 6496,
+          "y": 28,
+          "text": "DEFINITION \u00b7 LEVEL 1FedRAMP PracticesFRD-FPR"
+        },
+        {
+          "id": "fr:FRD-FPV",
+          "x": 6496,
+          "y": 174,
+          "text": "DEFINITION \u00b7 LEVEL 1False Positive VulnerabilityFRD-FPV"
+        },
+        {
+          "id": "fr:FRD-FRA",
+          "x": 6496,
+          "y": 320,
+          "text": "DEFINITION \u00b7 LEVEL 1FedRAMP RecognizedFRD-FRA"
+        },
+        {
+          "id": "fr:FRD-FRI",
+          "x": 6496,
+          "y": 466,
+          "text": "DEFINITION \u00b7 LEVEL 1FedRAMP Reportable IncidentFRD-FRI"
+        },
+        {
+          "id": "fr:FRD-FSI",
+          "x": 6496,
+          "y": 612,
+          "text": "DEFINITION \u00b7 LEVEL 1FedRAMP Security InboxFRD-FSI"
+        },
+        {
+          "id": "fr:FRD-HAN",
+          "x": 6790,
+          "y": 28,
+          "text": "DEFINITION \u00b7 LEVEL 1HandleFRD-HAN"
+        },
+        {
+          "id": "fr:FRD-IFA",
+          "x": 6790,
+          "y": 174,
+          "text": "DEFINITION \u00b7 LEVEL 1Initial FedRAMP AssessmentFRD-IFA"
+        },
+        {
+          "id": "fr:FRD-IIR",
+          "x": 6790,
+          "y": 320,
+          "text": "DEFINITION \u00b7 LEVEL 1Initial Incident Report (IIR)FRD-IIR"
+        },
+        {
+          "id": "fr:FRD-INC",
+          "x": 6790,
+          "y": 466,
+          "text": "DEFINITION \u00b7 LEVEL 1Initial CertificationFRD-INC"
+        },
+        {
+          "id": "fr:FRD-INT",
+          "x": 6790,
+          "y": 612,
+          "text": "DEFINITION \u00b7 LEVEL 1IncidentFRD-INT"
+        },
+        {
+          "id": "fr:FRD-IRS",
+          "x": 322,
+          "y": 28,
+          "text": "DEFINITION \u00b7 LEVEL 1Information ResourceFRD-IRS"
+        },
+        {
+          "id": "fr:FRD-IRV",
+          "x": 7084,
+          "y": 28,
+          "text": "DEFINITION \u00b7 LEVEL 1Internet-Reachable Vulnerability (IRV)FRD-IRV"
+        },
+        {
+          "id": "fr:FRD-KEV",
+          "x": 7084,
+          "y": 174,
+          "text": "DEFINITION \u00b7 LEVEL 1Known Exploited Vulnerability (KEV)FRD-KEV"
+        },
+        {
+          "id": "fr:FRD-LEV",
+          "x": 7084,
+          "y": 320,
+          "text": "DEFINITION \u00b7 LEVEL 1Likely Exploitable Vulnerability (LEV)FRD-LEV"
+        },
+        {
+          "id": "fr:FRD-LKY",
+          "x": 7084,
+          "y": 466,
+          "text": "DEFINITION \u00b7 LEVEL 1LikelyFRD-LKY"
+        },
+        {
+          "id": "fr:FRD-MAY",
+          "x": 7084,
+          "y": 612,
+          "text": "DEFINITION \u00b7 LEVEL 1MAYFRD-MAY"
+        },
+        {
+          "id": "fr:FRD-MBI",
+          "x": 322,
+          "y": 174,
+          "text": "DEFINITION \u00b7 LEVEL 1Machine-Based (Information Resources)FRD-MBI"
+        },
+        {
+          "id": "fr:FRD-MCE",
+          "x": 7378,
+          "y": 28,
+          "text": "DEFINITION \u00b7 LEVEL 1Minimal Customer EffectFRD-MCE"
+        },
+        {
+          "id": "fr:FRD-MGN",
+          "x": 7378,
+          "y": 174,
+          "text": "DEFINITION \u00b7 LEVEL 1Machine-GeneratedFRD-MGN"
+        },
+        {
+          "id": "fr:FRD-MNT",
+          "x": 7378,
+          "y": 320,
+          "text": "DEFINITION \u00b7 LEVEL 1MUST NOTFRD-MNT"
+        },
+        {
+          "id": "fr:FRD-MRD",
+          "x": 7378,
+          "y": 466,
+          "text": "DEFINITION \u00b7 LEVEL 1Machine-ReadableFRD-MRD"
+        },
+        {
+          "id": "fr:FRD-MST",
+          "x": 7378,
+          "y": 612,
+          "text": "DEFINITION \u00b7 LEVEL 1MUSTFRD-MST"
+        },
+        {
+          "id": "fr:FRD-NCE",
+          "x": 7672,
+          "y": 28,
+          "text": "DEFINITION \u00b7 LEVEL 1Narrow Customer EffectFRD-NCE"
+        },
+        {
+          "id": "fr:FRD-OCR",
+          "x": 7672,
+          "y": 174,
+          "text": "DEFINITION \u00b7 LEVEL 1Ongoing Certification Report (OCR)FRD-OCR"
+        },
+        {
+          "id": "fr:FRD-ODV",
+          "x": 7672,
+          "y": 320,
+          "text": "DEFINITION \u00b7 LEVEL 1Overdue VulnerabilityFRD-ODV"
+        },
+        {
+          "id": "fr:FRD-OIR",
+          "x": 7672,
+          "y": 466,
+          "text": "DEFINITION \u00b7 LEVEL 1Ongoing Incident Report (OIR)FRD-OIR"
+        },
+        {
+          "id": "fr:FRD-ONC",
+          "x": 7672,
+          "y": 612,
+          "text": "DEFINITION \u00b7 LEVEL 1Ongoing CertificationFRD-ONC"
+        },
+        {
+          "id": "fr:FRD-PAC",
+          "x": 7966,
+          "y": 28,
+          "text": "DEFINITION \u00b7 LEVEL 1Privileged AccountFRD-PAC"
+        },
+        {
+          "id": "fr:FRD-PAI",
+          "x": 7966,
+          "y": 174,
+          "text": "DEFINITION \u00b7 LEVEL 1Potential Agency ImpactFRD-PAI"
+        },
+        {
+          "id": "fr:FRD-PER",
+          "x": 322,
+          "y": 466,
+          "text": "DEFINITION \u00b7 LEVEL 1PersistentlyFRD-PER"
+        },
+        {
+          "id": "fr:FRD-PFA",
+          "x": 7966,
+          "y": 320,
+          "text": "DEFINITION \u00b7 LEVEL 1Persistent FedRAMP AssessmentFRD-PFA"
+        },
+        {
+          "id": "fr:FRD-PMV",
+          "x": 7966,
+          "y": 466,
+          "text": "DEFINITION \u00b7 LEVEL 1Partially Mitigated VulnerabilityFRD-PMV"
+        }
+      ],
+      "footer": "60 of 108 neighborhood entities \u00b7 59 verified relationships\nShow 60 more\nShow all 108"
+    },
+    {
+      "name": "11-source-mobile",
+      "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/?node=fedramp&mode=flow&mapped=1",
+      "count": 60,
+      "width": 7868,
+      "height": 696,
+      "maxColumnGap": 4186,
+      "viewport": "transform: translate(-123.8px, -52.2px) scale(0.7);",
+      "toggle": {
+        "checked": true,
+        "disabled": true
+      },
+      "nodes": [
+        {
+          "id": "fedramp",
+          "x": 322,
+          "y": 320,
+          "text": "SOURCE DOCUMENTFedRAMP 2026fedramp"
+        },
+        {
+          "id": "fr:FRD-AAP",
+          "x": 4732,
+          "y": 466,
+          "text": "DEFINITION \u00b7 LEVEL 1All Affected PartiesFRD-AAP"
+        },
+        {
+          "id": "fr:FRD-ACV",
+          "x": 4732,
+          "y": 612,
+          "text": "DEFINITION \u00b7 LEVEL 1Accepted VulnerabilityFRD-ACV"
+        },
+        {
+          "id": "fr:FRD-ADP",
+          "x": 5026,
+          "y": 28,
+          "text": "DEFINITION \u00b7 LEVEL 1Adaptive ChangeFRD-ADP"
+        },
+        {
+          "id": "fr:FRD-ADV",
+          "x": 5026,
+          "y": 174,
+          "text": "DEFINITION \u00b7 LEVEL 1AdvisorFRD-ADV"
+        },
+        {
+          "id": "fr:FRD-AGY",
+          "x": 5026,
+          "y": 320,
+          "text": "DEFINITION \u00b7 LEVEL 1AgencyFRD-AGY"
+        },
+        {
+          "id": "fr:FRD-ANA",
+          "x": 5026,
+          "y": 466,
+          "text": "DEFINITION \u00b7 LEVEL 1All Necessary AssessorsFRD-ANA"
+        },
+        {
+          "id": "fr:FRD-ANP",
+          "x": 5026,
+          "y": 612,
+          "text": "DEFINITION \u00b7 LEVEL 1All Necessary PartiesFRD-ANP"
+        },
+        {
+          "id": "fr:FRD-ART",
+          "x": 5320,
+          "y": 28,
+          "text": "DEFINITION \u00b7 LEVEL 1ArtifactsFRD-ART"
+        },
+        {
+          "id": "fr:FRD-ASR",
+          "x": 5320,
+          "y": 174,
+          "text": "DEFINITION \u00b7 LEVEL 1AssessorFRD-ASR"
+        },
+        {
+          "id": "fr:FRD-CCC",
+          "x": 5320,
+          "y": 320,
+          "text": "DEFINITION \u00b7 LEVEL 1Certification Class ChangeFRD-CCC"
+        },
+        {
+          "id": "fr:FRD-CCL",
+          "x": 5320,
+          "y": 466,
+          "text": "DEFINITION \u00b7 LEVEL 1Certification ClassFRD-CCL"
+        },
+        {
+          "id": "fr:FRD-CPF",
+          "x": 5320,
+          "y": 612,
+          "text": "DEFINITION \u00b7 LEVEL 1Certification ProfileFRD-CPF"
+        },
+        {
+          "id": "fr:FRD-CPH",
+          "x": 5614,
+          "y": 28,
+          "text": "DEFINITION \u00b7 LEVEL 1Certification PathFRD-CPH"
+        },
+        {
+          "id": "fr:FRD-CRD",
+          "x": 5614,
+          "y": 174,
+          "text": "DEFINITION \u00b7 LEVEL 1Certification DataFRD-CRD"
+        },
+        {
+          "id": "fr:FRD-CRP",
+          "x": 5614,
+          "y": 320,
+          "text": "DEFINITION \u00b7 LEVEL 1Certification PackageFRD-CRP"
+        },
+        {
+          "id": "fr:FRD-CSO",
+          "x": 5614,
+          "y": 466,
+          "text": "DEFINITION \u00b7 LEVEL 1Cloud Service OfferingFRD-CSO"
+        },
+        {
+          "id": "fr:FRD-CTY",
+          "x": 5614,
+          "y": 612,
+          "text": "DEFINITION \u00b7 LEVEL 1Certification TypeFRD-CTY"
+        },
+        {
+          "id": "fr:FRD-DCE",
+          "x": 5908,
+          "y": 28,
+          "text": "DEFINITION \u00b7 LEVEL 1Debilitating Customer EffectFRD-DCE"
+        },
+        {
+          "id": "fr:FRD-DCF",
+          "x": 5908,
+          "y": 174,
+          "text": "DEFINITION \u00b7 LEVEL 1Disruptive Customer EffectFRD-DCF"
+        },
+        {
+          "id": "fr:FRD-DFT",
+          "x": 5908,
+          "y": 320,
+          "text": "DEFINITION \u00b7 LEVEL 1DriftFRD-DFT"
+        },
+        {
+          "id": "fr:FRD-DTM",
+          "x": 5908,
+          "y": 466,
+          "text": "DEFINITION \u00b7 LEVEL 1Deterministic TelemetryFRD-DTM"
+        },
+        {
+          "id": "fr:FRD-FCD",
+          "x": 5908,
+          "y": 612,
+          "text": "DEFINITION \u00b7 LEVEL 1Federal Customer DataFRD-FCD"
+        },
+        {
+          "id": "fr:FRD-FCR",
+          "x": 6202,
+          "y": 28,
+          "text": "DEFINITION \u00b7 LEVEL 1FedRAMP Certification ReportFRD-FCR"
+        },
+        {
+          "id": "fr:FRD-FCT",
+          "x": 6202,
+          "y": 174,
+          "text": "DEFINITION \u00b7 LEVEL 1FedRAMP CertifiedFRD-FCT"
+        },
+        {
+          "id": "fr:FRD-FIN",
+          "x": 6202,
+          "y": 320,
+          "text": "DEFINITION \u00b7 LEVEL 1FedRAMP Independent AssessmentFRD-FIN"
+        },
+        {
+          "id": "fr:FRD-FIR",
+          "x": 6202,
+          "y": 466,
+          "text": "DEFINITION \u00b7 LEVEL 1Final Incident Report (FIR)FRD-FIR"
+        },
+        {
+          "id": "fr:FRD-FMV",
+          "x": 6202,
+          "y": 612,
+          "text": "DEFINITION \u00b7 LEVEL 1Fully Mitigated VulnerabilityFRD-FMV"
+        },
+        {
+          "id": "fr:FRD-FPR",
+          "x": 6496,
+          "y": 28,
+          "text": "DEFINITION \u00b7 LEVEL 1FedRAMP PracticesFRD-FPR"
+        },
+        {
+          "id": "fr:FRD-FPV",
+          "x": 6496,
+          "y": 174,
+          "text": "DEFINITION \u00b7 LEVEL 1False Positive VulnerabilityFRD-FPV"
+        },
+        {
+          "id": "fr:FRD-FRA",
+          "x": 6496,
+          "y": 320,
+          "text": "DEFINITION \u00b7 LEVEL 1FedRAMP RecognizedFRD-FRA"
+        },
+        {
+          "id": "fr:FRD-FRI",
+          "x": 6496,
+          "y": 466,
+          "text": "DEFINITION \u00b7 LEVEL 1FedRAMP Reportable IncidentFRD-FRI"
+        },
+        {
+          "id": "fr:FRD-FSI",
+          "x": 6496,
+          "y": 612,
+          "text": "DEFINITION \u00b7 LEVEL 1FedRAMP Security InboxFRD-FSI"
+        },
+        {
+          "id": "fr:FRD-HAN",
+          "x": 6790,
+          "y": 28,
+          "text": "DEFINITION \u00b7 LEVEL 1HandleFRD-HAN"
+        },
+        {
+          "id": "fr:FRD-IFA",
+          "x": 6790,
+          "y": 174,
+          "text": "DEFINITION \u00b7 LEVEL 1Initial FedRAMP AssessmentFRD-IFA"
+        },
+        {
+          "id": "fr:FRD-IIR",
+          "x": 6790,
+          "y": 320,
+          "text": "DEFINITION \u00b7 LEVEL 1Initial Incident Report (IIR)FRD-IIR"
+        },
+        {
+          "id": "fr:FRD-INC",
+          "x": 6790,
+          "y": 466,
+          "text": "DEFINITION \u00b7 LEVEL 1Initial CertificationFRD-INC"
+        },
+        {
+          "id": "fr:FRD-INT",
+          "x": 6790,
+          "y": 612,
+          "text": "DEFINITION \u00b7 LEVEL 1IncidentFRD-INT"
+        },
+        {
+          "id": "fr:FRD-IRS",
+          "x": 322,
+          "y": 28,
+          "text": "DEFINITION \u00b7 LEVEL 1Information ResourceFRD-IRS"
+        },
+        {
+          "id": "fr:FRD-IRV",
+          "x": 7084,
+          "y": 28,
+          "text": "DEFINITION \u00b7 LEVEL 1Internet-Reachable Vulnerability (IRV)FRD-IRV"
+        },
+        {
+          "id": "fr:FRD-KEV",
+          "x": 7084,
+          "y": 174,
+          "text": "DEFINITION \u00b7 LEVEL 1Known Exploited Vulnerability (KEV)FRD-KEV"
+        },
+        {
+          "id": "fr:FRD-LEV",
+          "x": 7084,
+          "y": 320,
+          "text": "DEFINITION \u00b7 LEVEL 1Likely Exploitable Vulnerability (LEV)FRD-LEV"
+        },
+        {
+          "id": "fr:FRD-LKY",
+          "x": 7084,
+          "y": 466,
+          "text": "DEFINITION \u00b7 LEVEL 1LikelyFRD-LKY"
+        },
+        {
+          "id": "fr:FRD-MAY",
+          "x": 7084,
+          "y": 612,
+          "text": "DEFINITION \u00b7 LEVEL 1MAYFRD-MAY"
+        },
+        {
+          "id": "fr:FRD-MBI",
+          "x": 322,
+          "y": 174,
+          "text": "DEFINITION \u00b7 LEVEL 1Machine-Based (Information Resources)FRD-MBI"
+        },
+        {
+          "id": "fr:FRD-MCE",
+          "x": 7378,
+          "y": 28,
+          "text": "DEFINITION \u00b7 LEVEL 1Minimal Customer EffectFRD-MCE"
+        },
+        {
+          "id": "fr:FRD-MGN",
+          "x": 7378,
+          "y": 174,
+          "text": "DEFINITION \u00b7 LEVEL 1Machine-GeneratedFRD-MGN"
+        },
+        {
+          "id": "fr:FRD-MNT",
+          "x": 7378,
+          "y": 320,
+          "text": "DEFINITION \u00b7 LEVEL 1MUST NOTFRD-MNT"
+        },
+        {
+          "id": "fr:FRD-MRD",
+          "x": 7378,
+          "y": 466,
+          "text": "DEFINITION \u00b7 LEVEL 1Machine-ReadableFRD-MRD"
+        },
+        {
+          "id": "fr:FRD-MST",
+          "x": 7378,
+          "y": 612,
+          "text": "DEFINITION \u00b7 LEVEL 1MUSTFRD-MST"
+        },
+        {
+          "id": "fr:FRD-NCE",
+          "x": 7672,
+          "y": 28,
+          "text": "DEFINITION \u00b7 LEVEL 1Narrow Customer EffectFRD-NCE"
+        },
+        {
+          "id": "fr:FRD-OCR",
+          "x": 7672,
+          "y": 174,
+          "text": "DEFINITION \u00b7 LEVEL 1Ongoing Certification Report (OCR)FRD-OCR"
+        },
+        {
+          "id": "fr:FRD-ODV",
+          "x": 7672,
+          "y": 320,
+          "text": "DEFINITION \u00b7 LEVEL 1Overdue VulnerabilityFRD-ODV"
+        },
+        {
+          "id": "fr:FRD-OIR",
+          "x": 7672,
+          "y": 466,
+          "text": "DEFINITION \u00b7 LEVEL 1Ongoing Incident Report (OIR)FRD-OIR"
+        },
+        {
+          "id": "fr:FRD-ONC",
+          "x": 7672,
+          "y": 612,
+          "text": "DEFINITION \u00b7 LEVEL 1Ongoing CertificationFRD-ONC"
+        },
+        {
+          "id": "fr:FRD-PAC",
+          "x": 7966,
+          "y": 28,
+          "text": "DEFINITION \u00b7 LEVEL 1Privileged AccountFRD-PAC"
+        },
+        {
+          "id": "fr:FRD-PAI",
+          "x": 7966,
+          "y": 174,
+          "text": "DEFINITION \u00b7 LEVEL 1Potential Agency ImpactFRD-PAI"
+        },
+        {
+          "id": "fr:FRD-PER",
+          "x": 322,
+          "y": 466,
+          "text": "DEFINITION \u00b7 LEVEL 1PersistentlyFRD-PER"
+        },
+        {
+          "id": "fr:FRD-PFA",
+          "x": 7966,
+          "y": 320,
+          "text": "DEFINITION \u00b7 LEVEL 1Persistent FedRAMP AssessmentFRD-PFA"
+        },
+        {
+          "id": "fr:FRD-PMV",
+          "x": 7966,
+          "y": 466,
+          "text": "DEFINITION \u00b7 LEVEL 1Partially Mitigated VulnerabilityFRD-PMV"
+        }
+      ],
+      "footer": "60 of 108 neighborhood entities \u00b7 59 verified relationships\nShow 60 more\nShow all 108"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,20 @@
+{
+  "records": [
+    {
+      "step": "Definitions branch has only definitions and source context, no unrelated classes",
+      "asset": "/FedRAMP-Policy-Atlas/assets/index-ig61FBXY.js"
+    },
+    {
+      "step": "Selecting FedRAMP source adds its four explicitly defined classes as context"
+    },
+    {
+      "step": "Pointer click on an actual routed SVG segment opens the matching original edge evidence",
+      "id": "057bc2bffcf98b6a5edac741",
+      "locator": "/FRR/CCM"
+    },
+    {
+      "step": "No uncaught errors in corrected source-context and pointer session"
+    }
+  ],
+  "errors": []
+}

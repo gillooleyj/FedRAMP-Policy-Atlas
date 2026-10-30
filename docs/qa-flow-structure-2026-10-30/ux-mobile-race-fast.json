@@ -1,0 +1,43 @@
+{
+  "asset": "/FedRAMP-Policy-Atlas/assets/index-ig61FBXY.js",
+  "states": [
+    {
+      "name": "mobile-750ms",
+      "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/?node=fr%3AKSI-CNA-EIS&mode=flow",
+      "cards": 7,
+      "card": {
+        "x": 99.80001831054688,
+        "y": 880.8687744140625,
+        "width": 190.39999389648438,
+        "height": 95.20001220703125
+      },
+      "surface": {
+        "x": 15,
+        "y": 722.96875,
+        "width": 360,
+        "height": 411
+      },
+      "fullyVisible": true,
+      "viewport": "transform: translate(-163.4px, -175.3px) scale(0.85);"
+    },
+    {
+      "name": "mobile-2s",
+      "url": "http://127.0.0.1:4187/FedRAMP-Policy-Atlas/?node=fr%3AKSI-CNA-EIS&mode=flow",
+      "cards": 7,
+      "card": {
+        "x": 99.80001831054688,
+        "y": 880.8687744140625,
+        "width": 190.39999389648438,
+        "height": 95.20001220703125
+      },
+      "surface": {
+        "x": 15,
+        "y": 722.96875,
+        "width": 360,
+        "height": 411
+      },
+      "fullyVisible": true,
+      "viewport": "transform: translate(-163.4px, -175.3px) scale(0.85);"
+    }
+  ]
+}

@@ -19,3 +19,10 @@ The chart now reaches every imported FedRAMP branch. Next: implement the legal/p
 ## Follow-ups from independent browser QA (October 30, 2026)
 
 The stale Everything scope, semantic return navigation, disappearing context, moving class cards and offscreen selected mobile cards are addressed in this iteration. Mobile Filters now dismisses on Escape and restores trigger focus. Remaining validation: a complete mobile drawer focus-management/close-control pass, measured contrast and touch-target sizing, screen-reader testing, physical touch devices, Firefox/Safari, and live-site browser verification when environment access permits. Dense full-chart edge routing and long-title readability remain research items; source-directed arrows must not be reversed to improve layout.
+
+## Source and flow follow-ups from the structure review
+
+- Expose both the subset data locator and metadata locator in the inspector: containment uses `/FRR/.../data/...`, while subset title/applicability is held under `/FRR/.../info/...`. Existing applicability edges already cite metadata precisely.
+- Research edge separation in dense source gutters and better mobile placement of chart controls and the below-chart inspector. Preserve original endpoints and direction.
+- Evaluate class-variant navigation and rule-level control references as separate ingestion work. Optional KSI variants must not become mandatory class-applicability links.
+- Keep mixed-session gap/readability and mapping-toggle regressions alongside individual button checks. A stable coordinate alone is not UX acceptance.
