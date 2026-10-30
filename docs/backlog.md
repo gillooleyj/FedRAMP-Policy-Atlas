@@ -26,3 +26,16 @@ The stale Everything scope, semantic return navigation, disappearing context, mo
 - Research edge separation in dense source gutters and better mobile placement of chart controls and the below-chart inspector. Preserve original endpoints and direction.
 - Evaluate class-variant navigation and rule-level control references as separate ingestion work. Optional KSI variants must not become mandatory class-applicability links.
 - Keep mixed-session gap/readability and mapping-toggle regressions alongside individual button checks. A stable coordinate alone is not UX acceptance.
+
+
+## Galaxy-map growth and orientation
+
+The October 30 locator/theme iteration adds a fixed full-map overview, live view footprint, click/keyboard recentering, a stable hover readout, and independently selectable site/map palettes. It preserves the existing semantic zoom bands and source data. The live Galactic Atlas reference could not be inspected because the cloud proxy denies that hostname; the user-supplied screenshot informed the locator, not new policy relationships.
+
+Before adding more source collections:
+
+- Replace assumptions about two publisher hubs with source-driven region metadata; retain explicit unknown-source labels and evidence boundaries.
+- Compare source/region aggregation and edge bundling at overview scale, expanding only the active area while retaining nearby context. Bundles must disclose their underlying typed edges; never imply a new verified relationship.
+- Benchmark label churn, frame time and target-finding at 5k/10k entities using clearly marked synthetic performance fixtures separate from public source data. The current implementation is validated against 1,676 real entities, not an unlimited-scale claim.
+- Evaluate overview-locator size, depth cues during orbit, touch panning, and travel breadcrumbs with users. The locator is a fixed front projection of the focal-plane viewing rectangle; it is not a 3D visibility test for every point.
+- Research searchable nearby-object lists and density budgets, so adding laws, policy documents, ISO mappings and more NIST publications does not add every label or edge to the initial view.

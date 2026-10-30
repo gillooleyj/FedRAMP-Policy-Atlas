@@ -19,7 +19,7 @@ Open the address Vite prints. The bundled public-source snapshots and generated 
 npm run ingest       # offline: verify hashes, validate both schemas, regenerate graph/report
 npm run lint
 npm run typecheck
-npm test             # 71 source fidelity, updater, navigation, and model tests
+npm test             # 80 source fidelity, updater, navigation, and model tests
 npm run build
 npm run preview      # serve the production build
 ```
@@ -37,7 +37,11 @@ The browser suite captures desktop and mobile screenshots in `docs/screenshots/`
 
 ## Explore
 
-The interface uses the **research** variant of [FedRAMP Site Style v1.0.0](https://github.com/gillooleyj/fedramp-site-style/tree/v1.0.0/skills/fedramp-site-style): a warm light shell, readable source panels and a full-width explorer. The 3D canvas retains its dark background. **Explore**, **FedRAMP 20x**, and **Sources & coverage** are the three primary destinations. **Filters** opens layer, class and relationship controls on demand; Escape closes the drawer and returns keyboard focus. After selection, **Connection types** opens the relationship shortcuts; **Connection levels** stays directly available. See [design and verification](docs/qa-site-style-2026-10-30/README.md).
+- **Appearance** in the header offers Light, Dark, or device-controlled site colors. The map can use its own Light/Dark palette or follow the site. Preferences are saved locally; theme changes preserve the camera, selection and filters. On phones, Appearance is the palette icon.
+- **Overview map** shows the full imported layout with a live view footprint, center crosshair and selection ring. Click a location to recenter without changing zoom or selection; **Camera back** returns. Focus the locator and use arrow keys to travel or Enter/Space to fit the filtered map. It starts collapsed on phones. The locator is a fixed front projection, and faded points are outside the current filters.
+- Hover over a point or label for a stable full-title readout. Label tiers remain sources → regions → groups → entities. Important landmarks avoid the locator, with short dotted label guides only when their point is covered. Those guides are display aids, not graph relationships. See [map orientation and theme verification](docs/qa-galaxy-2026-10-30/README.md).
+
+The interface uses the **research** variant of [FedRAMP Site Style v1.0.0](https://github.com/gillooleyj/fedramp-site-style/tree/v1.0.0/skills/fedramp-site-style): a warm light shell, readable source panels and a full-width explorer. The 3D canvas defaults to dark and has its own appearance preference. **Explore**, **FedRAMP 20x**, and **Sources & coverage** are the three primary destinations. **Filters** opens layer, class and relationship controls on demand; Escape closes the drawer and returns keyboard focus. After selection, **Connection types** opens the relationship shortcuts; **Connection levels** stays directly available. See [design and verification](docs/qa-site-style-2026-10-30/README.md).
 
 - Choose **3D Map**, **Flow chart**, or **Table**. Presentation changes preserve the selection, filters, connection depth and FedRAMP 20x scope. Flow mode is shareable with `?mode=flow`; old `?view=table` links remain supported.
 - Use **Back** above the diagram (or browser Back/Forward) to restore previous selections, filters, branch scope and saved view. **Up** follows a verified containment parent; the containment breadcrumbs are clickable. **Overview** exits inspection. The bottom **Camera back** control only reverses camera movement. **Explore** clears retained selection/focus and filters, restoring both publisher hubs.

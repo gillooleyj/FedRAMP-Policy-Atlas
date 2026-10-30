@@ -1,5 +1,5 @@
 {
-  "testedAt": "2026-10-30T16:23:27.869Z",
+  "testedAt": "2026-10-30T17:02:29.719Z",
   "browser": "154.0.8037.57",
   "checks": [
     "Three primary destinations, filters closed, and a full-width explorer on initial load",

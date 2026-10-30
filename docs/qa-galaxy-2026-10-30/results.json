@@ -1,0 +1,26 @@
+{
+  "testedAt": "2026-10-30T17:07:22.935Z",
+  "browser": "154.0.8037.57",
+  "checks": [
+    "Quiet source-only overview retains the galaxy palette and displays the actual map locator",
+    "Zooming shrinks the overview footprint rather than replacing it with a static image",
+    "Overview click recenters at the same zoom and camera Back restores the previous position",
+    "Keyboard arrows navigate the overview and Enter fits the full filtered map",
+    "Overview footprint follows orbit without invalid coordinates and Reset restores the canonical view",
+    "Regional travel keeps the full map in view and identifies the explored region in the locator",
+    "The locator retains full-map context while visibly dimming exactly the entities excluded by filters",
+    "Stable hover identification gives the full title without repacking labels or changing selection",
+    "Independent light map uses a light WebGL palette and preserves camera, selection and evidence in a dark site",
+    "Follow site theme coordinates the map, labels, controls and overview with both site palettes",
+    "Appearance preferences persist across reloads while entity deep links still work",
+    "Device appearance changes apply live when the site uses the device setting",
+    "Dark flow chart preserves published mappings, readable card identities and exact pinned evidence",
+    "Table and source coverage share the selected theme without losing source links",
+    "768px layouts keep appearance controls, locator and navigation reachable without document overflow",
+    "390px layouts keep appearance controls, locator and navigation reachable without document overflow",
+    "320px layouts keep appearance controls, locator and navigation reachable without document overflow",
+    "Blocked browser storage falls back to working in-memory appearance settings",
+    "No uncaught browser errors"
+  ],
+  "errors": []
+}

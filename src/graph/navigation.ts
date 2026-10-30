@@ -13,16 +13,18 @@ export function fittedBounds(points:Position[],aspect:number,fov=45){
 }
 export interface LabelCandidate {id:string;x:number;y:number;width:number;height:number;priority:number;scale:number;eligible:boolean}
 export interface PlacedLabel {id:string;left:number;top:number;width:number;height:number;anchor:number}
-export function placeLabels(candidates:LabelCandidate[],width:number,height:number,budget=65,previousAnchors:Map<string,number>=new Map()):PlacedLabel[]{
+export function placeLabels(candidates:LabelCandidate[],width:number,height:number,budget=65,previousAnchors:Map<string,number>=new Map(),reserved:{left:number;top:number;width:number;height:number}[]=[]):PlacedLabel[]{
  const placed:PlacedLabel[]=[];
  const sorted=candidates.filter(c=>c.eligible).sort((a,b)=>a.priority-b.priority||b.scale-a.scale||a.id.localeCompare(b.id));
  for(const c of sorted){if(placed.length>=budget)break;
   const anchors=[[c.x+12,c.y-c.height/2],[c.x-c.width-12,c.y-c.height/2],[c.x-c.width/2,c.y-c.height-12],[c.x-c.width/2,c.y+12]];
   if(c.priority===0)anchors.push([Math.max(8,Math.min(width-c.width-8,c.x-c.width/2)),Math.max(66,Math.min(height-125-c.height,c.y-c.height-12))]);
+  // Important landmarks may step around a navigation overlay, with a visual leader.
+  if(c.priority<=2)for(const r of reserved)if(c.x>=r.left-12&&c.x<=r.left+r.width+12&&c.y>=r.top-26&&c.y<=r.top+r.height+26)anchors.push([r.left+r.width+8,c.y-c.height/2],[r.left-c.width-8,c.y-c.height/2],[c.x-c.width/2,r.top-c.height-8],[c.x-c.width/2,r.top+r.height+8]);
   const previous=previousAnchors.get(c.id);const order=anchors.map((_,i)=>i);if(previous!==undefined&&previous<anchors.length)order.sort((a,b)=>(a===previous?-1:b===previous?1:a-b));
   for(const anchor of order){const [left,top]=anchors[anchor];if(left<8||top<66||left+c.width>width-8||top+c.height>height-125)continue;
    const box={id:c.id,left,top,width:c.width,height:c.height,anchor};
-   if(placed.some(p=>left<p.left+p.width+5&&left+c.width+5>p.left&&top<p.top+p.height+4&&top+c.height+4>p.top))continue;
+   if([...placed,...reserved].some(p=>left<p.left+p.width+5&&left+c.width+5>p.left&&top<p.top+p.height+4&&top+c.height+4>p.top))continue;
    placed.push(box);break;
   }
  }

@@ -26,7 +26,8 @@
     "inventory:policy": "node scripts/inventory-policy-references.mjs",
     "test:journey:e2e": "node tests/journey-browser.mjs",
     "test:flow-labels:e2e": "node tests/flow-labels-browser.mjs",
-    "test:site-style:e2e": "node tests/site-style-browser.mjs"
+    "test:site-style:e2e": "node tests/site-style-browser.mjs",
+    "test:galaxy:e2e": "node tests/galaxy-browser.mjs"
   },
   "dependencies": {
     "@dagrejs/dagre": "^3.1.3",

@@ -1,0 +1,16 @@
+import {useId,useMemo,useState} from 'react';
+import {ChevronDown,LocateFixed} from 'lucide-react';
+import type {Entity} from '../data/types';
+import type {Position} from '../graph/model';
+import {overviewProjection,type OverviewFrame} from '../graph/overview';
+import {mapEntityColor,type Theme} from '../theme';
+
+export default function OverviewMap({allNodes,nodes,positions,frame,selected,theme,onTravel,onFit,onToggle}:{allNodes:Entity[];nodes:Entity[];positions:Map<string,Position>;frame:OverviewFrame|null;selected?:string;theme:Theme;onTravel:(p:Position)=>void;onFit:()=>void;onToggle:()=>void}){
+ const [open,setOpen]=useState(()=>!matchMedia('(max-width: 700px)').matches),clip=useId();
+ const projection=useMemo(()=>overviewProjection([...positions.values()]),[positions]);
+ const visible=useMemo(()=>new Set(nodes.map(n=>n.id)),[nodes]);
+ const dots=useMemo(()=>allNodes.map(n=>{const p=positions.get(n.id);if(!p)return null;const [x,y]=projection.project(p);return <circle key={n.id} cx={x} cy={y} r={n.kind==='source'?2.5:.85} fill={mapEntityColor(n,theme)} opacity={visible.has(n.id)?.8:.12}/>;}),[allNodes,positions,projection,visible,theme]);
+ const target=frame?projection.project(frame.target):[100,62],clamped=target.map((v,i)=>Math.max(5,Math.min(i?119:195,v)));
+ const offmap=target.some((v,i)=>v!==clamped[i]),chosen=selected&&positions.get(selected),point=chosen?projection.project(chosen):null;
+ return <section className={'map-overview '+(open?'is-open':'')} aria-label="Map overview locator" title="Fixed front view of the full imported map. Faded points are outside your filters; the ring marks your selection and the crosshair marks the view center."><button className="overview-heading" aria-expanded={open} onClick={()=>{setOpen(!open);onToggle();}}><LocateFixed size={14}/><span>Overview map</span><ChevronDown size={12}/></button>{open&&<><svg viewBox="0 0 200 124" role="button" tabIndex={0} aria-label="Recenter map using overview; click a location or use arrow keys" onClick={e=>{if(!frame)return;const r=e.currentTarget.getBoundingClientRect();onTravel(projection.unproject((e.clientX-r.left)/r.width*200,(e.clientY-r.top)/r.height*124,frame.target[2]));}} onKeyDown={e=>{if(!frame)return;const delta:Record<string,number[]>={ArrowLeft:[-12,0],ArrowRight:[12,0],ArrowUp:[0,-12],ArrowDown:[0,12]};if(delta[e.key]){e.preventDefault();const d=delta[e.key];onTravel(projection.unproject(clamped[0]+d[0],clamped[1]+d[1],frame.target[2]));}else if(e.key==='Enter'||e.key===' '){e.preventDefault();onFit();}}}><defs><clipPath id={clip}><rect width="200" height="124"/></clipPath></defs><g clipPath={`url(#${clip})`}>{dots}{frame&&<polygon className="overview-footprint" points={frame.corners.map(p=>projection.project(p).join(',')).join(' ')}/>}</g>{point&&visible.has(selected!)&&<circle className="overview-selection" cx={point[0]} cy={point[1]} r={4}/>}<g className="overview-target" transform={`translate(${clamped.join(' ')})`} data-offmap={offmap}><circle r="3"/><path d="M-7 0h4M3 0h4M0 -7v4M0 3v4"/></g><text x="10" y="116">Front projection · {offmap?'view center outside map':'crosshair = view center'}</text></svg><div className="overview-status"><span>{frame?`${frame.zoom.toFixed(1)}× · ${frame.region??frame.level}`:'Locating…'}</span><button onClick={onFit}>Fit all</button></div></>}</section>;
+}
