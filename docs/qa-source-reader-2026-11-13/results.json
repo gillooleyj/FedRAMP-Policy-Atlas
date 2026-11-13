@@ -1,0 +1,20 @@
+{
+  "status": "environment-blocked",
+  "startedAt": "2026-11-13T15:42:34.699Z",
+  "completedAt": "2026-11-13T15:42:34.883Z",
+  "source": {
+    "version": "2026.10.13.01",
+    "commit": "a89d78477ddea98dc57eca24f5007794c2b4eeb6",
+    "rulePointer": "/FRR/SCG/data/all/CSO/SCG-CSO-RSC",
+    "ksiPointer": "/KSI/CNA/indicators/KSI-CNA-EIS"
+  },
+  "execution": {
+    "browserLaunched": false,
+    "applicationPageCreated": false
+  },
+  "completedBrowserChecks": 0,
+  "screenshots": [],
+  "blocker": "Chromium IPC socket creation denied by the execution sandbox before app load. The request to run outside the sandbox was automatically rejected by the session permission profile.",
+  "command": "ATLAS_URL=http://127.0.0.1:4189 ATLAS_QA_DIR=/tmp/atlas-source-reader-qa npm run test:source-reader:e2e",
+  "scope": "Focused local Chromium reader/theme/navigation checks. Not representative-user validation or a comprehensive accessibility audit."
+}

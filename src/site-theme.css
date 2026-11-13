@@ -50,3 +50,64 @@ a:hover{text-decoration:underline;text-underline-offset:4px}button:focus-visible
 .class-trace-launch button{display:flex;align-items:center;gap:8px}.class-trace-launch span{color:var(--atlas-muted)}
 .class-trace-toolbar>div{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:12px}.class-trace-toolbar label{display:flex;align-items:center;gap:12px}.class-trace-toolbar select{flex:1;min-width:0;max-width:650px;background:var(--atlas-surface);color:var(--atlas-ink);border:1px solid var(--atlas-border);padding:9px;border-radius:4px}.class-trace-toolbar p{line-height:1.6;color:var(--atlas-muted);margin:10px 0}.class-trace-toolbar summary{color:var(--atlas-link);cursor:pointer}.class-trace-toolbar details{max-height:320px;overflow:auto;padding:3px}.trace-path{border-top:1px solid var(--atlas-rule);padding:12px 0}.trace-path small{display:block;margin:8px 0;color:var(--atlas-muted)}.trace-control{display:flex;gap:6px;margin:6px 0}.trace-control button:first-child{flex:1}.trace-control button{font-size:12px}.class-trace-toolbar>details>p{max-width:90ch}
 @media(max-width:700px){.class-trace-toolbar>div{align-items:flex-start;flex-direction:column}.class-trace-toolbar label{display:block}.class-trace-toolbar select{display:block;width:100%;margin-top:8px}.trace-control{align-items:flex-start}.trace-control button{overflow-wrap:anywhere}}
+
+/* Published source text uses the same reading hierarchy in both themes. */
+@media(min-width:1201px){
+ .explorer-layout.has-selection{grid-template-columns:minmax(0,1fr) minmax(400px,34%)}
+}
+.source-record{min-width:0;color:var(--atlas-ink)}
+.source-record-revision{font-size:13px;line-height:1.6;color:var(--atlas-muted);overflow-wrap:anywhere}
+.source-record-addresses{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin:0 0 16px;font-size:14px;color:var(--atlas-muted)}
+.source-record-addresses>.source-record-structured-list{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;padding:0;margin:0}
+.source-record-addresses>.source-record-structured-list>li{margin:0}
+.source-record-addresses .source-record-text{font-size:14px}
+.source-record-addresses>.source-record-citation{margin:0}
+.source-record-addresses>.source-record-citation[open]{flex-basis:100%}
+.source-record-field{min-width:0;margin-block:22px}
+.source-record-field h4,.source-record-artifact-bucket h5{font-size:14px;line-height:1.5;color:var(--atlas-ink);margin:0 0 10px;font-weight:600;letter-spacing:0;text-transform:none}
+.source-record-text,.source-record-list{font-size:16px;line-height:1.7;color:var(--atlas-ink);max-width:68ch;overflow-wrap:anywhere;white-space:pre-wrap}
+.source-record-text{margin:0 0 12px}
+.source-record .statement{padding-left:14px;font-size:16px}
+.source-record-list{padding-left:24px;margin:10px 0 16px}
+.source-record-list>li{padding-left:2px;margin-block:14px}
+.source-record-list>li::marker{color:var(--atlas-muted)}
+.source-record-warning{border-left:3px solid var(--atlas-warning-border);background:var(--atlas-warning-bg);padding:14px;color:var(--atlas-warning)}
+.source-record-warning .source-record-text{color:var(--atlas-warning)}
+.source-record-artifacts{border-top:1px solid var(--atlas-rule);padding-top:18px}
+.source-record-artifact-bucket{margin-block:16px}
+.source-record-citation{margin:8px 0 16px;font-size:13px;color:var(--atlas-muted)}
+.source-record-citation>summary{min-height:36px;padding:8px 2px;color:var(--atlas-link);line-height:1.5;cursor:pointer}
+.source-record-citation[open]{border-left:2px solid var(--atlas-border-soft);padding-left:12px}
+.source-record-citation dl{display:block;font-size:13px;line-height:1.6;margin:10px 0}
+.source-record-citation dt{font-weight:600;color:var(--atlas-ink);margin-top:12px}
+.source-record-citation dd{margin:3px 0 10px;overflow-wrap:anywhere}
+.source-record-citation code{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;color:var(--atlas-muted)}
+.source-record-citation pre{white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%;font-size:13px;line-height:1.6;color:var(--atlas-ink);background:var(--atlas-inset)}
+.source-record a{color:var(--atlas-link);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.source-record details>summary{color:var(--atlas-link);cursor:pointer;line-height:1.5}
+.source-record .source-record-field dl{min-width:0;overflow-wrap:anywhere}
+.source-record .source-record-field dd{margin-left:0}
+.source-record-scope{font-size:14px;line-height:1.6;color:var(--atlas-muted);border-top:1px solid var(--atlas-rule);padding-top:16px}
+.source-record-structured{display:block;font-size:15px;line-height:1.7}
+.source-record-structured>div{margin-block:14px}
+.source-record-structured dt{font-size:13px;font-weight:600;color:var(--atlas-muted);margin-bottom:4px}
+.source-record-structured dd{margin:0}
+.source-record-structured-list{padding-left:22px;margin:8px 0;line-height:1.7}
+.source-record-structured-list>li{margin-block:10px}
+.source-record-defaults{border-top:1px solid var(--atlas-rule);padding-top:16px;margin-top:24px}
+.source-record-defaults>summary{min-height:44px;font-size:14px;padding-block:9px}
+.source-record-missing{font-size:16px;color:var(--atlas-muted)}
+.source-record-force{font-size:13px;line-height:1.6}
+.source-record :is(button,summary,a):focus-visible{outline:3px solid var(--atlas-ink);outline-offset:3px;box-shadow:0 0 0 5px var(--atlas-surface)}
+.class-tabs button[aria-pressed=true]{font-weight:700}
+@media(max-width:700px){
+ .source-record-text,.source-record-list,.source-record .statement{font-size:16px}
+ .source-record-citation>summary{min-height:44px;padding-block:10px}
+}
+@media(forced-colors:active){
+ .source-record-warning,.source-record-citation[open]{border-color:CanvasText}
+ .source-record a,.source-record summary{color:LinkText}
+ .source-record :is(button,summary,a):focus-visible{outline-color:Highlight;box-shadow:none}
+ .class-tabs button[aria-pressed=true]{outline:2px solid Highlight;outline-offset:-3px}
+ .class-tabs button:focus-visible{outline:3px solid Highlight;outline-offset:3px}
+}

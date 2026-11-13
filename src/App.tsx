@@ -2,6 +2,7 @@ import {useEffect,useMemo,useState,useRef,lazy,Suspense} from 'react';
 import {ArrowLeft,ArrowUp,ArrowUpRight,Box,Check,CheckCheck,ChevronRight,Database,ExternalLink,Filter,Focus,GitBranch,Globe2,Info,List,Search,ShieldCheck,Sparkles,X} from 'lucide-react';
 import type {Graph,Entity,Edge} from './data/types';
 import {categories,entityColor,searchNodes,matchesClass,visibleEdges,oscalStatement,layout} from './graph/model';
+import SourceRecordContent from './components/SourceRecordContent';
 import {flowSlice,flowBranches,fedrampBranch,collectionSlice,flowAvailable,withFlowContext} from './graph/flow';
 import Universe from './components/Universe';
 import UpdateStatus from './components/UpdateStatus';
@@ -133,12 +134,13 @@ function Inspector({node:n,graph,nodeMap,cls,choose,onClose,focus,focusLabel,onF
  const ksiScopes=related.filter(e=>e.type==='APPLIES_TO'&&e.applicability?.processRule);
  const ordered=[...mappings,...related.filter(e=>e.type!=='PUBLISHED_CONTROL_MAPPING')];
  const v=variant?n.raw.varies_by_class?.[variant]:undefined;
+ const hasSourceReader=n.sourceId==='fedramp'&&['rule','ksi'].includes(n.kind);
  const statement=!variant&&n.raw.varies_by_class?'Choose a certification class above to read its published statement.':variant?(v?.statement??(n.raw.varies_by_class?'Not specified in source for this class.':n.raw.statement)):n.raw.statement;
  return <><div className="inspector-top"><span style={{color:entityColor(n)}}><i style={{background:entityColor(n)}}/>{kinds[n.kind]}</span><button aria-label="Close inspector" onClick={onClose}><X size={17}/></button></div><div className="inspector-scroll"><div className="entity-id">{n.sourceIdentifier??n.id}</div><h2>{n.title}</h2><div className="entity-badges"><span><CheckCheck size={12}/> Source-backed</span><span>{n.status==='unknown'?'Status not specified':n.status}</span></div>
  <button className={'focus-button '+(focus?'is-focused':'')} onClick={onFocus}><Focus size={15}/>{focusLabel??(focus?'Show full graph':'Focus neighborhood')}<ChevronRight size={14}/></button>
- <div className="detail-section"><h3>SOURCE WORDING</h3>{n.raw.varies_by_class&&<><div className="class-tabs"><button className={!variant?'active':''} onClick={()=>setVariant('')}>Common</button>{['a','b','c','d'].map(c=><button key={c} className={variant===c?'active':''} onClick={()=>setVariant(c)}>{c.toUpperCase()}</button>)}</div>{!variant&&<p className="hint">Statements vary by class. Select a class to read its exact wording.</p>}</>}
- <p className="statement">{statement??n.raw.definition??n.raw.purpose??n.raw.description??(oscalStatement(n.raw.parts)||'Not specified in source.')}</p>
- {(v?.force??n.raw.force)&&<div className="force">NORMATIVE FORCE <strong>{v?.force??n.raw.force}</strong></div>}
+ <div className="detail-section"><h3>{hasSourceReader?'PUBLISHED TEXT':'SOURCE WORDING'}</h3>{n.raw.varies_by_class&&<><div className="class-tabs"><button className={!variant?'active':''} aria-pressed={!variant} onClick={()=>setVariant('')}>Common</button>{['a','b','c','d'].map(c=><button key={c} className={variant===c?'active':''} aria-pressed={variant===c} onClick={()=>setVariant(c)}>{c.toUpperCase()}</button>)}</div>{!variant&&!hasSourceReader&&<p className="hint">Statements vary by class. Select a class to read its exact wording.</p>}</>}
+ {hasSourceReader?<SourceRecordContent node={n} variant={variant} sourceNode={nodeMap.get('fedramp')}/>:<><p className="statement">{statement??n.raw.definition??n.raw.purpose??n.raw.description??(oscalStatement(n.raw.parts)||'Not specified in source.')}</p>
+ {(v?.force??n.raw.force)&&<div className="force">NORMATIVE FORCE <strong>{v?.force??n.raw.force}</strong></div>}</>}
  {n.kind==='ksi'&&<p className="hint">No normative force is assigned to KSI statements in the source schema.</p>}
  </div>
  <div className="detail-section"><h3>APPLICABILITY & TIMING</h3><p className="hint">{n.framework?`Framework bucket: ${n.framework}. `:''}{n.classes?.length?`Source-backed class scope: ${n.classes.join(', ')}.`:'Class applicability not specified in source at this entry.'}</p>{n.applicability&&<details><summary>Subset applicability</summary><pre>{JSON.stringify(n.applicability,null,2)}</pre></details>}{Boolean(n.effective)&&<details><summary>Inherited effective metadata</summary><pre>{JSON.stringify(n.effective,null,2)}</pre></details>}<p className="hint">Entry and class overrides remain in the raw record below. No certification availability inferred.</p></div>
