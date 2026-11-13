@@ -1,1 +1,30 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="theme-color" content="#fafaf6"/><meta name="description" content="Explore public FedRAMP rules and NIST controls through a citation-grounded knowledge graph."/><title>FedRAMP Policy Atlas</title></head><body><div id="root"></div><script type="module" src="/src/main.tsx"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#fafaf6"/>
+  <meta name="description" content="Explore public FedRAMP rules and NIST controls through a citation-grounded knowledge graph."/>
+  <title>FedRAMP Policy Atlas</title>
+  <script>
+    // Match useAppearance before the app loads, including when storage is denied.
+    (() => {
+      let preference = 'system';
+      try {
+        const stored = localStorage.getItem('atlas-site-theme');
+        if (['light', 'dark', 'system'].includes(stored)) preference = stored;
+      } catch { /* Device preference still works without persistent storage. */ }
+      const theme = preference === 'system'
+        ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+        : preference;
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.style.colorScheme = theme;
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', theme === 'dark' ? '#101820' : '#fafaf6');
+    })();
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>

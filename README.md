@@ -19,7 +19,7 @@ Open the address Vite prints. The bundled public-source snapshots and generated 
 npm run ingest       # offline: verify hashes, validate both schemas, regenerate graph/report
 npm run lint
 npm run typecheck
-npm test             # 80 source fidelity, updater, navigation, and model tests
+npm test             # 103 source fidelity, updater, navigation, and model tests
 npm run build
 npm run preview      # serve the production build
 ```
@@ -143,3 +143,11 @@ Select a certification class and choose **Trace KSIs to NIST controls**. The act
 **Path evidence and coverage** lists the exact applicability and mapping steps, with links to the control records and each edge's pinned evidence. Class context stays visible while inspecting controls. **Return to class requirements** returns to the class's direct requirements; Back/Forward restore trace selections. URLs retain `trace=class:B` and the optional `indicator=fr:KSI-CNA-EIS` alongside the inspected `node` and view.
 
 The trace uses existing verified edges only: Class A reaches 94 distinct NIST controls/enhancements through 7 KSIs and 99 published mappings; B/C/D each reach 302 targets through 46 KSIs and 558 mappings. A published association is not a mandatory NIST baseline or compliance equivalence. Process rules without imported control mappings remain in the broader class view. See [trace validation and screenshots](docs/qa-class-trace-2026-10-30/REPORT.md). Run `npm run test:class-trace:e2e` against the Pages preview on port 4189, or set `ATLAS_URL`.
+
+### Published text and light/dark reading
+
+The inspector displays original FedRAMP rule and KSI wording, complete following-information lists, notes, warnings, artifact buckets, and other published supporting fields. Each source disclosure includes the original value, exact locator, revision, commit, and pinned URL. Entry-level, class-specific, and dataset-default artifacts remain separately identified. Missing class wording is explicit; a parent rule's force does not convert a recommended subitem into a requirement or assign force to a KSI.
+
+The reader uses the existing site Light/Dark/device setting and independent map theme. Initial site appearance is resolved before the application module loads. Source content stays identical across themes, with readable wrapping, semantic lists, native source disclosures, and explicit selected-class states. Only balanced Markdown strong emphasis is interpreted; other source syntax remains visible and raw HTML is inert.
+
+The [Phase 1 design contract](docs/design/PHASE1_READER_AND_THEMES.md) defines the bounded slice and follow-on work. The [review record](docs/qa-source-reader-2026-11-13/REPORT.md) reports 103 passing automated tests, lint, typecheck, and a successful production build. New browser/visual validation remains pending because the execution environment blocked Chromium before app load. Run `npm run test:source-reader:e2e` against the local Pages preview in a suitable environment and inspect its captures before accepting the visual and interaction gates.
